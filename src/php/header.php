@@ -11,10 +11,11 @@
 <body>
     <header>
         <input type="checkbox" name="" id="check_menu" style="display: none;">
-        <nav class="menu">
-            <label id="menu_btn" for="check_menu" >
+        <label id="menu_btn" for="check_menu" >
               <i class="fas fa-bars"></i>
              </label>
+        <nav class="menu">
+    
             <ul>
                 <li><a href="#" target="blank"><i class="fas fa-info-circle"></i> Sobre</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-users"></i> Equipe</a></li>
