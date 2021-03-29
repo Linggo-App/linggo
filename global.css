@@ -13,12 +13,16 @@ ul li a{
 }
 header{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
     background: black;
     color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 50px 1fr;
+    grid-template-areas: 
+     "menu logo user"
+    ;
+    align-items: center;
     /* overflow: hidden; */
 }
 .logo, .user{
@@ -26,7 +30,7 @@ header{
 }
 
 .logo{
-    width: 100%;
+    grid-area: logo;
     text-align: center;
 }
 
@@ -43,6 +47,7 @@ header{
 }
 
 #menu_btn{
+    grid-area: menu_btn;
     cursor: pointer;
     display: none;
     padding: 5px;
@@ -57,11 +62,12 @@ header{
     border: 1px solid rgb(190, 65, 190);
 }
 .user{
+    grid-area: user;
     display: flex;
     margin-right: 35px;
     align-items: center;
     justify-content: flex-end;
-    width: 100%;
+
 }
 .perfil_img{
     margin-right: 10px;
@@ -75,20 +81,30 @@ header{
     align-items: center;
 }
 .menu{
+    grid-area: menu;
     margin-left:20px;
-    width: 100%;
+
 }
 .menu ul li a:hover{
     background: rgba(255, 255, 255, 0.397);
     opacity: 1;
 }
 @media(max-width:680px){
+    header{
+        grid-template-areas: 
+        "menu_btn logo user"
+        "menu menu menu"
+       ;
+    }
     #menu_btn{
         display: block;
     }
     /* .menu ul{
         flex-direction: column;
     } */
+    .menu{
+        margin-left: 0px;
+    }
     .menu ul li{
         clear: both;
         width: 100%;
@@ -97,9 +113,13 @@ header{
         display: none;
         margin-top: 10px;
     }
-    #check_menu:checked ~ .menu ul {
-        display: block;
+ 
+  
+    .username{
+        display: none;
     }
 }
 
-
+#check_menu:checked ~ .menu ul {
+    display: block;
+}
