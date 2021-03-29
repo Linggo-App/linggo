@@ -1,0 +1,105 @@
+*{
+    margin:0; padding: 0;
+    box-sizing: border-box;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+}
+.menu ul li a{
+    opacity: 0.9;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: black;
+    color: white;
+    /* overflow: hidden; */
+}
+.logo, .user{
+    align-self: flex-start;
+}
+
+.logo{
+    width: 100%;
+    text-align: center;
+}
+
+.menu ul li{
+    float: left;
+    padding: 5px;
+
+}
+
+.menu ul li a{
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+#menu_btn{
+    cursor: pointer;
+    display: none;
+    padding: 5px;
+}
+
+#menu_btn i{
+    font-size: 1.3em;
+}
+.menu__createbtn{
+    background:purple;
+    border-radius: 10px;
+    border: 1px solid rgb(190, 65, 190);
+}
+.user{
+    display: flex;
+    margin-right: 35px;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+.perfil_img{
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    margin-left:20px;
+    width: 100%;
+}
+.menu ul li a:hover{
+    background: rgba(255, 255, 255, 0.397);
+    opacity: 1;
+}
+@media(max-width:680px){
+    #menu_btn{
+        display: block;
+    }
+    /* .menu ul{
+        flex-direction: column;
+    } */
+    .menu ul li{
+        clear: both;
+        width: 100%;
+    }
+    .menu ul {
+        display: none;
+        margin-top: 10px;
+    }
+    #check_menu:checked ~ .menu ul {
+        display: block;
+    }
+}
+
+
