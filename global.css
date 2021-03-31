@@ -2,6 +2,10 @@
     margin:0; padding: 0;
     box-sizing: border-box;
 }
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
 ul li{
     list-style: none;
 }
@@ -11,6 +15,7 @@ ul li a{
 .menu ul li a{
     opacity: 0.9;
 }
+/*Header*/
 header{
     width: 100%;
     padding: 10px;
@@ -34,10 +39,12 @@ header{
     text-align: center;
 }
 
+.menu ul{
+    display: flex;
+}
 .menu ul li{
-    float: left;
     padding: 5px;
-
+    
 }
 
 .menu ul li a{
@@ -83,10 +90,96 @@ header{
 .menu{
     grid-area: menu;
     margin-left:20px;
-
+    
 }
 .menu ul li a:hover{
     background: rgba(255, 255, 255, 0.397);
+    opacity: 1;
+
+}
+
+/*Tela Principal*/
+.div_consulta{
+    margin-top: 40px;
+    margin-left: 35px;
+}
+.consulta{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 17px;
+    align-items: center;
+}
+/* .div_consulta .titulo{
+
+} */
+.barra_busca{
+    width: 300px;
+    height: 30px;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    background: #f3efef;
+    display: flex;
+    align-items: center;
+}
+.barra_busca input[type="text"]{
+    width: 270px;
+    height:28px ;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background:none;
+}
+.btn_search{
+    cursor: pointer;
+    padding: 5px;
+}
+.consulta select{
+    margin: 10px;
+    background: #f3efef;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+
+.agendas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    /* border: 1px solid; */
+    margin:40px 35px;
+    align-items: center;
+}
+.schedules{
+    width: 273px;
+    height: 246px;
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background: #a6e24e;
+    overflow: hidden;
+    color: white;
+}
+.create_schedule {
+    background: grey;
+    color: #000;
+}
+.create_schedule i{
+    font-size: 4em;
+}
+.schedules{
+    opacity: 0.9;
+    cursor: pointer;
+}
+.schedules h1{
+    font-size: 3em;
+    font-weight: bold;
+    
+}
+.schedules:hover{
     opacity: 1;
 }
 @media(max-width:680px){
@@ -95,6 +188,9 @@ header{
         "menu_btn logo user"
         "menu menu menu"
        ;
+       /* overflow: hidden; */
+       position: relative;
+       
     }
     #menu_btn{
         display: block;
@@ -104,6 +200,7 @@ header{
     } */
     .menu{
         margin-left: 0px;
+      
     }
     .menu ul li{
         clear: both;
@@ -112,6 +209,74 @@ header{
     .menu ul {
         display: none;
         margin-top: 10px;
+
+        /*---Caso no futuro incomode, configs para tornar o menu flutuante---*/
+
+        /* position: absolute;
+        background: black;
+        width: 100%;
+        left: 0;
+        padding: 5px; */
+
+        /*--------------------*/
+    }
+ 
+    .user{
+        margin-right: 0px;
+    }
+    .username{
+        display: none;
+    }
+
+    .agendas{
+        flex-direction: column;
+    }
+    .schedules{
+        margin-left: 0px;
+    }
+
+    .consulta select{
+        margin-left: 5px;
+    }
+}
+
+@media(max-width:900px){
+    header{
+        grid-template-areas: 
+        "menu_btn logo user"
+        "menu menu menu"
+       ;
+       /* overflow: hidden; */
+       position: relative;
+       
+    }
+    #menu_btn{
+        display: block;
+    }
+    /* .menu ul{
+        flex-direction: column;
+    } */
+    .menu{
+        margin-left: 0px;
+      
+    }
+    .menu ul li{
+        clear: both;
+        width: 100%;
+    }
+    .menu ul {
+        display: none;
+        margin-top: 10px;
+
+        /*---Caso no futuro incomode, configs para tornar o menu flutuante---*/
+
+        /* position: absolute;
+        background: black;
+        width: 100%;
+        left: 0;
+        padding: 5px; */
+
+        /*--------------------*/
     }
  
   
