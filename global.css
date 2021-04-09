@@ -275,13 +275,35 @@ header{
     margin-top: 5px;
     display: flex;
     flex-wrap:wrap;
+    align-items: center;
 }
 .color_content span{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border: 1px solid black;
     display: block;
-    margin: 5px;
+    margin: 2px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.color_content span::after{
+    content: "✔";
+    display: none;
+}
+
+.color_content label{
+    display: table;
+}
+ input[type="radio"]{
+    display: none;
+}
+
+input[type="radio"]:checked ~ span::after{
+    display: block;
 }
 .input{
     position: relative;
@@ -328,7 +350,7 @@ header{
     flex-direction: column;
     justify-content: space-around;
     padding: 10px;
-    
+    position: relative;
 }
 
 .form_btn{
@@ -380,6 +402,23 @@ header{
 .container_form{
     border: none;
     width: 100%;
+}
+.form_part1{
+    transition: transform 0.2s;
+
+}
+.form_part1.active{
+    transform: translateX(-1500px);
+    position: absolute;
+}
+.form_part2{
+    transform: translateX(1500px);
+    transition: transform 0.2s;
+    position: absolute;
+
+}
+.form_part2.active{
+    transform: translateX(0px);
 }
 @media(max-width:680px){
     header{
