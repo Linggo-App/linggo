@@ -41,7 +41,7 @@
     <section class="lightbox">
             <div class="modal">
                 <i class="fas fa-times close"></i>
-                <form method="POST" action="" class="add_agenda">
+                <form method="POST" action="" class="add_agenda" style="flex-direction: row;">
                  <span class="add_agenda container_form form_part1">
                     <div class="cor">
                         <h1 class="form_btn open_colors">
@@ -51,15 +51,124 @@
                         <i class="fas fa-times close_color"></i>
 
                             <div class="color_content">
-                                <span>
+                                <label for="color1">
+                                    <input type="radio" id="color1" name="color_agenda" value="#fff" checked> 
 
-                                </span>
+                                    <span style="background-color:#fff ;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color2">
+                                    <input type="radio" id="color2" name="color_agenda" value="#18D97F">
+
+                                    <span style="background-color:#18D97F;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color3">
+                                    <input type="radio" id="color3" name="color_agenda" value="#8C530D">
+
+                                    <span style="background-color:#8C530D;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color4">
+                                    <input type="radio" id="color4" name="color_agenda" value="#F25922">
+
+                                    <span style="background-color:#F25922;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color5">
+                                    <input type="radio" id="color5" name="color_agenda" value="#BF544B">
+
+                                    <span style="background-color:#BF544B;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color6">
+                                    <input type="radio" id="color6" name="color_agenda" value="#D91818">
+
+                                    <span style="background-color:#D91818;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color7">
+                                    <input type="radio" id="color7" name="color_agenda" value="#242259">
+
+                                    <span style="background-color:#242259;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color8">
+                                    <input type="radio" id="color8" name="color_agenda" value="#23518C">
+
+                                    <span style="background-color:#23518C;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color9">
+                                    <input type="radio" id="color9" name="color_agenda" value="#5FC2D9">
+
+                                    <span style="background-color:#5FC2D9;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color10">
+                                    <input type="radio" id="color10" name="color_agenda" value="#F2AE30">
+
+                                    <span style="background-color:#F2AE30;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color11">
+                                    <input type="radio" id="color11" name="color_agenda" value="#D93B3B">
+
+                                    <span style="background-color:#D93B3B;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color12">
+                                    <input type="radio" id="color12" name="color_agenda" value="#F24B59">
+
+                                    <span style="background-color:#F24B59;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color13">
+                                    <input type="radio" id="color13" name="color_agenda" value="#666CD9">
+
+                                    <span style="background-color:#666CD9;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color14">
+                                    <input type="radio" id="color14" name="color_agenda" value="#02734A">
+
+                                    <span style="background-color:#02734A;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color15">
+                                    <input type="radio" id="color15" name="color_agenda" value="#F2C335">
+
+                                    <span style="background-color:#F2C335;">
+                                    
+                                    </span>
+                                </label>
+                                <label for="color16">
+                                    <input type="radio" id="color16" name="color_agenda" value="#F2AFA0">
+
+                                    <span style="background-color:#F2AFA0;">
+                                    
+                                    </span>
+                                </label>
                             </div>
-                            <span class="form_btn">
-                            <span class="bg"></span>  
-
+                            <span id="ok_btn" class="form_btn">
+                            <span class="bg"></span>
                                 <p>Ok</p>
                             </span>
+                            
                         </div>
                     </div>
                     <label class="input" for="titulo">
@@ -70,12 +179,21 @@
                         <input type="text" placeholder=" " id="assunto" name="assunto">
                         <span class="place">Assunto</span>
                     </label>
-                    <label class="form_btn">
+                    <div id="prox" class="form_btn">
                         <span class="bg"></span>
                         <p>Próximo</p>
-                    </label>
+                    </div>
+                 </span>
+                 <div class="overlay"></div>
+
+                 <span class="add_agenda container_form form_part2">
+                     <h1>parte 2</h1>
+                     <div id="ant">
+                        <p>voltar</p>
+                    </div>
                  </span>
                 </form>
+ 
             </div>  
         </section>
 
