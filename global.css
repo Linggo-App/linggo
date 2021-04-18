@@ -102,93 +102,10 @@ header{
     font-size: 0.9em;
 }
 
-/*Tela Principal*/
-.div_consulta{
-    margin-top: 40px;
-    margin-left: 35px;
-}
-.consulta{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 17px;
-    align-items: center;
-}
-/* .div_consulta .titulo{
 
-} */
-.barra_busca{
-    width: 300px;
-    height: 30px;
-    /* border: 1px solid black; */
-    overflow: hidden;
-    background: #f3efef;
-    display: flex;
-    align-items: center;
-}
-.barra_busca input[type="text"]{
-    width: 270px;
-    height:28px ;
-    border: none;
-    outline: none;
-    padding: 5px;
-    background:none;
-}
-.btn_search{
-    cursor: pointer;
-    padding: 5px;
-}
-.consulta select{
-    margin: 10px;
-    background: #f3efef;
-    outline: none;
-    border: none;
-    padding: 5px;
-}
-
-.agendas{
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    /* border: 1px solid; */
-    margin:40px 35px;
-    align-items: center;
-}
-.schedules{
-    width: 273px;
-    height: 246px;
-    /* border: 1px solid; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    background: #a6e24e;
-    overflow: hidden;
-    color: white;
-}
-.create_schedule {
-    background: grey;
-    color: #000;
-}
-.create_schedule i{
-    font-size: 4em;
-}
-.schedules{
-    opacity: 0.9;
-    cursor: pointer;
-}
-.schedules h1{
-    font-size: 3em;
-    font-weight: bold;
-    
-}
-.schedules:hover{
-    opacity: 1;
-}
 
 /*modal*/
-.modal , .modal_color{
+.modal {
     position: fixed;
     top: 55%;
     left: 50%;
@@ -231,126 +148,12 @@ header{
     cursor: pointer;
     margin: 5px;
 }
-.modal.active, .modal_color.active{
+.modal.active{
     transform: translate(-50%,-50%) scale(1);
 }
 .overlay.active{
     opacity: 1;
     pointer-events: all;
-}
-
-/*formulário de cadastro*/
-.cor{
-    width: 100%;
-    height: 80px;
-    padding: 10px;
-    border-bottom: 1px solid;
-  
-    
-}
-.cor .form_btn p{
-    margin: 0;
-}
-
-.modal_color .form_btn{
-    border:1px solid black;
-    align-self: flex-end;
-    margin-top: 10px;
-}
-
-.modal_color{
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
-}
-
-.close_color{
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-.color_content{
-    width: 100%;
-    height: 30vh;
-    border: 1px solid black;
-    margin-top: 5px;
-    display: flex;
-    flex-wrap:wrap;
-    align-items: center;
-}
-.color_content span{
-    width: 35px;
-    height: 35px;
-    border: 1px solid black;
-    display: block;
-    margin: 2px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.color_content span::after{
-    content: "✔";
-    display: none;
-}
-
-.color_content label{
-    display: table;
-}
- input[type="radio"]{
-    display: none;
-}
-
-input[type="radio"]:checked ~ span::after{
-    display: block;
-}
-.input{
-    position: relative;
-    border: 1px solid #23518c;
-    padding: 10px;
-    background: white;
-    width: 80%;
-    align-self: center;
-    border-radius: 5px;
-    cursor: text;
-}
-.input input{
-    outline: none;
-    border: none;
-    background: transparent;
-    width: 100%;
-    font-size: 1.2rem;
-
-}
-.input .place{
-    position: absolute;
-    left: 0;
-    margin-left: 10px;
-    font-size: 1.2rem;
-    color: #23518c;
-    background: white;
-    opacity: 0.5;
-    user-select: none;
-    transition: all 0.2s;
-    padding: 1px;
-}
-.input input:focus + .place,.input input:not(:placeholder-shown)+.place{
-    opacity: 1;
-    font-size: 0.8rem;
-    transform: translateY(-18px);
-}
-
-.add_agenda{
-    width: 95%;
-    height: 70vh;
-    border: 3px solid #23518c;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 10px;
-    position: relative;
 }
 
 .form_btn{
@@ -365,7 +168,7 @@ input[type="radio"]:checked ~ span::after{
     height: 50px;
     width: 30%;
     align-self: center;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .form_btn p{
     text-align: center;
@@ -399,27 +202,44 @@ input[type="radio"]:checked ~ span::after{
 .form_btn:hover p{
     color: white;
 }
-.container_form{
+
+.input{
+    position: relative;
+    border: 1px solid #23518c;
+    padding: 10px;
+    background: white;
+    width: 80%;
+    align-self: center;
+    border-radius: 5px;
+    cursor: text;
+}
+.input input{
+    outline: none;
     border: none;
-    width: 100%;
-}
-.form_part1{
-    transition: transform 0.2s;
+    background: transparent;
+    /* width: 100%; */
+    font-size: 1.2rem;
 
 }
-.form_part1.active{
-    transform: translateX(-1500px);
+.input .place{
     position: absolute;
+    left: 0;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: #23518c;
+    background: white;
+    opacity: 0.5;
+    user-select: none;
+    transition: all 0.2s;
+    padding: 1px;
 }
-.form_part2{
-    transform: translateX(1500px);
-    transition: transform 0.2s;
-    position: absolute;
+.input input:focus + .place,.input input:not(:placeholder-shown)+.place{
+    opacity: 1;
+    font-size: 0.8rem;
+    transform: translateY(-18px);
+}
 
-}
-.form_part2.active{
-    transform: translateX(0px);
-}
+
 @media(max-width:680px){
     header{
         grid-template-areas: 
