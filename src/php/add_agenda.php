@@ -15,8 +15,8 @@
         include("./header.php");
     ?>
     <div class="div_consulta">
-        <h1 class="titulo">Todas as agendas</h1>
-        <form class="consulta" action="" method="get">
+        <h1 class="titulo">Todos os projetos</h1>
+        <!-- <form class="consulta" action="" method="get">
             <div class="barra_busca">
                 <input type="text" name="" id="" placeholder="Procurar Agenda..."><label for="search"><i class="fas fa-search btn_search"></i></label>
                 <input type="submit" id="search" style="display: none;">
@@ -25,7 +25,7 @@
                 <option value="categoria">Categoria</option>
                 <option value="titulo">Titulo</option>
             </select>
-        </form>
+        </form> -->
     </div>
     <div class="agendas">
         <div class="create_schedule schedules">
@@ -49,9 +49,9 @@
                         <h1 class="form_btn open_colors">
                         <span class="bg"></span>    
                         <p><i class="fas fa-palette"></i> Cor</p></h1>
-                        <div class="cores modal_color">
+                        <div class="cores modal_color" id="pallet">
                         <i class="fas fa-times close_color"></i>
-
+                            
                             <div class="color_content">
                                 <label for="color1">
                                     <input type="radio" id="color1" name="color_agenda" value="#fff" checked> 
@@ -172,30 +172,26 @@
                             </span>
                             
                         </div>
+                      
                     </div>
+                    
                     <label class="input" for="titulo">
                         <input type="text" placeholder=" " id="titulo" name="titulo">
                         <span class="place">Titulo</span>
                     </label>
-                    <label class="input" for="assunto">
+                    <!-- <label class="input" for="assunto">
                         <input type="text" placeholder=" " id="assunto" name="assunto">
                         <span class="place">Assunto</span>
-                    </label>
-                    <div id="prox" class="form_btn">
+                    </label> -->
+                    <label for="cad_proget" class="form_btn">
+                        <input type="submit" id="cad_proget" name="cad_proget" value="" style="display:none;">
                         <span class="bg"></span>
-                        <p>Próximo</p>
-                    </div>
-                 </span>
-                 <div class="overlay"></div>
-
-                 <span class="add_agenda container_form form_part2">
-                     <h1>parte 2</h1>
-                     <div id="ant">
-                        <p>voltar</p>
-                    </div>
-                 </span>
+                        <p>Cadastrar</p>
+                    
+                     </label>
+                
                 </form>
- 
+                <div class="overlay"></div>
             </div>  
         </section>
 

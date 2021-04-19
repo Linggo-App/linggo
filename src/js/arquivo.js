@@ -41,19 +41,8 @@ $(document).ready(function(){
       })
 
       $('.open_colors').css({"background-color":color})
+      $('#pallet').css({"background-color":color})
         
-    })
-
-    //Próximo form
-
-    $("#prox").click(function(){
-        $(".form_part1").addClass("active")
-        $(".form_part2").addClass("active")
-    })
-    
-    $("#ant").click(function(){
-        $(".form_part1").removeClass("active")
-        $(".form_part2").removeClass("active")
     })
 
 });
