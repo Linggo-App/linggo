@@ -68,6 +68,7 @@ input{
     margin: 5px 0px 5px 0px;
     /* border-radius: 5px; */
     border: 1px solid #d1d2d4;
+    outline: none;
 }
 
 input[type="submit"]{
@@ -81,6 +82,27 @@ input[type="submit"]{
     border: none;
 }
 
+.email.valid{
+    border-color: green;
+}
+.email.invalid{
+    border-color:crimson;
+}
+.senha.valid{
+    border-color: green;
+}
+.senha.invalid{
+    border-color:crimson;
+}
+.validation{
+    font-size: .8em;
+}
+.validation.valid{
+    color: green;
+}
+.validation.invalid{
+    color: crimson;
+}
 /* Responsividade Celular e Tablet */
 @media screen and (min-width:300px) and (max-width:800px) {
     #align-form{ 
