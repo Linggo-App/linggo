@@ -371,26 +371,30 @@ header{
 
 /* footer css */
 footer{
-    background:#fff;
     width: 100%;
     height: auto;
     /* margin-top:100px; */
     color: #3c4043;
     font-size: 12px;
-    border-top: 1px solid #dadce0;
     line-height: 50px;
-    padding:  2em 5em;
+    background:#fff;
+    padding: 0.5em 5em;
+    border-top: 1px solid #dadce0;
 }
 
 footer ul{ height: 100%; }
 
-footer ul , #logo, .siga, 
-.collaborators, .collaborators a{ box-sizing: unset; display: flex; }
+footer ul, .siga,.collaborators, .collaborators a{ box-sizing: unset; display: flex; }
 
 footer ul{ justify-content: space-between; }
 
-#Logo, .siga, .collaborators,
-.collaborators a{ align-items: center; }
+#Logo > p{ align-self: center; }
+
+#Logo { display: flex; }
+
+#Logo img{margin: 0 10px;width: 100px;height: 100px;}
+
+.siga, .collaborators,.collaborators a{ align-items: center; }
 
 .siga{ margin-right: 150px; }
 
@@ -524,24 +528,19 @@ label[for="checkGit"] img{
 
 
 @media screen and (min-width:300px) and (max-width:800px) {
-    footer ul, footer ul li{
-        display: flex; 
+    
+    footer ul, footer ul li, .siga, #Logo{
+        display: flex;
         text-align: center;
         align-items: center;
         flex-direction: column;
         justify-content: center;
     }
 
-     .siga{
-        display: flex; 
-        margin-right: 0px;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
+    .siga{ margin-right: 0px; }
 
     #container-git-collaborators{ padding: 0px; }
-     
+
     #git-collaborators-list{ margin: 0px; }
 }
 
