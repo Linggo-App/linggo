@@ -1,11 +1,9 @@
 <ul>
     <li>
-        <h3 id="Logo">
-            <img src="../../assets/Linggo-Logo.png" alt="">
-            <p>
-                Linggo APP - Organizador de tarefas.
-            </p>
-        </h3>
+    <div id="Logo">
+        <img src="../../assets/Linggo-Logo.png" alt="">
+        <p>Linggo APP - Organizador de tarefas.</p>
+    </div>
     </li>
 
     <!-- <li>
