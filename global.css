@@ -14,7 +14,7 @@ ul li{
 ul li a{
     text-decoration: none;
 }
-.menu ul li a{
+.menu ul li a, .user a{
     opacity: 0.9;
 }
 /*Header*/
@@ -49,12 +49,26 @@ header{
     
 }
 
+
 .menu ul li a{
     display: block;
     padding: 10px;
     color: white;
     font-size: 0.8em;
 }
+
+.logs{
+    padding: 0;
+    height: auto;
+    width: auto;
+    background: transparent !important;
+    border: none !important;
+    color:blue;
+    font-size: 0.8em !important;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+
 
 #menu_btn{
     grid-area: menu_btn;
@@ -97,11 +111,12 @@ header{
     margin-left:20px;
     
 }
-.menu ul li a:hover{
+.menu ul li a:hover, .user a:hover{
     /* background: rgba(255, 255, 255, 0.397); */
     opacity: 1;
     font-size: 0.9em;
 }
+
 
 
 
@@ -244,12 +259,16 @@ header{
     transform: translateY(-18px);
 }
 
+.user a{
+    text-decoration: none;
+    color: white;
+}
 
 @media(max-width:680px){
     header{
         grid-template-areas: 
         "menu_btn logo user"
-        "menu menu menu"
+        "menu menu user"
        ;
        /* overflow: hidden; */
        position: relative;
@@ -286,10 +305,14 @@ header{
  
     .user{
         margin-right: 0px;
+     
+    
     }
     .username{
         display: none;
     }
+
+
 
     .agendas{
         flex-direction: column;
@@ -357,7 +380,7 @@ header{
  
   
     .username{
-        display: none;
+       display: none;
     }
 
    

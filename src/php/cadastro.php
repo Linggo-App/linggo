@@ -35,7 +35,7 @@
                                 <td>
                                     
                                     <input type="email" name="login-email" placeholder="Email" maxlength="45" required>
-                                    <input type="password" name="login-senha" placeholder="Senha" required>
+                                    <input type="password" name="login-senha" placeholder="Senha" required >
                                     <input type="submit" name="login" value="Logar">
                                 </td>
                             </tr>
@@ -77,23 +77,65 @@
 <!--Cadastro-->
 <?php
   $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");
+
+  
+  //Login
+
+  if(isset($_POST["login"])){
+
+    $email_log=$_POST["login-email"];
+    $password_log=$_POST["login-senha"];
+
+    $sql_log="SELECT * FROM usuarios WHERE EMAIL='$email_log'";
+    $res_log=mysqli_query($con,$sql_log);
+    $lin_log=mysqli_num_rows($res_log);
+    $row_info=mysqli_fetch_assoc($res_log);
+
+    if($lin_log>0){
+        if(md5($password_log)==$row_info["SENHA"]){
+          session_start();
+          //Para a página de projetos
+            $_SESSION["id_user"]=$row_info["ID_USUARIO"];
+         echo "<script>window.location.replace('http://localhost/flex-schedule/src/php/add_agenda.php');</script>";
+          //-----
+
+          //Para o header
+            $_SESSION["username"]=$row_info["APELIDO"];
+          //--------
+          
+        }else{
+            echo "<script>alert('USUÁRIO OU SENHA INVALIDOS!')</script>";
+        }
+    }
+
+    //session_destroy();
+}
+
+//Cadastro
     if(isset($_POST["register"])){
     
         $nick=$_POST["register-nome"];
         $email=$_POST["register-email"];
         $password=md5($_POST["register-senha"]);
 
+        $sql_ver="SELECT EMAIL FROM usuarios WHERE EMAIL='$email'";
+        $res=mysqli_query($con,$sql_ver);
+        $lin=mysqli_num_rows($res);
        
+        if($lin>0){
+            echo "<script>alert('Esse email já foi cadastrado!')</script>";
+        }else{
 
-      $sql="INSERT INTO usuarios (ID_USUARIO,APELIDO,EMAIL,SENHA) VALUES (null,'$nick','$email','$password')";
-      $res=mysqli_query($con,$sql);
 
-      if($res){
-          echo "<script>alert('Cadastrado com Sucesso!')</script>";
-      }else{
-        echo "<script>alert('Falha ao Cadastrar!')</script>";
-      }
+        $sql="INSERT INTO usuarios (ID_USUARIO,APELIDO,EMAIL,SENHA) VALUES (null,'$nick','$email','$password')";
+        $res=mysqli_query($con,$sql);
 
+        if($res){
+            echo "<script>alert('Cadastrado com Sucesso!')</script>";
+        }else{
+            echo "<script>alert('Falha ao Cadastrar!')</script>";
+            }
+        }
 
     }
 ?>
