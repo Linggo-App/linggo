@@ -13,6 +13,9 @@
 <body>
     <?php 
         include("./header.php");
+        if(!isset($_SESSION["id_user"])){
+            header("location: cadastro.php");
+        }else{
     ?>
     <div class="div_consulta">
         <h1 class="titulo">Todos os projetos</h1>
@@ -198,3 +201,8 @@
         <div class="overlay"></div>
 </body>
 </html>
+<?php 
+    }
+
+ //  session_destroy();
+?>
