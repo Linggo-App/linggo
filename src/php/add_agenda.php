@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="../css/add_quadros.css">
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/arquivo.js"></script>
-    <title>Tela principal</title>
 </head>
+<?php include("./header.php"); ?>
 <body>
     <?php 
-        include("./header.php");
         if(!isset($_SESSION["id_user"])){
             header("location: cadastro.php");
         }else{

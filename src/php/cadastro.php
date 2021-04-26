@@ -5,13 +5,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Linggo</title>
-        <link rel="icon" href="">
-        <!-- <meta http-equiv="refresh" content="1" >  -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/register.css">
         <link rel="stylesheet" href="../../global.css">
-        <!-- <link rel="stylesheet" href="../../global.css"> -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet"> 
         <script src="../js/jquery-3.5.1.min.js"></script>
         <script src="../js/valid.js"></script>
@@ -96,7 +92,7 @@
           session_start();
           //Para a página de projetos
             $_SESSION["id_user"]=$row_info["ID_USUARIO"];
-         echo "<script>window.location.replace('http://localhost/flex-schedule/src/php/add_agenda.php');</script>";
+         echo "<script>window.location.replace('http://localhost/linggo/src/php/add_agenda.php');</script>";
           //-----
 
           //Para o header
