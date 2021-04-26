@@ -106,6 +106,8 @@
         }else{
             echo "<script>alert('USUÁRIO OU SENHA INVALIDOS!')</script>";
         }
+    }else{
+        echo "<script>alert('USUÁRIO E SENHA NÃO CADASTRADOS')</script>";
     }
 
     //session_destroy();

@@ -121,7 +121,7 @@ header{
 
 
 /*modal*/
-.modal {
+.modal, .settings {
     position: fixed;
     top: 55%;
     left: 50%;
@@ -165,7 +165,7 @@ header{
     cursor: pointer;
     margin: 5px;
 }
-.modal.active{
+.modal.active, .settings.active{
     transform: translate(-50%,-50%) scale(1);
 }
 .overlay.active{
