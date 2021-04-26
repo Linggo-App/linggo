@@ -45,7 +45,16 @@ $(document).ready(function(){
         
     })
 
-    
+    //modal settings
+    $(".schedule_update").click(function(){
+        $(".settings").addClass("active");
+        
+    })
+
+    $(".close_settings").click(function(){
+        $(".settings").removeClass("active");
+       
+    })
 
 
 });

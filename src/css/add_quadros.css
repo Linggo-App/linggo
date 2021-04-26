@@ -53,15 +53,16 @@
 .schedules{
     width: 273px;
     height: 246px;
-    /* border: 1px solid; */
+    border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 5px;
-    background: #a6e24e;
+    /* background: #a6e24e; */
     overflow: hidden;
     color: white;
+    position: relative;
 }
 .create_schedule {
     background: grey;
@@ -209,4 +210,19 @@ input[type="radio"]:checked ~ span::after{
 
  .modal_color.active{
     transform: translate(-50%,-50%) scale(1);
+}
+
+.schedule_update{
+    color: black;
+    position: absolute;
+    flex-shrink: 1;
+    top: 0;
+    right: 0;
+    font-size: 1.9em;
+}
+.schedules .schedule_update{
+    display: none;
+}
+.schedules:hover .schedule_update{
+    display: block;
 }
