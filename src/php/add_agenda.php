@@ -122,9 +122,9 @@
             
 
         ?>
-        <div class="settings">
+        <!-- <div class="settings">
             <i class="fas fa-times close_settings"></i>
-        </div>
+        </div> -->
 
     </div>
     <section class="lightbox">
