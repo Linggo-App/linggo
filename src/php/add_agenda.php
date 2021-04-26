@@ -109,7 +109,7 @@
                 //          </div> ";
                 //        }
                 //    }
-                echo "<script>window.location.replace('http://localhost/flex-schedule/src/php/add_agenda.php');</script>";
+                echo "<script>window.location.replace('http://localhost/linggo/src/php/add_agenda.php');</script>";
               }else{
                  echo "<script>alert('erro ao cadastrar')</script>";
               }
