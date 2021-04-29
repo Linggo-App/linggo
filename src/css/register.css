@@ -28,7 +28,7 @@
 
 table{ border-spacing: 15px; }
 
-#table-register{ border-left: 1px solid #d1d3d6;; }
+#table-register{ border-left: 1px solid #d1d3d6; }
 
 #register-container, #login-container{
     position: relative;
