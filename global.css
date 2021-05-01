@@ -316,11 +316,10 @@ header{
 
     .agendas{
         flex-direction: column;
-        margin-left: 0;
-        margin-right: 0;
+        margin:40px 0px;
     }
     .schedules{
-        margin-left: 0px;
+        margin: 10px 0px;
     }
 
     .consulta select{
