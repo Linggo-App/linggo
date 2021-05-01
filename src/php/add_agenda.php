@@ -46,13 +46,13 @@
               $id_user=$_SESSION['id_user'];
               $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user ORDER by TITULO_ROTINA ASC";
               $res=mysqli_query($con,$sql);
-              $lin=mysqli_affected_rows($con);
-  
+              $lin=mysqli_num_rows($res);
+           // echo "<script>alert('".$lin."')</script>";
               if($lin>0){
                 while($linha=mysqli_fetch_array($res)){
                            if($linha["ROTINA_COR"]=="#fff"){
                                echo"<div class='schedules' style='background:".$linha["ROTINA_COR"].";'>
-                               <i class='fas fa-cog schedule_update'></i>
+                             
                                <h1 class='schedule_titulo' style='color:black;'>
                                    ".$linha['TITULO_ROTINA']."
                                </h1>
@@ -60,7 +60,7 @@
                              </div> ";
                            }else{
                                echo"<div class='schedules'  style='background:".$linha["ROTINA_COR"].";'>
-                               <i class='fas fa-cog schedule_update'></i>
+                               
                                <h1 class='schedule_titulo' >
                                ".$linha['TITULO_ROTINA']."
                                </h1>
@@ -81,39 +81,31 @@
                 $id_user=$_SESSION['id_user'];
         
                // echo"<script>alert('".$titulo.'\n'.$cor.'\n'.$id_user."')</script>";
-          
-                $sql="INSERT INTO usuarios_rotinas (ID_USUARIO, ID_ROTINA, TITULO_ROTINA, ROTINA_COR) VALUE($id_user,null,'$titulo','$cor')";
+
+               $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user ORDER by TITULO_ROTINA ASC";
+               $res=mysqli_query($con,$sql);
+              // $res=mysqli_query($con,$sql);
+               $lin=mysqli_num_rows($res);
+              // echo "<script>alert('".$lin."')</script>";
+
+                if($lin>=5){
+                    echo "<script>alert('Você excedeu o limite de projetos exclua alguns para poder adicionar novos projetos!')</script>";
+                   //echo "<script>alert('".$lin."')</script>";
+                }else{
+                    $sql="INSERT INTO usuarios_rotinas (ID_USUARIO, ID_ROTINA, TITULO_ROTINA, ROTINA_COR) VALUE($id_user,null,'$titulo','$cor')";
                 $res=mysqli_query($con,$sql);
                 $lin=mysqli_affected_rows($con);
           
-               //   echo json_encode('cadastrado com sucesso');//"<script>alert('cadastrado com sucesso')</script>";
-               //echo "<script>location.reload();</script>";
-        
-            //    $sql="SELECT * FROM tabelas WHERE ID_USUARIO=$id_user";
-            //      $res=mysqli_query($con,$sql);
-            //      $lin=mysqli_affected_rows($con);
         
                  if($lin>0){
-                //    while($linha=mysqli_fetch_array($res)){
-                //        if($linha["COR"]=="#fff"){
-                //            echo"<div class='schedules' style='background:".$linha["COR"].";'>
-                //            <h1 class='schedule_titulo' style='color:black;'>
-                //                ".$linha['TITULO']."
-                //            </h1>
-                //          </div> ";
-                //        }else{
-                //            echo"<div class='schedules'  style='background:".$linha["COR"].";'>
-                //            <h1 class='schedule_titulo' >
-                //            ".$linha['TITULO']."
-                //            </h1>
-                //          </div> ";
-                //        }
-                //    }
                 echo "<script>window.location.replace('http://localhost/linggo/src/php/add_agenda.php');</script>";
               }else{
                  echo "<script>alert('erro ao cadastrar')</script>";
               }
           
+                }
+                
+                
               
           
               mysqli_close($con);
