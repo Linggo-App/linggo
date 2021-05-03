@@ -1,0 +1,9 @@
+Relatório 2021-05-02
+
+Caio:
+    Codificação de tela rotina
+Leticia:
+    Codificação inicial da página home
+Rafael:
+    Melhorias página projetos, incio do php página rotina.
+Ricardo:
