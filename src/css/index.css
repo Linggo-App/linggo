@@ -1,0 +1,33 @@
+a{
+    text-decoration: none;
+    color:white;
+}
+
+.container_index a{
+    opacity: 0.9;
+}
+
+.container_index a:hover{
+    opacity: 1;
+    font-size: 0.9em;
+}
+
+.container_index{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.container_index img{
+    width:auto ;
+    height: 50vh;
+    margin-top: -100px;
+}
+
+.btn-primary{background-color:#4527a0;  border:1px solid #341c7e;
+ padding:15px; border-radius:10px;  text-align: center;}
+
