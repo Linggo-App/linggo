@@ -51,21 +51,21 @@
               if($lin>0){
                 while($linha=mysqli_fetch_array($res)){
                            if($linha["ROTINA_COR"]=="#fff"){
-                               echo"<div class='schedules' style='background:".$linha["ROTINA_COR"].";'>
+                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]."  target='_blank' class='schedules' style='background:".$linha["ROTINA_COR"].";  text-decoration:none'>
                              
                                <h1 class='schedule_titulo' style='color:black;'>
                                    ".$linha['TITULO_ROTINA']."
                                </h1>
                                <span style='display:none'>".$linha["ID_ROTINA"]."</span>
-                             </div> ";
+                             </a> ";
                            }else{
-                               echo"<div class='schedules'  style='background:".$linha["ROTINA_COR"].";'>
+                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]."  target='_blank' class='schedules'  style='background:".$linha["ROTINA_COR"].";  text-decoration:none'>
                                
-                               <h1 class='schedule_titulo' >
+                               <h1 class='schedule_titulo'  >
                                ".$linha['TITULO_ROTINA']."
                                </h1>
                                <span style='display:none'>".$linha["ID_ROTINA"]."</span>
-                             </div> ";
+                             </a> ";
                
                            }
                        }
@@ -129,7 +129,7 @@
                         <p><i class="fas fa-palette"></i> Cor</p></h1>
                         <div class="cores modal_color" id="pallet">
                         <i class="fas fa-times close_color"></i>
-                            
+                           
                             <div class="color_content">
                                 <label for="color1">
                                     <input type="radio" id="color1" name="color_agenda" value="#fff" checked> 
