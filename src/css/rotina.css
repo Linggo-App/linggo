@@ -1,4 +1,6 @@
-*{
+/* Global config in this page */
+
+#main-container *{
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -7,9 +9,43 @@
     text-decoration: none;
     list-style-type: none;
     font: 400 15px Roboto, sans-serif;
+    /* overflow-y: hidden; */
 }
 
 body{ overflow-y: hidden; }
+
+button svg:hover,
+label > svg:hover{ fill: #4527a0; }
+
+label > svg,
+button > svg{
+    fill: #5f6368;
+    width: 1.3rem !important;
+    height: 1.3rem !important;
+    transition: fill 0.5s ease-out;
+}
+
+button{ 
+    border-radius: 5px;
+    border: 1px solid #dadce0; 
+}
+
+input[type="checkbox"]{ display: none; }
+
+.tasks-container > .box-task:hover, svg:hover,
+#kanban-container > .box-columns > #create-column:hover, 
+button:hover{ cursor: pointer; }
+/*                                              */
+
+/* mini menu box */
+
+#mini-menu-box{
+    padding: 10px 0;
+    border-bottom: 1px solid #dadce0c5;
+    box-shadow: 
+    0 1px 1px 0 rgba(60, 64, 67, 0.083), 
+    0 1px 6px 1px rgba(60, 64, 67, 0.027);
+}
 
 #box-routine-title{
     padding: 2.5px;
@@ -23,27 +59,25 @@ body{ overflow-y: hidden; }
     0 1px 6px 1px rgba(60, 64, 67, 0.103);
 }
 
-#mini-menu-box{
-    padding: 10px 0;
-    border-bottom: 1px solid #dadce0c5;
-    box-shadow: 
-    0 1px 1px 0 rgba(60, 64, 67, 0.083), 
-    0 1px 6px 1px rgba(60, 64, 67, 0.027);
+
+.box-column-header div button{
+    background-color: transparent !important;
 }
+/*                                              */
 
-/* #main-container{ background-color: pink; overflow-x: scroll;} */
+/* Kanban container content */
 
-#kanban-container > .box-columns {
+.box-columns {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: 290px 290px 290px 290px 290px;
     width: 100vw;
     padding: 10px;
     overflow-x: scroll;
-    /* height: calc(100vh - 105px); */
+    height: calc(100vh - 125px);
 }
 
-#kanban-container > .box-columns > #create-column{
+#create-column{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,24 +88,17 @@ body{ overflow-y: hidden; }
     background-color: #fff !important;
 }
 
-#kanban-container > .box-columns > #create-column:hover{
-    cursor: pointer;
-    background-color: rgba(179, 179, 179, 0.062) !important;
-}
+#create-column:hover{ background-color: rgba(179, 179, 179, 0.062) !important; }
 
-#kanban-container .box-columns .column .column-title{ 
-    font-size: .75rem;
-    font-weight: bold;
-    margin:  5px 0 5px 10px;
-}
-
-#kanban-container > .box-columns > .column{
+.column, #create-column{
     width: 100%;
     height: 100%;
-    padding: 5px;
+    /* padding: 8px; */
+    position: relative;
     min-width: 290px;
-    max-width: 355px;
-    overflow-y: scroll;
+    /* max-width: 355px; */
+    overflow-y: hidden;
+    /* scroll-margin-right: 20px; */
     border-radius: 10px;
     border: 1px solid #dadce0;
     background-color: #f6f8fa;
@@ -79,18 +106,104 @@ body{ overflow-y: hidden; }
     0 1px 1px 0 rgba(60, 64, 67, 0.069), 
     0 1px 6px 1px rgba(60, 64, 67, 0.041);
 }
+/*                                              */
 
-/* #tasks-container{ padding: 0 5px; } */
+/* column header content */
 
-#tasks-container > .box-task {
-    width: 100%;
-    /* position: relative; */
-    height: 50px;
-    margin: 0 0 10px 0;
-    padding: 10px;
-    font-size: .70rem;
-    /* font-weight: 600; */
+.box-column-header{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 0 0 10px 0; */
+    padding: 8px 8px 5px 10px;
+    border-bottom: 2px solid #dadce0;
+    box-shadow: 
+    0 1px 1px 0 rgba(60, 64, 67, 0.083), 
+    0 1px 6px 1px rgba(60, 64, 67, 0.027);
+}
+
+.box-column-header p{
+    font-size: .90rem;
+    font-weight: bold;
+}
+
+.box-column-header button{
+    height: 35px;
+    padding: 0 5px;
+}
+
+input[type="checkbox"] ~ .dropdown-column-editor{ display: none; }
+input[type="checkbox"]:checked ~ .dropdown-column-editor{ display: block; }
+
+.dropdown-column-editor{
+    /* padding: 5px; */
     border-radius: 5px;
+    width: fit-content !important;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #dadce0 !important;
+    box-shadow: 
+    0 1px 1px 0 rgba(60, 64, 67, 0.214), 
+    0 1px 6px 1px rgba(60, 64, 67, 0.096);
+}
+
+.dropdown-column-editor ul li:hover{
+    cursor: pointer;
+    background-color: #dadce0;
+}
+.dropdown-column-editor ul li{ padding: 5px 10px; }
+
+.dropdown-column-editor ul li:nth-child(1){ border-bottom: 1px solid #dadce0 !important; }
+/*                                              */
+
+/* Task container */
+
+.tasks-container{ 
+    padding: 8px;
+    overflow-y: scroll;
+    height: calc(100vh - 200px);
+}
+/*                                              */
+
+/* Tasks container content */
+
+.box-task-creator{ display: none; }
+
+.box-task-creator{ margin: 5px 0; }
+
+.box-task-creator button{ 
+    padding: 5px;
+    margin: 0 6px 0 0;
+}
+
+.box-task-creator form textarea{
+    width: 100%;
+    resize: none;
+    padding: 10px;
+    display: block;
+    margin: 0 0 5px 0; 
+    border-radius: 5px;
+    border: 1px solid #dadce0;
+    box-shadow: 
+    0 1px 1px 0 rgba(60, 64, 67, 0.083), 
+    0 1px 6px 1px rgba(60, 64, 67, 0.027);
+}
+
+.box-task-creator form div{ display: flex; }
+.box-task-creator form div button{ width: 81px; }
+.box-task-creator form div input{ width: 100px; margin: 0 2.5px 0 0;}
+.box-task-creator form div .btn-close-task-creator{ margin: 0 !important; }
+
+.box-task {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 0 10px 0;
     background-color: #fff;
     border: 1px solid #dadce0;
     box-shadow: 
@@ -98,37 +211,100 @@ body{ overflow-y: hidden; }
         0 1px 6px 1px rgba(60, 64, 67, 0.027);
 }
 
-/* .btn-delet-task{
-
-}
-
-.btn-delet-task{
-    top: 0;
-    right: 0;
-    position: absolute;
-    margin: 10px;
+/* .box-task p{
+    font-size: .70rem;
+    overflow-wrap: break-word;
 } */
 
-#tasks-container > .box-task:hover {
-    cursor: pointer;
+.box-task:hover {
     box-shadow: 
         0 1px 1px 0 rgba(60, 64, 67, 0.172), 
         0 1px 6px 1px rgba(60, 64, 67, 0.096);
 }
+/*                                              */
 
+/* Modal contaianer */
+.modal-columns,
+#modals-container{ display: none; }
 
-#kanban-container > .box-columns {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 290px 290px 290px 290px 290px;
-    width: 100vw;
-    padding: 10px;
-    overflow-x: scroll;
-    /* height: calc(100vh - 105px); */
+#modals-container{
+    top: 0;
+    z-index: 2;
+    position: absolute;
+    transition: all 2s;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.069);
+}
+/*                                              */
+
+/* modal container content */
+
+.modal-columns{
+    width: 350px;
+    z-index: 1;
+    margin: 0px 0px;
+    transition: all 2s;
+    /* padding: 5px; */
+    height: min-content;
+    border-radius: 10px;
+    /* padding: 10px; */
+    background-color: #fff;
+    border: 1px solid #dadce0;
+    box-shadow: 
+        0 1px 1px 0 rgba(60, 64, 67, 0.083), 
+        0 1px 6px 1px rgba(60, 64, 67, 0.027);
 }
 
-@media screen and (min-height:300px) and (min-height:590px){
+.modal-columns-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-bottom: 2px solid #dadce0;
+    box-shadow: 
+    0 1px 1px 0 rgba(60, 64, 67, 0.083), 
+    0 1px 6px 1px rgba(60, 64, 67, 0.027);
+}
+
+.modal-columns input{ padding: 5px; } 
+.modal-columns input,
+.modal-columns button:not(#btn-close-modal){
+    width: 100%;
+    height: auto;
+    /* padding: 15px; */
+    border-radius: 5px;
+    margin: 5px 0 5px 0px;
+    border: 1px solid lightgray !important;
+}
+
+.modal-columns-header button{
+    margin: 0 !important;
+    width: auto !important;
+    border: unset !important;
+    /* padding:  0 2.5px 0 0 !important; */
+    background-color: unset !important;
+}
+
+.modal-columns-config-box { padding: 10px; }
+
+.modal-columns-config-box button[type="submit"]{
+    height: 35px;
+    padding: 5px;
+}
+/*                                              */
+
+
+/* .btn-show-column-editor{
+    display: none;
+} */
+
+/* #main-container{ background-color: pink; overflow-x: scroll;} */
+
+/* @media screen and (min-height:500px){
     #kanban-container > .box-columns {
         height: calc(100vh - 125px);
     }
-}
+} */
