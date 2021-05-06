@@ -107,8 +107,8 @@
                                         <path class="'.$linha["ID_COLUNA"].' d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
                                     </svg>
                                 </button>
-                                <input type="checkbox" name="btn-show-column-editor" id="btn-show-column-1-editor" title="Editar coluna">
-                                <label for="btn-show-column-1-editor">
+                                <input type="checkbox" name="btn-show-column-editor" id="btn-show-column-'.$linha["ID_COLUNA"].'-editor" title="Editar coluna">
+                                <label for="btn-show-column-'.$linha["ID_COLUNA"].'-editor">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.82em" height="1em" viewBox="0 0 13 16">
                                         <path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0
                                         0-3a1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3a1.5
