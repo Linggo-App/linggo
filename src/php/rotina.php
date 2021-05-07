@@ -97,51 +97,51 @@
                 <div class="box-columns">
 
                 <?php
-                    echo
-                    '<div class="column '.$linha["ID_COLUNA"].'>
-                        <div class="box-column-header">
-                            <p>Segunda</p>
-                            <div>
-                                <button class="'.$linha["ID_COLUNA"].' title="Adicionar tarefa">
-                                    <svg class="'.$linha["ID_COLUNA"].' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-                                        <path class="'.$linha["ID_COLUNA"].' d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                                    </svg>
-                                </button>
-                                <input type="checkbox" name="btn-show-column-editor" id="btn-show-column-'.$linha["ID_COLUNA"].'-editor" title="Editar coluna">
-                                <label for="btn-show-column-'.$linha["ID_COLUNA"].'-editor">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.82em" height="1em" viewBox="0 0 13 16">
-                                        <path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0
-                                        0-3a1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3a1.5
-                                        1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0a1.5 1.5
-                                        0 0 1 3 0z"/>
-                                    </svg>
-                                </label>
-                                <div class="dropdown-column-editor">
-                                    <ul>
-                                        <li class="btn-rename-columns">Renomear coluna</li>
-                                        <li class="btn-delete-columns">Deletar coluna</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    // echo
+                    // '<div class="column '.$linha["ID_COLUNA"].'>
+                    //     <div class="box-column-header">
+                    //         <p>Segunda</p>
+                    //         <div>
+                    //             <button class="'.$linha["ID_COLUNA"].' title="Adicionar tarefa">
+                    //                 <svg class="'.$linha["ID_COLUNA"].' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                    //                     <path class="'.$linha["ID_COLUNA"].' d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                    //                 </svg>
+                    //             </button>
+                    //             <input type="checkbox" name="btn-show-column-editor" id="btn-show-column-'.$linha["ID_COLUNA"].'-editor" title="Editar coluna">
+                    //             <label for="btn-show-column-'.$linha["ID_COLUNA"].'-editor">
+                    //                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.82em" height="1em" viewBox="0 0 13 16">
+                    //                     <path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0
+                    //                     0-3a1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3a1.5
+                    //                     1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0a1.5 1.5
+                    //                     0 0 1 3 0z"/>
+                    //                 </svg>
+                    //             </label>
+                    //             <div class="dropdown-column-editor">
+                    //                 <ul>
+                    //                     <li class="btn-rename-columns">Renomear coluna</li>
+                    //                     <li class="btn-delete-columns">Deletar coluna</li>
+                    //                 </ul>
+                    //             </div>
+                    //         </div>
+                    //     </div>
 
-                        <div class="tasks-container">
+                    //     <div class="tasks-container">
 
-                            <div class="box-task-creator '.$linha["ID_COLUNA"].'>
-                                <form class="form-task-creator" action="#" method="POST">
-                                    <textarea name="task-description" maxlength="15" cols="25" rows="1"></textarea>
-                                    <div>
-                                        <input type="time" clss="appt" name="time" required>
-                                        <button type="submit" class="btn-create-task '.$linha["ID_COLUNA"].' name="btn-create-task" disabled>Adicionar</button>
-                                        <button class="btn-close-task-creator">Cancelar</button>
-                                    </div>
-                                    <input type="text" class="ID_COLUNA_CREATE_TASK" name="ID_COLUNA_CREATE_TASK" value="" style="display:none;">
-                                </form>
-                            </div>
+                    //         <div class="box-task-creator '.$linha["ID_COLUNA"].'>
+                    //             <form class="form-task-creator" action="#" method="POST">
+                    //                 <textarea name="task-description" maxlength="15" cols="25" rows="1"></textarea>
+                    //                 <div>
+                    //                     <input type="time" clss="appt" name="time" required>
+                    //                     <button type="submit" class="btn-create-task '.$linha["ID_COLUNA"].' name="btn-create-task" disabled>Adicionar</button>
+                    //                     <button class="btn-close-task-creator">Cancelar</button>
+                    //                 </div>
+                    //                 <input type="text" class="ID_COLUNA_CREATE_TASK" name="ID_COLUNA_CREATE_TASK" value="" style="display:none;">
+                    //             </form>
+                    //         </div>
 
-                            <div class="box-task"> <span>Matemática</span> <span>14:30</span> </div>
-                        </div>
-                    </div>'
+                    //         <div class="box-task"> <span>Matemática</span> <span>14:30</span> </div>
+                    //     </div>
+                    // </div>'
                 ?>
 
                     <div class="column 2">

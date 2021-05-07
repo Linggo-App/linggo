@@ -3,7 +3,7 @@ var modalTarget;
 
 // (Btn Open Create Column Modal) Show & Hide column modal creator
 const btnOpenCCM = document.getElementById("create-column"); 
-btnOpenCCM.addEventListener("click", (event) => { createColumnModal("create-columns", "block", "flex"); });
+btnOpenCCM.addEventListener("click", (event) => { createColumnModal("create-columns", "", "block", "flex"); });
 
 // (Btn Open Rename Column Modal) Show & Hide column modal creator
 const btnOpenRCM = document.getElementsByClassName("btn-rename-columns");
