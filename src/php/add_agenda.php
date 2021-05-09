@@ -42,7 +42,7 @@
           </h2>
         </div> -->
         <?php
-              $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");
+             // $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");
               $id_user=$_SESSION['id_user'];
               $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user ORDER by TITULO_ROTINA ASC";
               $res=mysqli_query($con,$sql);
@@ -51,21 +51,21 @@
               if($lin>0){
                 while($linha=mysqli_fetch_array($res)){
                            if($linha["ROTINA_COR"]=="#fff"){
-                               echo"<div class='schedules' style='background:".$linha["ROTINA_COR"].";'>
+                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]." target='_blank' class='schedules' style='background:".$linha["ROTINA_COR"].";'>
                              
                                <h1 class='schedule_titulo' style='color:black;'>
                                    ".$linha['TITULO_ROTINA']."
                                </h1>
                                <span style='display:none'>".$linha["ID_ROTINA"]."</span>
-                             </div> ";
+                             </a> ";
                            }else{
-                               echo"<div class='schedules'  style='background:".$linha["ROTINA_COR"].";'>
+                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]." target='_blank' class='schedules'  style= 'background:".$linha["ROTINA_COR"].";'>
                                
                                <h1 class='schedule_titulo' >
                                ".$linha['TITULO_ROTINA']."
                                </h1>
                                <span style='display:none'>".$linha["ID_ROTINA"]."</span>
-                             </div> ";
+                             </a> ";
                
                            }
                        }

@@ -77,3 +77,8 @@ for(let itemsI of taskDescritionFiel){
     });
 }
 
+$(document).ready(function(){
+    $("#box-routine-title").change(function(){
+        $("#rotina_titulo").trigger('click');
+    })
+})

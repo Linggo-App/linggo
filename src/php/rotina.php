@@ -7,27 +7,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/rotina.css">
         <link rel="stylesheet" href="../../global.css">
+        <script src="../js/jquery-3.5.1.min.js"></script>
     </head>
     <?php
      include("./header.php");
+     $id_tab=$_GET["id_tab"];
      ?>
     <body>
     <?php 
-        // if(!isset($_SESSION["id_user"])){
-        //     header("location: cadastro.php");
-        // }else{
+        if(!isset($_SESSION["id_user"]) ){
+            header("location: cadastro.php");
+        }else{
+          
+            $id_user=$_SESSION['id_user'];
     ?> 
 
         <div id="main-container">
             <!-- A global modal -->
-            <form id="modals-container" action="#" method="POST">
+            <form id="modals-container" action="" method="POST">
                 <input type="text" id="ID_COLUMN_MODAL" name="ID_COLUMN_MODAL" value="" style="display:none;">
             </form>
             <?php
             if(isset($_POST['btn-create-task'])){
 
-                $a = $_POST['ID_COLUMN_MODAL'];
-                $b = $_POST['ID_COLUNA_CREATE_TASK'];
+              //  $a = $_POST['ID_COLUMN_MODAL'];
+               $b = $_POST['ID_COLUNA_CREATE_TASK'];
+                $task_description=$_POST["task-description"];
+                $time=$_POST["time"];
+
+                $sql_taf="SELECT * FROM colunas_tarefas WHERE ID_COLUNA=$b AND HORARIO_TAREFA='$time'";
+                $res_taf=mysqli_query($con,$sql_taf);
+                $lin_taf=mysqli_num_rows($res_taf);
+
+                if($lin_taf > 0){
+                    echo "<script>alert('Já existe uma tarefa nesse horario dentro dessa coluna!')</script>";
+                }else{
+                    $sql="INSERT INTO colunas_tarefas (ID_USUARIO, ID_ROTINA, ID_COLUNA, ID_TAREFA, DESCRICAO_TAREFA, HORARIO_TAREFA) VALUE($id_user,$id_tab,$b,null,'$task_description','$time')";
+                    $res=mysqli_query($con,$sql);
+    
+                    if($res){
+                        echo "<script>window.location.replace('http://localhost/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
+                    }
+    
+                }
+
+             
             }
             ?>
             <!-- Create columns modal content-->
@@ -44,11 +68,38 @@
                     </button>
                 </div>
                 <div class="modal-columns-config-box">
+                    <form action="" method="post">
                     <label for="new-column-name">Nome da coluna</label>
                     <input type="text" name="new-column-name" placeholder="Dê um nome a sua coluna (Segunda, Trabalho)">
                     <button type="submit" class="btn-modal-columns" name="btn-create-column">Criar coluna</button>
+                    </form>
                 </div>
             </div>
+
+            <?php
+                if(isset($_POST["btn-create-column"])){
+                    $column_name=$_POST["new-column-name"];
+                    
+               $sql="SELECT * FROM rotina_colunas WHERE ID_ROTINA=$id_tab";
+               $res=mysqli_query($con,$sql);
+              // $res=mysqli_query($con,$sql);
+               $lin=mysqli_num_rows($res);
+              // echo "<script>alert('".$lin."')</script>";
+
+                if($lin>=7){
+                    echo "<script>alert('Você excedeu o limite de colunas.')</script>";
+                   //echo "<script>alert('".$lin."')</script>";
+                }else{
+                    $sql="INSERT INTO rotina_colunas (ID_USUARIO, ID_ROTINA, ID_COLUNA, TITULO_COLUNA) VALUE($id_user,$id_tab,null,'$column_name')";
+                    $res=mysqli_query($con,$sql);
+
+                    if($res){
+                        echo "<script>window.location.replace('http://localhost/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
+                    }
+                    
+                }
+            }
+            ?>
 
             <!-- Rename column modal content -->
             <div class="modal-columns" id="rename-columns">
@@ -64,11 +115,24 @@
                     </button>
                 </div>
                 <div class="modal-columns-config-box">
+              
                     <label for="new-column-name">Nome da coluna</label>
                     <input type="text" name="new-column-name" placeholder="Renomeie a coluna (Quarta, Férias)">
                     <button type="submit" class="btn-modal-columns" name="btn-rename-column">Renomar coluna</button>
                 </div>
             </div>
+            <?php
+                if(isset($_POST["btn-rename-column"])){
+                    $a = $_POST['ID_COLUMN_MODAL'];
+                    $new_column_name=$_POST["new-column-name"];
+                    $sql="UPDATE  rotina_colunas set TITULO_COLUNA='$new_column_name' WHERE ID_COLUNA=$a";
+                    $res=mysqli_query($con,$sql);
+
+                    if($res){
+                       echo "<meta http-equiv='refresh' content='0; url=./rotina.php?id_tab=".$id_tab."'/>";
+                    }
+                }
+            ?>
 
             <!-- Delete column modal content -->
             <div class="modal-columns" id="delete-columns">
@@ -88,63 +152,51 @@
                     <button type="submit" class="btn-modal-columns" name="btn-delete-column">Deletar coluna</button>
                 </div>
             </div>
+
+            <?php
+               if(isset($_POST["btn-delete-column"])){
+                $a = $_POST['ID_COLUMN_MODAL'];
+                $sql="DELETE FROM rotina_colunas WHERE ID_COLUNA=$a";
+                $res=mysqli_query($con,$sql);
+
+                if($res){
+                   echo "<meta http-equiv='refresh' content='0; url=./rotina.php?id_tab=".$id_tab."'/>";
+                }
+            }
+            ?>
+
+            
             <div id="mini-menu-box">
-                <input id="box-routine-title" type="text" value="Matemática" placeholder="" onClick="this.select();">
+                <?php 
+                $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user AND ID_ROTINA=$id_tab";
+                $res=mysqli_query($con,$sql);
+                //$lin=mysqli_num_rows($res_log);
+                $row_info=mysqli_fetch_assoc($res);
+
+                if($res){
+                    echo"<form method='post'>
+                    <input id='box-routine-title' type='text' value='".$row_info["TITULO_ROTINA"]."' placeholder='' onClick='this.select();' name='tab_titulo'>
+                    <input type='submit' name='update_titulo' id='rotina_titulo' style='display:none'>
+                    </form>";
+
+                    if(isset($_POST["update_titulo"])){
+                        $tab_titulo=$_POST["tab_titulo"];
+                        $sql="UPDATE usuarios_rotinas set TITULO_ROTINA=' $tab_titulo' WHERE ID_ROTINA=$id_tab";
+                        $res=mysqli_query($con,$sql);
+
+                        if($res){
+                           echo "<meta http-equiv='refresh' content='0; url=./rotina.php?id_tab=".$id_tab."'/>";
+                        }
+                    }
+                }
+               
+                ?>
             </div>
 
             <div id="kanban-container">
 
                 <div class="box-columns">
-
-                <?php
-                    // echo
-                    // '<div class="column '.$linha["ID_COLUNA"].'>
-                    //     <div class="box-column-header">
-                    //         <p>Segunda</p>
-                    //         <div>
-                    //             <button class="'.$linha["ID_COLUNA"].' title="Adicionar tarefa">
-                    //                 <svg class="'.$linha["ID_COLUNA"].' xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-                    //                     <path class="'.$linha["ID_COLUNA"].' d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                    //                 </svg>
-                    //             </button>
-                    //             <input type="checkbox" name="btn-show-column-editor" id="btn-show-column-'.$linha["ID_COLUNA"].'-editor" title="Editar coluna">
-                    //             <label for="btn-show-column-'.$linha["ID_COLUNA"].'-editor">
-                    //                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.82em" height="1em" viewBox="0 0 13 16">
-                    //                     <path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0
-                    //                     0-3a1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3a1.5
-                    //                     1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0a1.5 1.5
-                    //                     0 0 1 3 0z"/>
-                    //                 </svg>
-                    //             </label>
-                    //             <div class="dropdown-column-editor">
-                    //                 <ul>
-                    //                     <li class="btn-rename-columns">Renomear coluna</li>
-                    //                     <li class="btn-delete-columns">Deletar coluna</li>
-                    //                 </ul>
-                    //             </div>
-                    //         </div>
-                    //     </div>
-
-                    //     <div class="tasks-container">
-
-                    //         <div class="box-task-creator '.$linha["ID_COLUNA"].'>
-                    //             <form class="form-task-creator" action="#" method="POST">
-                    //                 <textarea name="task-description" maxlength="15" cols="25" rows="1"></textarea>
-                    //                 <div>
-                    //                     <input type="time" clss="appt" name="time" required>
-                    //                     <button type="submit" class="btn-create-task '.$linha["ID_COLUNA"].' name="btn-create-task" disabled>Adicionar</button>
-                    //                     <button class="btn-close-task-creator">Cancelar</button>
-                    //                 </div>
-                    //                 <input type="text" class="ID_COLUNA_CREATE_TASK" name="ID_COLUNA_CREATE_TASK" value="" style="display:none;">
-                    //             </form>
-                    //         </div>
-
-                    //         <div class="box-task"> <span>Matemática</span> <span>14:30</span> </div>
-                    //     </div>
-                    // </div>'
-                ?>
-
-                    <div class="column 2">
+                    <!-- <div class="column 2">
                         <div class="box-column-header">
                             <p>Segunda</p>
                             <div>
@@ -188,8 +240,78 @@
 
                             <div class="box-task"> <span>Matemática</span> <span>14:30</span> </div>
                         </div>
-                    </div>
+                    </div> -->
+                
+                    <?php 
+                                $sql="SELECT * FROM rotina_colunas WHERE ID_ROTINA=$id_tab";
+                                $res=mysqli_query($con,$sql);
+                                $lin=mysqli_num_rows($res);
+                             // echo "<script>alert('".$lin."')</script>";
+                                if($lin>0){
+                                  while($linha=mysqli_fetch_array($res)){
+                                      $teste=$linha["ID_COLUNA"];
 
+                                     echo
+                    '<div class="column '.$linha["ID_COLUNA"].'">
+                        <div class="box-column-header">
+                            <p>'.$linha["TITULO_COLUNA"].'</p>
+                            <div>
+                            <button class="'.$linha["ID_COLUNA"].'" title="Adicionar tarefa">
+                            <svg class="'.$linha["ID_COLUNA"].'" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                                <path class="'.$linha["ID_COLUNA"].'" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                            </svg>
+                        </button>
+                                <input type="checkbox" name="btn-show-column-editor" id="btn-show-column-'.$linha["ID_COLUNA"].'-editor" title="Editar coluna">
+                                <label for="btn-show-column-'.$linha["ID_COLUNA"].'-editor">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.82em" height="1em" viewBox="0 0 13 16">
+                                        <path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0
+                                        0-3a1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3a1.5
+                                        1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0a1.5 1.5
+                                        0 0 1 3 0z"/>
+                                    </svg>
+                                </label>
+                                <div class="dropdown-column-editor">
+                                    <ul>
+                                        <li class="btn-rename-columns">Renomear coluna</li>
+                                        <li class="btn-delete-columns">Deletar coluna</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                      <div class="tasks-container">
+
+                            <div class="box-task-creator '.$linha["ID_COLUNA"].'">
+                                <form class="form-task-creator" action="" method="POST">
+                                    <textarea name="task-description" maxlength="15" cols="25" rows="1"></textarea>
+                                    <div>
+                                        <input type="time" class="appt" name="time" required>
+                                        <button type="submit" class="btn-create-task '.$linha["ID_COLUNA"].'" name="btn-create-task" disabled>Adicionar</button>
+                                        <button class="btn-close-task-creator">Cancelar</button>
+                                    </div>
+                                    <input type="text" class="ID_COLUNA_CREATE_TASK" name="ID_COLUNA_CREATE_TASK" value="" style="display:none;">
+                                </form>
+                            </div>
+
+                          ';
+
+                          $sql_taf="SELECT * FROM colunas_tarefas WHERE ID_COLUNA=$teste ORDER by HORARIO_TAREFA ASC";
+                          $res_taf=mysqli_query($con,$sql_taf);
+                          $lin_taf=mysqli_num_rows($res_taf);
+                       // echo "<script>alert('".$lin."')</script>";
+                          if($lin_taf>0){
+                            while($linha_taf=mysqli_fetch_array($res_taf)){
+                                echo' <div class="box-task"> <span>'.$linha_taf["DESCRICAO_TAREFA"].'</span> <span>'.$linha_taf["HORARIO_TAREFA"].'</span> </div>';
+                            }
+                          }
+                          
+                          echo'
+                        </div>
+                    </div>';
+
+                                         }
+                                  }
+                    ?>  
                     <div id="create-column">
                         <p>+ Criar coluna</p>
                     </div>
@@ -201,6 +323,6 @@
     </body>
 </html>
 <?php 
-    // }
+     }
  //  session_destroy();
 ?>
