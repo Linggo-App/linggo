@@ -1,0 +1,8 @@
+Relatório 2021-05-09
+
+Caio:
+    Página rotina completa
+Leticia ¨& Ricardo:
+    Decidindo o Layout/Design da Página Home
+Rafael:
+    Já adicionou quase todas as funcionalidades com php na página rotina, só falta a de deletar projeto.
