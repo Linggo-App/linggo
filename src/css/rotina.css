@@ -10,6 +10,8 @@
     list-style-type: none;
     font: 400 15px Roboto, sans-serif;
     /* overflow-y: hidden; */
+    color: #3c4043;
+    
 }
 
 body{ overflow-y: hidden; }
@@ -28,6 +30,7 @@ button > svg{
 button{ 
     border-radius: 5px;
     border: 1px solid #dadce0; 
+    transition: all 0.5s ease-out;
 }
 
 input[type="checkbox"]{ display: none; }
@@ -40,7 +43,9 @@ button:hover{ cursor: pointer; }
 /* mini menu box */
 
 #mini-menu-box{
-    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    padding: 15px;
     border-bottom: 1px solid #dadce0c5;
     box-shadow: 
     0 1px 1px 0 rgba(60, 64, 67, 0.083), 
@@ -48,10 +53,10 @@ button:hover{ cursor: pointer; }
 }
 
 #box-routine-title{
-    padding: 2.5px;
     width: 145px;
+    padding: 2.5px;
     border-radius: 2px;
-    margin: 10px 0 0 10px;
+    /* margin: 10px 0 0 10px; */
     border: 1px solid #dadce0;
     background-color: #f6f8fa;
     box-shadow: 
@@ -60,9 +65,30 @@ button:hover{ cursor: pointer; }
 }
 
 
-.box-column-header div button{
-    background-color: transparent !important;
+#btn-show-modal-delete-project{
+    display: flex;
+    align-items: center;
+    padding: 2.5px 3px;
+    border-radius: 2px !important;
+    /* color: #3c4043; */
+    margin: 0 0 0 15px;
+    font-size: 16px;
+    box-shadow: 
+    0 1px 1px 0 rgba(60, 64, 67, 0.138), 
+    0 1px 6px 1px rgba(60, 64, 67, 0.103);
 }
+
+#btn-show-modal-delete-project:hover > svg{ fill: #fff !important; }
+
+#btn-show-modal-delete-project:hover{
+    color: #fff !important;
+    background-color: #df2c3e;
+    box-shadow: 
+    0 1px 1px 0 #df2c3e5a, 
+    0 1px 6px 1px #df2c3e43;
+}
+
+.box-column-header div button{ background-color: transparent !important; }
 /*                                              */
 
 /* Kanban container content */
@@ -70,11 +96,11 @@ button:hover{ cursor: pointer; }
 .box-columns {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 290px 290px 290px 290px 290px;
+    grid-template-columns: 290px 290px 290px 290px 290px 290px 290px 290px;
     width: 100vw;
     padding: 10px;
     overflow-x: scroll;
-    height: calc(100vh - 125px);
+    height: calc(100vh - 127px);
 }
 
 #create-column{
@@ -260,10 +286,10 @@ hr{
 }
 
 
-#ID_COLUMN_MODAL, #ID_TASK_MODAL, #ID_COLUMN_CREATE_TASK{
+#ID_COLUMN_MODAL, #ID_TASK_MODAL, .ID_COLUMN_CREATE_TASK{
     margin: 0 5px;
     width: 50px !important;
-    display: block !important;
+    display: none !important;
 }
 /*                                              */
 
@@ -337,6 +363,36 @@ hr{
 .modal-columns-config-box button[type="submit"]{
     height: 35px;
     padding: 5px;
+}
+
+/* hover for modal buttons */
+button[name="btn-delete-tasks"], 
+button[name="btn-delete-project"], 
+button[name="btn-delete-column"]{
+    color: #df2c3e !important;
+    font-size: 16px !important;
+}
+
+button[name="btn-delete-tasks"]:hover, 
+button[name="btn-delete-project"]:hover, 
+button[name="btn-delete-column"]:hover{
+    color: #fff !important;
+    background-color: #df2c3e;
+    box-shadow: 
+    0 1px 1px 0 #df2c3e3c, 
+    0 1px 6px 1px #df2c3e20;
+}
+
+button[name="btn-edit-tasks"],
+button[name="btn-rename-column"]{ font-size: 16px !important; }
+
+button[name="btn-edit-tasks"]:hover,
+button[name="btn-rename-column"]:hover{
+    color: #fff !important;
+    background-color: #32b332;
+    box-shadow: 
+    0 1px 1px 0 #32b3323c, 
+    0 1px 6px 1px #32b33220;
 }
 /*                                              */
 

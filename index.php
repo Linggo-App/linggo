@@ -65,7 +65,7 @@
 
 <div class="container_index">
   <img src="./assets/Linggo-Logo.png" alt="" >
-  <div class="btn-primary"><a href="./src/php/add_agenda.php" target="self"><i class="fas fa-plus"></i> Criar Projeto</a></div>
+  <div class="btn-primary"><a href="./src/php/add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></div>
 </div>
 
 <footer>

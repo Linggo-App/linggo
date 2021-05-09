@@ -51,7 +51,7 @@
               if($lin>0){
                 while($linha=mysqli_fetch_array($res)){
                            if($linha["ROTINA_COR"]=="#fff"){
-                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]." target='_blank' class='schedules' style='background:".$linha["ROTINA_COR"].";'>
+                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]." target='_self' class='schedules' style='background:".$linha["ROTINA_COR"].";'>
                              
                                <h1 class='schedule_titulo' style='color:black;'>
                                    ".$linha['TITULO_ROTINA']."
@@ -59,7 +59,7 @@
                                <span style='display:none'>".$linha["ID_ROTINA"]."</span>
                              </a> ";
                            }else{
-                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]." target='_blank' class='schedules'  style= 'background:".$linha["ROTINA_COR"].";'>
+                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]." target='_self' class='schedules'  style= 'background:".$linha["ROTINA_COR"].";'>
                                
                                <h1 class='schedule_titulo' >
                                ".$linha['TITULO_ROTINA']."
@@ -274,6 +274,9 @@
         </section>
 
         <div class="overlay"></div>
+        <footer>
+            <?php include("./footer.php"); ?>
+        </footer>
 </body>
 </html>
 <?php 

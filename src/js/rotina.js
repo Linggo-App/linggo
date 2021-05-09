@@ -5,6 +5,10 @@ var modalTarget;
 const btnOpenCCM = document.getElementById("create-column"); 
 btnOpenCCM.addEventListener("click", (event) => { createColumnModal("create-columns", "", "", "block", "flex"); });
 
+// (Btn Open Delete Project Modal) Show & Hide Project modal delete
+const btnOpenDPM = document.getElementById("btn-show-modal-delete-project");
+btnOpenDPM.addEventListener("click", (element) => { createColumnModal("delete-project", "", "", "block", "flex"); });
+
 // (Btn Open Rename Column Modal) Show & Hide column modal rename
 const btnOpenRCM = document.getElementsByClassName("btn-rename-columns");
 for(let itemsI of btnOpenRCM){

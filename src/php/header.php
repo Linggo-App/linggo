@@ -26,7 +26,7 @@
                 <li><a href="#" target="blank"><i class="fas fa-info-circle"></i> Sobre</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-users"></i> Equipe</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-question-circle"></i> Suporte</a></li>
-                <li class="menu__createbtn"><a href="./add_agenda.php" target="self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
+                <li class="menu__createbtn"><a href="./add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
              
             </ul>
         </nav>
@@ -34,11 +34,11 @@
         <div class="user">
             <?php
                     if(!isset($_SESSION["username"])){
-                    echo "<a href='./cadastro.php' target='self' class='perfil_img'>
+                    echo "<a href='./cadastro.php' target='_self' class='perfil_img'>
                     <i class='fas fa-user'></i>
                  </a>";
                    }else{
-                    echo "<a href='./perfil.php' target='self' class='perfil_img'>
+                    echo "<a href='./perfil.php' target='_self' class='perfil_img'>
                     <i class='fas fa-user'></i>
                  </a>";
                    }
@@ -46,14 +46,14 @@
             
             <h3 class="username"><?php 
                 if(!isset($_SESSION["username"])){
-                    echo "<a href='./cadastro.php' target='self' >
+                    echo "<a href='./cadastro.php' target='_self' >
                     "."Logar"."
                  </a>";
 
                 
                }else{
                     //echo $_SESSION["username"];
-                    echo "<a href='./perfil.php' target='self'>
+                    echo "<a href='./perfil.php' target='_self'>
                     ".$_SESSION["username"]."
                  </a>";
                  //   echo "<script>location.reload();</script>";
