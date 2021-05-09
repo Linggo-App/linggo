@@ -34,9 +34,10 @@
               //  $ID_COLUNA = $_POST['ID_COLUMN_MODAL'];
                 $ID_COLUNA_TAREFA = $_POST['ID_COLUMN_CREATE_TASK'];
                 $ID_TAREFA = $_POST['ID_TASK_MODAL'];
-                $task_description=$_POST["task-description"];
+                $task_description=$_POST["task-description"]; 
                 $time=$_POST["time"];
-
+                
+                //faz uma busca nas tarefas para verificar se já existem tarefas nesse horario dentro da coluna
                 $sql_taf="SELECT * FROM colunas_tarefas WHERE ID_COLUNA=$ID_COLUNA_TAREFA AND HORARIO_TAREFA='$time'";
                 $res_taf=mysqli_query($con,$sql_taf);
                 $lin_taf=mysqli_num_rows($res_taf);
@@ -44,6 +45,7 @@
                 if($lin_taf > 0){
                     echo "<script>alert('Já existe uma tarefa nesse horario dentro dessa coluna!')</script>";
                 }else{
+                    //Após a verificação cadastra a tarefa na coluna
                     $sql="INSERT INTO colunas_tarefas (ID_USUARIO, ID_ROTINA, ID_COLUNA, ID_TAREFA, DESCRICAO_TAREFA, HORARIO_TAREFA) VALUE($id_user,$id_tab,$ID_COLUNA_TAREFA,null,'$task_description','$time')";
                     $res=mysqli_query($con,$sql);
     
@@ -81,17 +83,17 @@
             <?php
                 if(isset($_POST["btn-create-column"])){
                     $column_name=$_POST["new-column-name"];
-                    
+                
+                //faz uma busca nas colunas através do id da rotina(referente ao projeto clicado)
                $sql="SELECT * FROM rotina_colunas WHERE ID_ROTINA=$id_tab";
                $res=mysqli_query($con,$sql);
-              // $res=mysqli_query($con,$sql);
                $lin=mysqli_num_rows($res);
-              // echo "<script>alert('".$lin."')</script>";
-
+           
+               //Verifica se o numero de colunas pesquisadas na tarefa é maior ou igual a 7 
                 if($lin>=7){
                     echo "<script>alert('Você excedeu o limite de colunas.')</script>";
-                   //echo "<script>alert('".$lin."')</script>";
                 }else{
+                //Caso contrário, executa o comando para cadastrar a rotina
                     $sql="INSERT INTO rotina_colunas (ID_USUARIO, ID_ROTINA, ID_COLUNA, TITULO_COLUNA) VALUE($id_user,$id_tab,null,'$column_name')";
                     $res=mysqli_query($con,$sql);
 
@@ -124,9 +126,11 @@
                 </div>
             </div>
             <?php
+             //faz update no titulo da coluna 
                 if(isset($_POST["btn-rename-column"])){
                     $ID_COLUNA = $_POST['ID_COLUMN_MODAL'];
                     $new_column_name=$_POST["new-column-name"];
+                    //utilizando como codigo de acesso o id da coluna
                     $sql="UPDATE  rotina_colunas set TITULO_COLUNA='$new_column_name' WHERE ID_COLUNA=$ID_COLUNA";
                     $res=mysqli_query($con,$sql);
 
@@ -156,6 +160,7 @@
             </div>
 
             <?php
+            //deleta a coluna
                if(isset($_POST["btn-delete-column"])){
                 $ID_COLUNA = $_POST['ID_COLUMN_MODAL'];
                 $sql="DELETE FROM rotina_colunas WHERE ID_COLUNA=$ID_COLUNA";
@@ -181,25 +186,30 @@
                     </button>
                 </div>
                 <div class="modal-columns-config-box">
-                    <label for="new-column-name">Nome da tarefa</label>
-                    <input type="text" name="new-task-name" placeholder="Renomeie a tarefa (Matemática, Português, etc...)">
-                    <label for="new-column-name">Mudar horário da tarefa</label>
-                    <input type="time" name="new-time-task">
+                    <label for="new-task-name">Nome da tarefa</label>
+                    <input type="text" name="new-task-name" id="new-task-name" placeholder="Renomeie a tarefa (Matemática, Português, etc...)">
+                    <label for="new-time-task">Mudar horário da tarefa</label>
+                    <input type="time" name="new-time-task" id="new-time-task">
                     <button type="submit" class="btn-modal-tasks" name="btn-edit-tasks">Salvar alterações</button>
                 </div>
             </div>
 
             <?php
+            //faz update na tarefa para poder trocar o nome ou o horário
             if(isset($_POST["btn-edit-tasks"])){
                 $ID_COLUNA = $_POST['ID_COLUMN_MODAL'];
                 $ID_TAREFA = $_POST['ID_TASK_MODAL'];
-                // $sql="UPDATE colunas_tarefas 
-                // SET DESCRICAO_TAREFA=$ ,HORARIO_TAREFA =$
-                // WHERE ID_COLUNA=$ID_COLUNA and ID_TAREFA=$ID_TAREFA";
+                $new_task_name = $_POST['new-task-name'];
+                $new_time_task = $_POST['new-time-task'];
+                $sql="UPDATE colunas_tarefas 
+                SET DESCRICAO_TAREFA='$new_task_name',HORARIO_TAREFA ='$new_time_task'
+                WHERE ID_COLUNA=$ID_COLUNA and ID_TAREFA=$ID_TAREFA";
                 $res=mysqli_query($con,$sql);
 
                 if($res){
                    echo "<meta http-equiv='refresh' content='0; url=./rotina.php?id_tab=".$id_tab."'/>";
+                }else{
+                    echo "<script>alert('não')</script>";
                 }
             }
             ?>
@@ -219,11 +229,12 @@
                 </div>
 
                 <?php
-                if(isset($_POST["btn-edit-tasks"])){
+                //deleta a tarefa
+                if(isset($_POST["btn-delete-tasks"])){
                         $ID_COLUNA = $_POST['ID_COLUMN_MODAL'];
                         $ID_TAREFA = $_POST['ID_TASK_MODAL'];
-                        // $sql="DELETE colunas_tarefas FROM
-                        // WHERE ID_COLUNA=$ID_COLUNA and ID_TAREFA=$ID_TAREFA";
+                        $sql="DELETE  FROM colunas_tarefas
+                        WHERE ID_COLUNA=$ID_COLUNA and ID_TAREFA=$ID_TAREFA";
                         $res=mysqli_query($con,$sql);
 
                         if($res){
@@ -233,13 +244,14 @@
                 ?>
 
                 <div class="modal-columns-config-box">
-                    <p>Tem certeza que deseja deletar essa coluna?</p>
-                    <button type="submit" class="btn-modal-columns" name="btn-delete-column">Deletar coluna</button>
+                    <p>Tem certeza que deseja deletar essa Tarefa?</p>
+                    <button type="submit" class="btn-modal-columns" name="btn-delete-tasks">Deletar coluna</button>
                 </div>
             </div>
             
             <div id="mini-menu-box">
                 <?php 
+                //carrega as colunas na página com base no id da tarefa que foi clicado
                 $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user AND ID_ROTINA=$id_tab";
                 $res=mysqli_query($con,$sql);
                 //$lin=mysqli_num_rows($res_log);
@@ -250,7 +262,8 @@
                     <input id='box-routine-title' type='text' value='".$row_info["TITULO_ROTINA"]."' placeholder='' onClick='this.select();' name='tab_titulo'>
                     <input type='submit' name='update_titulo' id='rotina_titulo' style='display:none'>
                     </form>";
-
+                    
+                    //troca o nome do projeto
                     if(isset($_POST["update_titulo"])){
                         $tab_titulo=$_POST["tab_titulo"];
                         $sql="UPDATE usuarios_rotinas set TITULO_ROTINA=' $tab_titulo' WHERE ID_ROTINA=$id_tab";
@@ -340,6 +353,7 @@
                     </div> -->
                 
                     <?php 
+                    //carrega as colunas na página
                                 $sql="SELECT * FROM rotina_colunas WHERE ID_ROTINA=$id_tab";
                                 $res=mysqli_query($con,$sql);
                                 $lin=mysqli_num_rows($res);
@@ -391,7 +405,7 @@
                             </div>
 
                           ';
-
+//carrega as tarefas referente a coluna
                           $sql_taf="SELECT * FROM colunas_tarefas WHERE ID_COLUNA=$ID_COLUNA ORDER by HORARIO_TAREFA ASC";
                           $res_taf=mysqli_query($con,$sql_taf);
                           $lin_taf=mysqli_num_rows($res_taf);
@@ -402,7 +416,7 @@
                                 // ' <div class="box-task"> <span>'.$linha_taf["DESCRICAO_TAREFA"].'</span> <span>'.$linha_taf["HORARIO_TAREFA"].'</span> </div>';
 
                                 echo   
-                                    '<div class="box-task '.$linha_taf["ID_COLUNA"].' '.$linha_taf["ID_TAREFA"].'"> 
+                                '<div class="box-task '.$linha_taf["ID_COLUNA"].'" id="'.$linha_taf["ID_TAREFA"].'"> 
                                         <div class="box-task-info">
                                             <span>'.$linha_taf["DESCRICAO_TAREFA"].'</span>
                                             <span>'.$linha_taf["HORARIO_TAREFA"].'</span> 
@@ -415,6 +429,7 @@
                                                     3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02
                                                     0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/>
                                                 </svg>
+                                                
                                             </button>
                                             <hr>
                                             <button title="Detelar tarefa" class="btn-delete-task">
