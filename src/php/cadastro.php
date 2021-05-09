@@ -72,7 +72,7 @@
 </html>
 <!--Cadastro-->
 <?php
-  $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");
+ // $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");
 
   
   //Login

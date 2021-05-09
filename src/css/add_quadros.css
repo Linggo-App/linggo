@@ -63,6 +63,8 @@
     overflow: hidden;
     color: white;
     position: relative;
+    text-decoration: none;
+
 }
 .create_schedule {
     background: grey;
@@ -78,7 +80,7 @@
 .schedules h1{
     font-size: 3em;
     font-weight: bold;
-    
+
 }
 .schedules:hover{
     opacity: 1;

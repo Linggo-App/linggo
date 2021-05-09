@@ -1,1 +1,0 @@
- $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");

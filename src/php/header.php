@@ -1,4 +1,5 @@
-<?php ini_set('memory_limit', '-1');  session_start();  ?>
+<?php ini_set('memory_limit', '-1');  session_start();
+ $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");   ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -26,6 +27,7 @@
                 <li><a href="#" target="blank"><i class="fas fa-users"></i> Equipe</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-question-circle"></i> Suporte</a></li>
                 <li class="menu__createbtn"><a href="./add_agenda.php" target="self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
+             
             </ul>
         </nav>
         <h1 class="logo">logo</h1>
