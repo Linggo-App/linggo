@@ -3,30 +3,51 @@ var modalTarget;
 
 // (Btn Open Create Column Modal) Show & Hide column modal creator
 const btnOpenCCM = document.getElementById("create-column"); 
-btnOpenCCM.addEventListener("click", (event) => { createColumnModal("create-columns", "", "block", "flex"); });
+btnOpenCCM.addEventListener("click", (event) => { createColumnModal("create-columns", "", "", "block", "flex"); });
 
-// (Btn Open Rename Column Modal) Show & Hide column modal creator
+// (Btn Open Rename Column Modal) Show & Hide column modal rename
 const btnOpenRCM = document.getElementsByClassName("btn-rename-columns");
 for(let itemsI of btnOpenRCM){
     itemsI.addEventListener("click", (element) => {
         let ID_COLUMN = element.target.offsetParent.offsetParent.classList[1];
-        createColumnModal("rename-columns", ID_COLUMN, "block", "flex"); 
+        createColumnModal("rename-columns", ID_COLUMN, "", "block", "flex"); 
     });
 }
 
-// (Btn Open Delete Column Modal) Show & Hide column modal creator
+// (Btn Open Delete Column Modal) Show & Hide column modal delete
 const btnOpenECM = document.getElementsByClassName("btn-delete-columns");
 for(let itemsI of btnOpenECM){
     itemsI.addEventListener("click", (element) => {
         let ID_COLUMN = element.target.offsetParent.offsetParent.classList[1];
-        createColumnModal("delete-columns", ID_COLUMN, "block", "flex");
+        createColumnModal("delete-columns", ID_COLUMN, "", "block", "flex");
     });
 }
 
-function createColumnModal(modal, ID_COLUMN, displayX, displayY){
+// (Btn Open edit task Modal) Show & Hide task modal editor
+const btnOpenETM = document.getElementsByClassName("btn-edit-task");
+for(let itemsI of btnOpenETM){
+    itemsI.addEventListener("click", (element) => {
+        let ID_COLUMN = element.target.parentElement.parentElement.offsetParent.classList[1];
+        let ID_TASK = element.target.parentElement.parentElement.offsetParent.classList[2];
+        createColumnModal("edit-task", ID_COLUMN, ID_TASK, "block", "flex"); 
+    });
+}
+
+// (Btn Open Delete task Modal) Show & Hide task modal delete
+const btnOpenDTM = document.getElementsByClassName("btn-delete-task");
+for(let itemsI of btnOpenDTM){
+    itemsI.addEventListener("click", (element) => {
+        let ID_COLUMN = element.target.parentElement.parentElement.offsetParent.classList[1];
+        let ID_TASK = element.target.parentElement.parentElement.offsetParent.classList[2];
+        createColumnModal("delete-task", ID_COLUMN, ID_TASK, "block", "flex");
+    });
+}
+
+function createColumnModal(modal, ID_COLUMN, ID_TASK, displayX, displayY){
     modalTarget = modal;
     document.getElementById("modals-container").appendChild(document.getElementById(modal));
     document.getElementById("ID_COLUMN_MODAL").value = ID_COLUMN;
+    document.getElementById("ID_TASK_MODAL").value = ID_TASK;
     document.getElementById(modal).style.display = displayX;
     document.getElementById("modals-container").style.display = displayY;
 }
@@ -77,8 +98,3 @@ for(let itemsI of taskDescritionFiel){
     });
 }
 
-$(document).ready(function(){
-    $("#box-routine-title").change(function(){
-        $("#rotina_titulo").trigger('click');
-    })
-})

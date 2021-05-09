@@ -137,6 +137,7 @@ input[type="checkbox"]:checked ~ .dropdown-column-editor{ display: block; }
 
 .dropdown-column-editor{
     /* padding: 5px; */
+    z-index: 1;
     border-radius: 5px;
     width: fit-content !important;
     position: absolute;
@@ -197,12 +198,11 @@ input[type="checkbox"]:checked ~ .dropdown-column-editor{ display: block; }
 
 .box-task {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
     height: 50px;
-    padding: 10px;
+    padding: 10px 32px 10px 10px;
+    overflow: hidden;
     border-radius: 5px;
+    position: relative;
     margin: 0 0 10px 0;
     background-color: #fff;
     border: 1px solid #dadce0;
@@ -220,6 +220,50 @@ input[type="checkbox"]:checked ~ .dropdown-column-editor{ display: block; }
     box-shadow: 
         0 1px 1px 0 rgba(60, 64, 67, 0.172), 
         0 1px 6px 1px rgba(60, 64, 67, 0.096);
+}
+
+.box-task-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+hr{
+    height: 1px;
+    background-color: #dadce0;
+}
+
+.box-task-buttons button{
+    width: min-content;
+    height: 20px;
+    border-radius: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: transparent !important;
+
+}
+.box-task-buttons{
+    top: 0;
+    right: 0;
+    position: absolute;
+    display: flex;
+    height: 100%;
+    justify-content: space-evenly;
+    flex-direction: column;
+    /* align-content: space-around; */
+    border-left: 2px solid #dadce0 !important;
+    box-shadow: 
+    0px 1px 2px 1px rgba(60, 64, 67, 0.083), 
+    0px 1px 6px 1px rgba(60, 64, 67, 0.027);
+}
+
+
+#ID_COLUMN_MODAL, #ID_TASK_MODAL, #ID_COLUMN_CREATE_TASK{
+    margin: 0 5px;
+    width: 50px !important;
+    display: block !important;
 }
 /*                                              */
 
