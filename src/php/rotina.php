@@ -44,6 +44,7 @@
 
                 if($lin_taf > 0){
                     echo "<script>alert('Já existe uma tarefa nesse horario dentro dessa coluna!')</script>";
+                    echo "<script>window.location.replace('http://localhost/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
                 }else{
                     //Após a verificação cadastra a tarefa na coluna
                     $sql="INSERT INTO colunas_tarefas (ID_USUARIO, ID_ROTINA, ID_COLUNA, ID_TAREFA, DESCRICAO_TAREFA, HORARIO_TAREFA) VALUE($id_user,$id_tab,$ID_COLUNA_TAREFA,null,'$task_description','$time')";
@@ -104,6 +105,25 @@
                 }
             }
             ?>
+            
+            <!-- Delete project modal content -->
+             <div class="modal-columns" id="delete-project">
+                <div class="modal-columns-header">
+                    <p>Deletar Projeto</p>
+                    <button id="btn-close-modal">
+                        <svg id="btn-close-modal" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                            <path id="btn-close-modal" d="M19 6.41L17.59 5 12 10.59 
+                            6.41 5 5 6.41 10.59 12 5 17.59 6.41 
+                            19 12 13.41 17.59 19 19 17.59 13.41 
+                            12 19 6.41z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-columns-config-box">
+                    <p>Tem certeza que deseja deletar esse Projeto?</p>
+                    <button type="submit" class="btn-modal-columns" name="btn-delete-project">Deletar Projeto</button>
+                </div>
+            </div>
 
             <!-- Rename column modal content -->
             <div class="modal-columns" id="rename-columns">
@@ -245,7 +265,7 @@
 
                 <div class="modal-columns-config-box">
                     <p>Tem certeza que deseja deletar essa Tarefa?</p>
-                    <button type="submit" class="btn-modal-columns" name="btn-delete-tasks">Deletar coluna</button>
+                    <button type="submit" class="btn-modal-columns" name="btn-delete-tasks">Deletar tarefa</button>
                 </div>
             </div>
             
@@ -276,83 +296,22 @@
                 }
                
                 ?>
+                <button id="btn-show-modal-delete-project">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+                        <path d="M0 0h24v24H0V0z" fill="none"></path>
+                        <path d="M16 9v10H8V9h8m-1.5-6h-5l-1 
+                        1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9
+                        2 2 2h8c1.1 0 2-.9 2-2V7z"></path>
+                    </svg>
+                    Deletar Projeto
+                </button>
             </div>
 
             <div id="kanban-container">
 
                 <div class="box-columns">
-                    <!-- <div class="column 2">
-                        <div class="box-column-header">
-                            <p>Segunda</p>
-                            <div>
-                                <button class="2" title="Adicionar tarefa">
-                                    <svg class="2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-                                        <path class="2" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
-                                    </svg>
-                                </button>
-                                <input type="checkbox" name="btn-show-column-editor" id="btn-show-column-2-editor" title="Editar coluna">
-                                <label for="btn-show-column-2-editor">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="0.82em" height="1em" viewBox="0 0 13 16">
-                                        <path fill-rule="evenodd" d="M1.5 9a1.5 1.5 0 1 0
-                                        0-3a1.5 1.5 0 0 0 0 3zm5 0a1.5 1.5 0 1 0 0-3a1.5
-                                        1.5 0 0 0 0 3zM13 7.5a1.5 1.5 0 1 1-3 0a1.5 1.5
-                                        0 0 1 3 0z"/>
-                                    </svg>
-                                </label>
-                                <div class="dropdown-column-editor">
-                                    <ul>
-                                        <li class="btn-rename-columns">Renomear coluna</li>
-                                        <li class="btn-delete-columns">Deletar coluna</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="tasks-container">
-
-                            <div class="box-task-creator 2">
-                                <form class="form-task-creator" action="#" method="POST">
-                                    <textarea name="task-description" maxlength="15" cols="25" rows="1"></textarea>
-                                    <div>
-                                        <input type="time" clss="appt" name="time" required>
-                                        <button type="submit" class="btn-create-task 2" name="btn-create-task" disabled>Adicionar</button>
-                                        <button class="btn-close-task-creator">Cancelar</button>
-                                    </div>
-
-                                    <input type="text" class="ID_COLUMN_CREATE_TASK" name="ID_COLUMN_CREATE_TASK" value="" >
-                                </form>
-                            </div>
-
-                            
-                            <div class="box-task 2"> 
-                                <div class="box-task-info">
-                                    <span>asdfasdf</span>
-                                    <span>14:30</span> 
-                                </div>
-                                <div class="box-task-buttons">
-                                    <button title="Editar tarefa" class="btn-edit-task">
-                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-                                        <path d="M0 0h24v24H0V0z" fill="none"/>
-                                        <path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66
-                                        3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02
-                                        0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"/>
-                                    </svg>
-                                    </button>
-                                        <hr>
-                                    <button title="Detelar tarefa" class="btn-delete-task">
-                                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
-                                            <path d="M0 0h24v24H0V0z" fill="none"/>
-                                            <path d="M16 9v10H8V9h8m-1.5-6h-5l-1 
-                                            1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9
-                                            2 2 2h8c1.1 0 2-.9 2-2V7z"/>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                
-                    <?php 
+                <?php 
                     //carrega as colunas na página
                                 $sql="SELECT * FROM rotina_colunas WHERE ID_ROTINA=$id_tab";
                                 $res=mysqli_query($con,$sql);
@@ -405,11 +364,11 @@
                             </div>
 
                           ';
-//carrega as tarefas referente a coluna
+                        //carrega as tarefas referente a coluna
                           $sql_taf="SELECT * FROM colunas_tarefas WHERE ID_COLUNA=$ID_COLUNA ORDER by HORARIO_TAREFA ASC";
                           $res_taf=mysqli_query($con,$sql_taf);
                           $lin_taf=mysqli_num_rows($res_taf);
-                       // echo "<script>alert('".$lin."')</script>";
+                        // echo "<script>alert('".$lin."')</script>";
                           if($lin_taf>0){
                             while($linha_taf=mysqli_fetch_array($res_taf)){
                                 // echo
@@ -459,7 +418,7 @@
                 </div>
             </div>
         </div>
-        <script src="../js/rotina.js"></script>
+        <script src="../js/rotina.js" async defer></script>
     </body>
 </html>
 <?php 
