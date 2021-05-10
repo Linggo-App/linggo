@@ -185,8 +185,11 @@
                 $ID_COLUNA = $_POST['ID_COLUMN_MODAL'];
                 $sql="DELETE FROM rotina_colunas WHERE ID_COLUNA=$ID_COLUNA";
                 $res=mysqli_query($con,$sql);
+                $sql_taf="DELETE FROM colunas_tarefas WHERE ID_COLUNA=$ID_COLUNA";
+                $res_taf=mysqli_query($con,$sql_taf);
 
-                if($res){
+
+                if($res && $res_taf){
                    echo "<meta http-equiv='refresh' content='0; url=./rotina.php?id_tab=".$id_tab."'/>";
                 }
             }
