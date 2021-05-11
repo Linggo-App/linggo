@@ -44,14 +44,14 @@
 
                 if($lin_taf > 0){
                     echo "<script>alert('Já existe uma tarefa nesse horario dentro dessa coluna!')</script>";
-                    echo "<script>window.location.replace('http://localhost/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
+                    echo "<script>window.location.replace('http://".$serv."/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
                 }else{
                     //Após a verificação cadastra a tarefa na coluna
                     $sql="INSERT INTO colunas_tarefas (ID_USUARIO, ID_ROTINA, ID_COLUNA, ID_TAREFA, DESCRICAO_TAREFA, HORARIO_TAREFA) VALUE($id_user,$id_tab,$ID_COLUNA_TAREFA,null,'$task_description','$time')";
                     $res=mysqli_query($con,$sql);
     
                     if($res){
-                        echo "<script>window.location.replace('http://localhost/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
+                        echo "<script>window.location.replace('http://".$serv."/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
                     }
     
                 }
@@ -99,7 +99,7 @@
                     $res=mysqli_query($con,$sql);
 
                     if($res){
-                        echo "<script>window.location.replace('http://localhost/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
+                        echo "<script>window.location.replace('http://".$serv."/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
                     }
                     
                 }
@@ -289,7 +289,7 @@
                     //troca o nome do projeto
                     if(isset($_POST["update_titulo"])){
                         $tab_titulo=$_POST["tab_titulo"];
-                        $sql="UPDATE usuarios_rotinas set TITULO_ROTINA=' $tab_titulo' WHERE ID_ROTINA=$id_tab";
+                        $sql="UPDATE usuarios_rotinas set TITULO_ROTINA='$tab_titulo' WHERE ID_ROTINA=$id_tab";
                         $res=mysqli_query($con,$sql);
 
                         if($res){

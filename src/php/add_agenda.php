@@ -98,7 +98,7 @@
           
         
                  if($lin>0){
-                echo "<script>window.location.replace('http://localhost/linggo/src/php/add_agenda.php');</script>";
+                echo "<script>window.location.replace('http://".$serv."/linggo/src/php/add_agenda.php');</script>";
               }else{
                  echo "<script>alert('erro ao cadastrar')</script>";
               }
@@ -254,7 +254,7 @@
                     </div>
                     
                     <label class="input" for="titulo">
-                        <input type="text" placeholder=" " id="titulo" name="titulo" required>
+                        <input type="text" placeholder=" " id="titulo" name="titulo" maxlength="15" required>
                         <span class="place">Titulo</span>
                     </label>
                     <!-- <label class="input" for="assunto">
