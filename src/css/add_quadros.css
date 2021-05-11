@@ -51,7 +51,7 @@
     align-items: center;
 }
 .schedules{
-    width: 273px;
+    width: 275px;
     height: 246px;
     border: 1px solid black;
     display: flex;
@@ -64,7 +64,8 @@
     color: white;
     position: relative;
     text-decoration: none;
-
+    word-break: break-all;
+    padding: 5px;
 }
 .create_schedule {
     background: grey;
@@ -78,9 +79,8 @@
     cursor: pointer;
 }
 .schedules h1{
-    font-size: 3em;
+    font-size: 2.5em;
     font-weight: bold;
-
 }
 .schedules:hover{
     opacity: 1;

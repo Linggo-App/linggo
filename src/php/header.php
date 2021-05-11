@@ -1,5 +1,7 @@
 <?php ini_set('memory_limit', '-1');  session_start();
- $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");   ?>
+    $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão"); 
+    $serv="localhost";
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
