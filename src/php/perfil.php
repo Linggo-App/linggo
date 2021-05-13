@@ -10,9 +10,9 @@
 <body>
     <?php
      
-        include("./header");
+        include("./header.php");
         if(!isset($_SESSION["id_user"])){
-            header("location: cadastro");
+            header("location: cadastro.php");
         }else{
             echo $_SESSION["username"];
     ?>
