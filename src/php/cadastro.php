@@ -92,7 +92,9 @@
           session_start();
           //Para a página de projetos
             $_SESSION["id_user"]=$row_info["ID_USUARIO"];
-         echo "<script>window.location.replace('http://".$serv."/linggo/src/php/add_agenda.php');</script>";
+
+         echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
+
           //-----
 
           //Para o header
