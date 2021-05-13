@@ -26,18 +26,18 @@
                 <li><a href="#" target="blank"><i class="fas fa-info-circle"></i> Sobre</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-users"></i> Equipe</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-question-circle"></i> Suporte</a></li>
-                <li class="menu__createbtn"><a href="./src/php/add_agenda.php" target="self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
+                <li class="menu__createbtn"><a href="./src/php/add_agenda" target="self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
             </ul>
         </nav>
         <h1 class="logo">logo</h1>
         <div class="user">
             <?php
                     if(!isset($_SESSION["username"])){
-                    echo "<a href='./src/php/cadastro.php' target='self' class='perfil_img'>
+                    echo "<a href='./src/php/cadastro' target='self' class='perfil_img'>
                     <i class='fas fa-user'></i>
                  </a>";
                    }else{
-                    echo "<a href='./src/php/perfil.php' target='self' class='perfil_img'>
+                    echo "<a href='./src/php/perfil' target='self' class='perfil_img'>
                     <i class='fas fa-user'></i>
                  </a>";
                    }
@@ -45,14 +45,14 @@
             
             <h3 class="username"><?php 
                 if(!isset($_SESSION["username"])){
-                    echo "<a href='./src/php/cadastro.php' target='self' >
+                    echo "<a href='./src/php/cadastro' target='self' >
                     "."Logar"."
                  </a>";
 
                 
                }else{
                     //echo $_SESSION["username"];
-                    echo "<a href='./src/php/perfil.php' target='self'>
+                    echo "<a href='./src/php/perfil' target='self'>
                     ".$_SESSION["username"]."
                  </a>";
                  //   echo "<script>location.reload();</script>";
@@ -65,7 +65,7 @@
 
 <div class="container_index">
   <img src="./assets/Linggo-Logo.png" alt="" >
-  <div class="btn-primary"><a href="./src/php/add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></div>
+  <div class="btn-primary"><a href="./src/php/add_agenda" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></div>
 </div>
 
 <footer>

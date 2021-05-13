@@ -9,11 +9,11 @@
     <script src="../js/jquery-3.5.1.min.js"></script>
     <script src="../js/arquivo.js"></script>
 </head>
-<?php include("./header.php"); ?>
+<?php include("./header"); ?>
 <body>
     <?php 
         if(!isset($_SESSION["id_user"])){
-            header("location: cadastro.php");
+            header("location: cadastro");
         }else{
     ?>
     <div class="div_consulta">
@@ -51,7 +51,7 @@
               if($lin>0){
                 while($linha=mysqli_fetch_array($res)){
                            if($linha["ROTINA_COR"]=="#fff"){
-                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]." target='_self' class='schedules' style='background:".$linha["ROTINA_COR"].";'>
+                               echo"<a href=./rotina?id_tab=".$linha["ID_ROTINA"]." target='_self' class='schedules' style='background:".$linha["ROTINA_COR"].";'>
                              
                                <h1 class='schedule_titulo' style='color:black;'>
                                    ".$linha['TITULO_ROTINA']."
@@ -59,7 +59,7 @@
                                <span style='display:none'>".$linha["ID_ROTINA"]."</span>
                              </a> ";
                            }else{
-                               echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]." target='_self' class='schedules'  style= 'background:".$linha["ROTINA_COR"].";'>
+                               echo"<a href=./rotina?id_tab=".$linha["ID_ROTINA"]." target='_self' class='schedules'  style= 'background:".$linha["ROTINA_COR"].";'>
                                
                                <h1 class='schedule_titulo' >
                                ".$linha['TITULO_ROTINA']."
@@ -98,7 +98,7 @@
           
         
                  if($lin>0){
-                echo "<script>window.location.replace('http://".$serv."/linggo/src/php/add_agenda.php');</script>";
+                echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
               }else{
                  echo "<script>alert('erro ao cadastrar')</script>";
               }
@@ -275,7 +275,7 @@
 
         <div class="overlay"></div>
         <footer>
-            <?php include("./footer.php"); ?>
+            <?php include("./footer"); ?>
         </footer>
 </body>
 </html>
