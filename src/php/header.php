@@ -1,11 +1,6 @@
 <?php ini_set('memory_limit', '-1');  session_start();
-    // Conexão para local host
     $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão"); 
-    $serv="localhost/linggo/";
-
-    // Conexão para páginaWeb
-    // $con=mysqli_connect("sql309.epizy.com","epiz_28608127","ycJtjMygknrdRbq","epiz_28608127_linggo") or die ("Sem conexão"); 
-    // $serv="linggoapp.42web.io";
+    $serv="localhost";
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,7 +28,7 @@
                 <li><a href="#" target="blank"><i class="fas fa-info-circle"></i> Sobre</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-users"></i> Equipe</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-question-circle"></i> Suporte</a></li>
-                <li class="menu__createbtn"><a href="./add_agenda" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
+                <li class="menu__createbtn"><a href="./add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
              
             </ul>
         </nav>
@@ -41,11 +36,11 @@
         <div class="user">
             <?php
                     if(!isset($_SESSION["username"])){
-                    echo "<a href='./cadastro' target='_self' class='perfil_img'>
+                    echo "<a href='./cadastro.php' target='_self' class='perfil_img'>
                     <i class='fas fa-user'></i>
                  </a>";
                    }else{
-                    echo "<a href='./perfil' target='_self' class='perfil_img'>
+                    echo "<a href='./perfil.php' target='_self' class='perfil_img'>
                     <i class='fas fa-user'></i>
                  </a>";
                    }
@@ -53,14 +48,14 @@
             
             <h3 class="username"><?php 
                 if(!isset($_SESSION["username"])){
-                    echo "<a href='./cadastro' target='_self' >
+                    echo "<a href='./cadastro.php' target='_self' >
                     "."Logar"."
                  </a>";
 
                 
                }else{
                     //echo $_SESSION["username"];
-                    echo "<a href='./perfil' target='_self'>
+                    echo "<a href='./perfil.php' target='_self'>
                     ".$_SESSION["username"]."
                  </a>";
                  //   echo "<script>location.reload();</script>";
