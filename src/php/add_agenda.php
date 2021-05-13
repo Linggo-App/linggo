@@ -98,7 +98,7 @@
           
         
                  if($lin>0){
-                echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
+                echo "<script>window.location.replace('http://".$serv."/src/php/add_agenda');</script>";
               }else{
                  echo "<script>alert('erro ao cadastrar')</script>";
               }

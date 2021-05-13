@@ -4,8 +4,8 @@
     $serv="localhost/linggo/";
 
     // Conexão para páginaWeb
-    // $con=mysqli_connect("sql309.epizy.com","epiz_28608127","ycJtjMygknrdRbq","epiz_28608127_linggo") or die ("Sem conexão"); 
-    // $serv="linggoapp.42web.io";
+    $con=mysqli_connect("sql309.epizy.com","epiz_28608127","ycJtjMygknrdRbq","epiz_28608127_linggo") or die ("Sem conexão"); 
+    $serv="linggoapp.42web.io/";
  ?>
 <!DOCTYPE html>
 <html lang="pt-br">
