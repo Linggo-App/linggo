@@ -1,0 +1,600 @@
+*{
+    margin:0; 
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "ubuntu",sans-serif;
+}
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+ul li{
+    list-style: none;
+}
+ul li a{
+    text-decoration: none;
+}
+.menu ul li a, .user a{
+    opacity: 0.9;
+}
+/*Header*/
+header{
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 50px 1fr;
+    grid-template-areas: 
+     "menu logo user"
+    ;
+    align-items: center;
+    /* overflow: hidden; */
+}
+.logo, .user{
+    align-self: flex-start;
+}
+
+.logo{
+    grid-area: logo;
+    text-align: center;
+}
+
+.menu ul{
+    display: flex;
+}
+.menu ul li{
+    padding: 5px;
+    
+}
+
+
+.menu ul li a{
+    display: block;
+    padding: 10px;
+    color: white;
+    font-size: 0.8em;
+}
+
+.logs{
+    padding: 0;
+    height: auto;
+    width: auto;
+    background: transparent !important;
+    border: none !important;
+    color:blue;
+    font-size: 0.8em !important;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+
+
+#menu_btn{
+    grid-area: menu_btn;
+    cursor: pointer;
+    display: none;
+    padding: 5px;
+}
+
+#menu_btn i{
+    font-size: 1.3em;
+}
+.menu__createbtn{
+    background:purple;
+    border-radius: 10px;
+    border: 1px solid rgb(190, 65, 190);
+    flex-grow: 1;
+    text-align: center;
+}
+.user{
+    grid-area: user;
+    display: flex;
+    margin-right: 35px;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+.perfil_img{
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    grid-area: menu;
+    margin-left:20px;
+    
+}
+.menu ul li a:hover, .user a:hover{
+    /* background: rgba(255, 255, 255, 0.397); */
+    opacity: 1;
+    font-size: 0.9em;
+}
+
+
+
+
+/*modal*/
+.modal, .settings {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: 1px solid black;
+    background: white;
+    width: 80%;
+    height: 80%;
+    overflow-y: scroll;
+    z-index: 10;
+    transition: 200ms ease-in-out;  
+    overflow-x: hidden;
+    padding: 5px;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.modal::-webkit-scrollbar{
+    visibility: hidden;
+}
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: 200ms ease-in-out;
+    
+}
+.modal .close{
+    font-size: 2em;
+    cursor: pointer;
+    margin: 5px;
+}
+.modal.active, .settings.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+.overlay.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.form_btn{
+    text-align: center;
+    cursor: pointer;
+    background: white/* #5fc2d9*/;
+    padding: 10px;
+    color: black;
+    border: 1px solid black;
+    overflow:hidden ;
+    position: relative;
+    height: 50px;
+    width: 30%;
+    align-self: center;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form_btn p{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    /* margin-top: 5px; */
+}
+.form_btn .bg{
+    position: absolute;
+    width: 0;
+    background: #23518c;
+    padding: 10px;
+    left: 0;
+    height: 100vh;
+    top: 0;
+    transform: translateX(-20px);
+    transition: width 0.2s;
+}
+
+.form_btn:hover{
+    /* box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 0px 12px 21px 0px rgba(0,0,0,0); */
+    border: none;
+}
+.form_btn:hover .bg{
+    transform: translateX(0);
+    width: 100%;
+    
+}
+
+.form_btn:hover p{
+    color: white;
+}
+
+.input{
+    position: relative;
+    border: 1px solid #23518c;
+    padding: 10px;
+    background: white;
+    width: 80%;
+    align-self: center;
+    border-radius: 5px;
+    cursor: text;
+}
+.input input{
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1.2rem;
+
+}
+.input .place{
+    position: absolute;
+    left: 0;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: #23518c;
+    background: white;
+    opacity: 0.5;
+    user-select: none;
+    transition: all 0.2s;
+    padding: 1px;
+}
+.input input:focus + .place,.input input:not(:placeholder-shown)+.place{
+    opacity: 1;
+    font-size: 0.8rem;
+    transform: translateY(-18px);
+}
+
+.user a{
+    text-decoration: none;
+    color: white;
+}
+
+@media(max-width:680px){
+    header{
+        grid-template-areas: 
+        "menu_btn logo user"
+        "menu menu user"
+       ;
+       /* overflow: hidden; */
+       position: relative;
+       
+    }
+    #menu_btn{
+        display: block;
+    }
+    /* .menu ul{
+        flex-direction: column;
+    } */
+    .menu{
+        margin-left: 0px;
+      
+    }
+    .menu ul li{
+        clear: both;
+        width: 100%;
+    }
+    .menu ul {
+        display: none;
+        margin-top: 10px;
+
+        /*---Caso no futuro incomode, configs para tornar o menu flutuante---*/
+
+        /* position: absolute;
+        background: black;
+        width: 100%;
+        left: 0;
+        padding: 5px; */
+
+        /*--------------------*/
+    }
+ 
+    .user{
+        margin-right: 0px;
+     
+    
+    }
+    .username{
+        display: none;
+    }
+
+
+
+    .agendas{
+        flex-direction: column;
+        margin:40px 0px;
+    }
+    .schedules{
+        margin: 10px 0px;
+    }
+
+    .consulta select{
+        margin-left: 5px;
+    }
+
+    
+    .input{
+        width: 100%;
+    }
+    .form_btn{
+        width:100% !important;
+       
+    }
+
+  
+}
+
+@media(max-width:900px){
+    header{
+        grid-template-areas: 
+        "menu_btn logo user"
+        "menu menu menu"
+       ;
+       /* overflow: hidden; */
+       position: relative;
+       
+    }
+    #menu_btn{
+        display: block;
+    }
+    /* .menu ul{
+        flex-direction: column;
+    } */
+    .menu{
+        margin-left: 0px;
+      
+    }
+    .menu ul li{
+        clear: both;
+        width: 100%;
+    }
+    .menu ul {
+        display: none;
+        margin-top: 10px;
+
+        /*---Caso no futuro incomode, configs para tornar o menu flutuante---*/
+
+        /* position: absolute;
+        background: black;
+        width: 100%;
+        left: 0;
+        padding: 5px; */
+
+        /*--------------------*/
+    }
+ 
+  
+    .username{
+       display: none;
+    }
+
+   
+   
+}
+
+#check_menu:checked ~ .menu ul {
+    display: block;
+}
+
+
+/* footer css */
+footer{
+    width: 100%;
+    height: auto;
+    /* margin-top:100px; */
+    color: #3c4043;
+    font-size: 12px;
+    line-height: 50px;
+    background:#fff;
+    padding: 0.5em 5em;
+    border-top: 1px solid #dadce0;
+}
+
+footer ul{ height: 100%; }
+
+footer ul, .siga,.collaborators, .collaborators a{ box-sizing: unset; display: flex; }
+
+footer ul{ justify-content: space-between; }
+
+#Logo > p{ align-self: center; }
+
+#Logo { display: flex; }
+
+#Logo img{margin: 0 10px;width: 100px;height: 100px;}
+
+.siga, .collaborators,.collaborators a{ align-items: center; }
+
+.siga{ margin-right: 150px; }
+
+#Logo img{
+    margin: 0 10px;
+    width: 100px;
+    height: 100px;
+}
+
+/* footer ul li .footer-link-content{
+
+} */
+
+/* footer ul li:nth-child(3) .footer-link-content a{ width: auto; }
+
+footer ul li:nth-child(3) h3{ margin-bottom: 10px; }
+
+footer ul li:nth-child(2) .footer-link-content p{ margin-top: 10px; }
+
+footer ul li:last-child{ margin: 0 8rem 0 0; }
+
+footer ul li .footer-link-content a:hover{ color: #fe42e0; } */
+/* footer ul li { 
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border-style: none;  
+    text-decoration: none;
+    list-style-type: none;
+
+ }  */
+
+#checkGit{ display: none; }
+
+label[for="checkGit"], #checkGit { 
+    right: 215px;
+    cursor: pointer;
+ }
+
+label[for="checkGit"] img:hover{ opacity: 1; }
+
+label[for="checkGit"] img, .collaborators a, 
+#container-git-collaborators{
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+label[for="checkGit"] img{
+    opacity: 0.5;
+    width: 50px;
+    height: 50px;
+    border-radius: 70%;
+    -webkit-border-radius: 70%;
+}
+
+#container-git-collaborators{
+    width: 100%;
+    max-width: 180px;
+    display: block;
+    padding: 0 0 0 5px;
+}
+ 
+#git-collaborators-list{ margin: 0 15px 0 20px; }
+
+.collaborators{
+    height: 50px;
+    margin: 2px 0;
+}
+
+.collaborators a{
+    position: absolute;
+    transform: scale(0);
+    margin: 5px;
+    padding: 5px;
+    width: 25px;
+    border-radius: 40px;
+    -webkit-border-radius: 40px;
+    background-color: #171516;
+    transition-timing-function: ease;
+    box-shadow: 1px 2px 5px 1px black;
+}
+
+.collaborators a:hover{
+    cursor: pointer;
+    width: 170px;
+    background-color: #1f1c1d;
+}
+
+.collaborators img{
+    transition: all 1s;
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+.collaborators p{ 
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    max-height: 35px;
+    font-weight: bold;
+    margin: 0 0 0 10px;
+ }
+
+ #assin{
+     width: 100%;
+     margin-top: 10px;
+     border-top: 1px dotted black;
+     /* background-color: red; */
+     text-align: center;
+   /* height: 30px;*/   
+ }
+
+/* #assin h3{
+    text-align: left;
+    margin-top:5px ;
+    font-size:12px;
+}
+
+ #assin ul{
+     width: 100%;
+     align-items: center;
+     justify-content: center;
+ }
+
+ #assin ul li{
+    font-size:10px;
+ } */
+
+
+@media screen and (min-width:300px) and (max-width:800px) {
+    
+    footer ul, footer ul li, .siga, #Logo{
+        display: flex;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .siga{ margin-right: 0px; }
+
+    #container-git-collaborators{ padding: 0px; }
+
+    #git-collaborators-list{ margin: 0px; }
+}
+
+/* @media(max-width: 600px){
+
+
+    footer ul li{ margin: 0 0 3rem 0;}
+    
+    footer ul li:nth-child(3){ margin: 0 20px 3rem 0; }
+    
+    footer ul li:last-child{ margin: 0 2rem 0 0; }
+
+    footer ul{ justify-content: center; }
+
+#Logo, .siga, .collaborators,
+.collaborators a{ align-items: center; }
+
+.siga{ margin-right: 150px; }
+
+ }
+
+@media(max-width: 990px){
+
+    footer ul , #Logo{ 
+        flex-direction: column;
+        align-items: center;
+     }
+
+    footer ul li{ margin: 0 0 3rem 0;}
+    
+    footer ul li:nth-child(3){ margin: 0 20px 3rem 0; }
+    
+    footer ul li:last-child{ margin: 0 2rem 0 0; }
+
+ } */

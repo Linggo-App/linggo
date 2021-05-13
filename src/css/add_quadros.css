@@ -1,0 +1,230 @@
+/*Tela Principal*/
+.div_consulta{
+    margin-top: 40px;
+    margin-left: 35px;
+}
+.consulta{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 17px;
+    align-items: center;
+}
+/* .div_consulta .titulo{
+
+} */
+.barra_busca{
+    width: 300px;
+    height: 30px;
+    /* border: 1px solid black; */
+    overflow: hidden;
+    background: #f3efef;
+    display: flex;
+    align-items: center;
+}
+.barra_busca input[type="text"]{
+    width: 270px;
+    height:28px ;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background:none;
+}
+.btn_search{
+    cursor: pointer;
+    padding: 5px;
+}
+.consulta select{
+    margin: 10px;
+    background: #f3efef;
+    outline: none;
+    border: none;
+    padding: 5px;
+}
+
+.agendas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: 1px solid; */
+    margin:40px 0px;
+    align-items: center;
+}
+.schedules{
+    width: 275px;
+    height: 246px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    /* background: #a6e24e; */
+    overflow: hidden;
+    color: white;
+    position: relative;
+    text-decoration: none;
+    word-break: break-all;
+    padding: 5px;
+}
+.create_schedule {
+    background: grey;
+    color: #000;
+}
+.create_schedule i{
+    font-size: 4em;
+}
+.schedules{
+    opacity: 0.9;
+    cursor: pointer;
+}
+.schedules h1{
+    font-size: 2.5em;
+    font-weight: bold;
+}
+.schedules:hover{
+    opacity: 1;
+}
+
+.add_agenda{
+    width: 95%;
+    height: 70vh;
+    border: 3px solid #23518c;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    position: relative;
+}
+
+
+.container_form{
+    border: none;
+    width: 100%;
+}
+.form_part1{
+    transition: transform 0.2s;
+
+}
+.form_part1.active{
+    transform: translateX(-1500px);
+    position: absolute;
+}
+.form_part2{
+    transform: translateX(1500px);
+    transition: transform 0.2s;
+    position: absolute;
+
+}
+.form_part2.active{
+    transform: translateX(0px);
+}
+
+/*formulário de cadastro*/
+.cor{
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border-bottom: 1px solid;
+  
+    
+}
+.cor .form_btn p{
+    margin: 0;
+}
+
+.modal_color .form_btn{
+    border:1px solid black;
+    align-self: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+
+.close_color{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.color_content{
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    align-self: center;
+    overflow: hidden;
+    background-color: white;
+}
+.color_content span{
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    display: block;
+    margin: 2px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.color_content span::after{
+    content: "✔";
+    display: none;
+}
+
+.color_content label{
+    display: table;
+}
+ input[type="radio"]{
+    display: none;
+}
+
+input[type="radio"]:checked ~ span::after{
+    display: block;
+}
+ .modal_color{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: 1px solid black;
+    background: white;
+    width: 230px;
+    height: 300px;
+    overflow-y: scroll;
+    z-index: 10;
+    transition: 200ms ease-in-out;  
+    overflow: hidden;
+    padding: 5px;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+ .modal_color.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.schedule_update{
+    color: black;
+    position: absolute;
+    flex-shrink: 1;
+    top: 0;
+    right: 0;
+    font-size: 1.9em;
+}
+.schedules .schedule_update{
+    display: none;
+}
+.schedules:hover .schedule_update{
+    display: block;
+}
