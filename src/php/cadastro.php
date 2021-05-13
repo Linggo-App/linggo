@@ -12,7 +12,7 @@
         <script src="../js/jquery-3.5.1.min.js"></script>
         <script src="../js/valid.js"></script>
     </head>
-    <?php include("./header.php"); ?>
+    <?php include("./header"); ?>
     <body>
         <div id="login-register-page">
             <div id="align-form">
@@ -66,7 +66,7 @@
             </div>
         </div>
         <footer>
-            <?php include("./footer.php"); ?>
+            <?php include("./footer"); ?>
         </footer>
     </body>
 </html>
@@ -92,7 +92,7 @@
           session_start();
           //Para a página de projetos
             $_SESSION["id_user"]=$row_info["ID_USUARIO"];
-         echo "<script>window.location.replace('http://".$serv."/linggo/src/php/add_agenda.php');</script>";
+         echo "<script>window.location.replace('http://".$serv."/src/php/add_agenda');</script>";
           //-----
 
           //Para o header
