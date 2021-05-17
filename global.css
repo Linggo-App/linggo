@@ -390,7 +390,6 @@ header{
     display: block;
 }
 
-
 /* footer css */
 footer{
     width: 100%;
@@ -400,30 +399,29 @@ footer{
     font-size: 12px;
     line-height: 50px;
     background:#fff;
-    padding: 0.5em 5em;
+    padding: 2em 5em 0.5em 5em;
     border-top: 1px solid #dadce0;
 }
 
 footer ul{ height: 100%; }
 
-footer ul, .siga,.collaborators, .collaborators a{ box-sizing: unset; display: flex; }
+footer ul, .siga,.collaborators, .collaborators a{box-sizing: unset;display: flex;}
 
-footer ul{ justify-content: space-between; }
+footer ul{justify-content: space-around;align-items: center;}
 
-#Logo > p{ align-self: center; }
+#Logo > p{ margin: 0 10px; }
 
-#Logo { display: flex; }
+#Logo {display: flex;flex-direction: column;}
 
 #Logo img{margin: 0 10px;width: 100px;height: 100px;}
 
-.siga, .collaborators,.collaborators a{ align-items: center; }
+/* .siga, .collaborators,.collaborators a{align-items: center;} */
 
-.siga{ margin-right: 150px; }
+/* .siga{ margin-right: 150px; } */
 
 #Logo img{
-    margin: 0 10px;
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: 14vh;
 }
 
 /* footer ul li .footer-link-content{
@@ -494,15 +492,16 @@ label[for="checkGit"] img{
     width: 25px;
     border-radius: 40px;
     -webkit-border-radius: 40px;
-    background-color: #171516;
+    background-color: #27274f;
     transition-timing-function: ease;
-    box-shadow: 1px 2px 5px 1px black;
+    box-shadow: 0 1px 1px 0 rgb(60 64 67 / 42%), 
+    0 1px 4px 1px rgb(60 64 67 / 40%);
 }
 
 .collaborators a:hover{
     cursor: pointer;
     width: 170px;
-    background-color: #1f1c1d;
+    background-color: #27274f;
 }
 
 .collaborators img{
@@ -556,7 +555,7 @@ label[for="checkGit"] img{
         text-align: center;
         align-items: center;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .siga{ margin-right: 0px; }
