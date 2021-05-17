@@ -29,7 +29,7 @@
                 <li class="menu__createbtn"><a href="./src/php/add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
             </ul>
         </nav>
-        <a class="cont_logo" href="./index.php" target="__self"><img class="logo" src="./assets/LingoApp_Branco.png" alt="Logo da página com cores em roxo e laranja"></a>
+        <a class="cont_logo" href="./index.php" target="_self"><img class="logo" src="./assets/LingoApp_Branco.png" alt="Logo da página com cores em roxo e laranja"></a>
         <div class="user">
             <?php
                     if(!isset($_SESSION["username"])){
