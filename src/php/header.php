@@ -3,8 +3,8 @@
     $serv="localhost/linggo/";
 
     // Conexão para páginaWeb
-    $con=mysqli_connect("sql309.epizy.com","epiz_28608127","ycJtjMygknrdRbq","epiz_28608127_linggo") or die ("Sem conexão"); 
-    $serv="linggoapp.42web.io/";
+    // $con=mysqli_connect("sql309.epizy.com","epiz_28608127","ycJtjMygknrdRbq","epiz_28608127_linggo") or die ("Sem conexão"); 
+    // $serv="linggoapp.42web.io/";
 
  ?>
 <!DOCTYPE html>
@@ -33,11 +33,11 @@
                 <li><a href="#" target="blank"><i class="fas fa-info-circle"></i> Sobre</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-users"></i> Equipe</a></li>
                 <li><a href="#" target="blank"><i class="fas fa-question-circle"></i> Suporte</a></li>
-                <li class="menu__createbtn"><a href="./add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
+                <li class="menu__createbtn"><a href="./add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Rotina</a></li>
              
             </ul>
         </nav>
-        <h1 class="logo">logo</h1>
+             <a class="cont_logo" href="../../index.php" target="_self"><img class="logo" src="../../assets/LingoApp_Branco.png" alt="Logo da página com cores em roxo e laranja"></a>
         <div class="user">
             <?php
                     if(!isset($_SESSION["username"])){
