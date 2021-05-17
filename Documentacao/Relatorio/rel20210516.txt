@@ -1,0 +1,8 @@
+Relatório 2021-05-16
+
+Caio:
+    Tela do APP teste baseados no rascunho.
+Leticia & Ricardo:
+    Decidindo o Layout/Design da Página Home
+Rafael:
+    Terminou PHP na página rotina, deu inicio na página perfil.
