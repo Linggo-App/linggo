@@ -122,14 +122,13 @@
                 <div class="modal-columns-config-box">
                     <p>Tem certeza que deseja deletar esse Projeto?</p>
                     <p>
-                        Obs:. Projetos deletados serão armazenados no seu 
+                        Projetos deletados serão armazenados no seu 
                         <?php 
                             echo 
                             "<a href='./perfil.php' target='_blank'>
                             perfil
                             </a>";
                         ?>
-                        temporariamente.
                     </p>
                     <button type="submit" class="btn-modal-columns" name="btn-delete-project">Deletar Projeto</button>
                 </div>
