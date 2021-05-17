@@ -370,8 +370,8 @@ hr{
     background-color: unset !important;
 }
 
-.modal-columns-config-box > p:nth-child(2) { font-size: 13px !important; padding: 0 20px 0 0 !important;}
-.modal-columns-config-box > p:nth-child(2) > a { font-size: 15px !important; color: #f49236 !important; }
+.modal-columns-config-box > p:nth-child(2) { font-size: 13px !important; padding: 0 20px 0 0 !important; margin: 0 0 5px 0; }
+.modal-columns-config-box > p:nth-child(2) > a { font-size: 15px !important; color: #f49236 !important;}
 
 .modal-columns-config-box { padding: 10px; }
 
