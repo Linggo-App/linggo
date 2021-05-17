@@ -44,11 +44,12 @@
         <?php
              // $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");
               $id_user=$_SESSION['id_user'];
-              $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user ORDER by TITULO_ROTINA ASC";
+              $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user AND STATUS='active' ORDER by TITULO_ROTINA ASC";
               $res=mysqli_query($con,$sql);
               $lin=mysqli_num_rows($res);
            // echo "<script>alert('".$lin."')</script>";
               if($lin>0){
+                  //Exibe as rotinas criadas na página.
                 while($linha=mysqli_fetch_array($res)){
                            if($linha["ROTINA_COR"]=="#fff"){
                                echo"<a href=./rotina.php?id_tab=".$linha["ID_ROTINA"]." target='_self' class='schedules' style='background:".$linha["ROTINA_COR"].";'>
@@ -73,6 +74,7 @@
       
             
            // $con=mysqli_connect("localhost","root","","linggo") or die ("Sem conexão");
+           //Cadastra a rotina no banco de dados
             if(isset($_POST["cad_proget"])){
                 
                // session_start();
@@ -82,7 +84,8 @@
         
                // echo"<script>alert('".$titulo.'\n'.$cor.'\n'.$id_user."')</script>";
 
-               $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user ORDER by TITULO_ROTINA ASC";
+               //Faz a validação antes de cadastrar
+               $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user AND STATUS='active' ORDER by TITULO_ROTINA ASC";
                $res=mysqli_query($con,$sql);
               // $res=mysqli_query($con,$sql);
                $lin=mysqli_num_rows($res);
@@ -92,7 +95,7 @@
                     echo "<script>alert('Você excedeu o limite de projetos exclua alguns para poder adicionar novos projetos!')</script>";
                    //echo "<script>alert('".$lin."')</script>";
                 }else{
-                    $sql="INSERT INTO usuarios_rotinas (ID_USUARIO, ID_ROTINA, TITULO_ROTINA, ROTINA_COR) VALUE($id_user,null,'$titulo','$cor')";
+                    $sql="INSERT INTO usuarios_rotinas (ID_USUARIO, ID_ROTINA, TITULO_ROTINA, ROTINA_COR, STATUS) VALUE($id_user,null,'$titulo','$cor', 'active')";
                 $res=mysqli_query($con,$sql);
                 $lin=mysqli_affected_rows($con);
           

@@ -32,7 +32,13 @@
                                     
                                     <input type="email" name="login-email" placeholder="Email" maxlength="45" required>
                                     <input type="password" name="login-senha" placeholder="Senha" required >
-                                    <input type="submit" name="login" value="Logar">
+                                    <label for="log" class="form_btn btn_reg" id="btn_log">
+                                       <input type="submit" id="log" name="login" value="" style="display:none;">
+                                         <span class="bg"></span>
+                                          <p>Login</p>
+
+                                     </label>
+                                    <!-- <input type="submit" name="login" value="Logar"> -->
                                 </td>
                             </tr>
                         </tbody>
@@ -57,7 +63,13 @@
                                     <input type="password" class="senha" id="senha" name="register-senha" placeholder="Senha*" required>
                                     <input type="password" class="senha" id="c_senha" name="register-conf-senha" placeholder="Confirmar senha*" required><span class="validation">Teste</span>
                 
-                                    <input type="submit" id="teste" name="register" value="Cadastrar">
+                                    <label for="teste" class="form_btn btn_reg">
+                                       <input type="submit" id="teste" name="register" value="" style="display:none;">
+                                         <span class="bg"></span>
+                                          <p>Cadastrar</p>
+
+                                     </label>
+                                    <!-- <input type="submit" id="teste" name="register" value="Cadastrar"> -->
                                 </td>
                             </tr>
                         </tbody>
@@ -99,6 +111,7 @@
 
           //Para o header
             $_SESSION["username"]=$row_info["APELIDO"];
+            $_SESSION["email"]=$row_info["EMAIL"];
           //--------
           
         }else{
