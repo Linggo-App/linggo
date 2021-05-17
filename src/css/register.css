@@ -71,7 +71,7 @@ input{
     outline: none;
 }
 
- input[type="submit"]{
+ /* input[type="submit"]{
     color: white;
     cursor: pointer;
     font-size: 1.1em;
@@ -80,6 +80,17 @@ input{
     background-color: #4527a0;
     box-shadow: 1px 1px 1px 1px #333896;
     border: none;
+} */
+.btn_reg{
+    width: 100% !important;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px !important;
+ 
+}
+
+#btn_log .bg{
+    background: #f49236 !important;
 }
 
 .email.valid{

@@ -51,7 +51,7 @@
                     $res=mysqli_query($con,$sql);
     
                     if($res){
-                        echo "<script>window.location.replace('http://".$serv."/src/php/rotina.php?id_tab=".$id_tab."');</script>";
+                        echo "<script>window.location.replace('http://".$serv."/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
                     }
     
                 }
@@ -99,7 +99,7 @@
                     $res=mysqli_query($con,$sql);
 
                     if($res){
-                        echo "<script>window.location.replace('http://".$serv."/src/php/rotina.php?id_tab=".$id_tab."');</script>";
+                        echo "<script>window.location.replace('http://".$serv."/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
                     }
                     
                 }
@@ -109,7 +109,7 @@
             <!-- Delete project modal content -->
              <div class="modal-columns" id="delete-project">
                 <div class="modal-columns-header">
-                    <p>Deletar Projeto</p>
+                    <p>Restaurar Projeto</p>
                     <button id="btn-close-modal">
                         <svg id="btn-close-modal" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
                             <path id="btn-close-modal" d="M19 6.41L17.59 5 12 10.59 
@@ -120,20 +120,39 @@
                     </button>
                 </div>
                 <div class="modal-columns-config-box">
-                    <p>Tem certeza que deseja deletar esse Projeto?</p>
-                    <button type="submit" class="btn-modal-columns" name="btn-delete-project">Deletar Projeto</button>
+                    <p>Tem certeza que deseja restaurar esse Projeto?</p>
+                    <button type="submit" class="btn-modal-columns" name="btn-restore-project">Restaurar Projeto</button>
                 </div>
             </div>
 
             <?php
-                if(isset($_POST["btn-delete-project"])){
-                    $sql="UPDATE usuarios_rotinas set STATUS='disabled' WHERE ID_ROTINA=$id_tab";
+                if(isset($_POST["btn-restore-project"])){
+                    // $sql="UPDATE usuarios_rotinas set STATUS='disabled' WHERE ID_ROTINA=$id_tab";
+                    // $res=mysqli_query($con,$sql);
+
+                    // if($res){
+                    //     echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
+                    // }
+                    $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user AND STATUS='active' ORDER by TITULO_ROTINA ASC";
+               $res=mysqli_query($con,$sql);
+              // $res=mysqli_query($con,$sql);
+               $lin=mysqli_num_rows($res);
+              // echo "<script>alert('".$lin."')</script>";
+
+                if($lin>=5){
+                    echo "<script>alert('Você excedeu o limite de projetos exclua alguns para poder adicionar novos projetos!')</script>";
+                   //echo "<script>alert('".$lin."')</script>";
+                }else{
+                   $sql="UPDATE usuarios_rotinas set STATUS='active' WHERE ID_ROTINA=$id_tab";
                     $res=mysqli_query($con,$sql);
 
                     if($res){
-                        echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
+                        //  echo "<meta http-equiv='refresh' content='0; url=./proj_disab.php?id_tab=".$id_tab."'/>";
+                         echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
                     }
+
                 }
+            }
             ?>
 
             <!-- Rename column modal content -->
@@ -317,7 +336,7 @@
                         1H5v2h14V4h-3.5l-1-1zM18 7H6v12c0 1.1.9
                         2 2 2h8c1.1 0 2-.9 2-2V7z"></path>
                     </svg>
-                    Deletar Projeto
+                    Restaurar Projeto
                 </button>
             </div>
 
