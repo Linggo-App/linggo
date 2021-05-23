@@ -1,7 +1,11 @@
  <!-- #4527a0 --> 
 <!DOCTYPE html>
 <html>
-
+  <?php
+    //  if(!isset($_SESSION["id_user"])){
+    //     header("location: perfil.php");
+    // }else{ 
+  ?>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -151,4 +155,5 @@
         }
 
     }
+//}
 ?>

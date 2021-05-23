@@ -78,6 +78,7 @@ header{
     cursor: pointer;
     display: none;
     padding: 5px;
+    color: white;
   
 }
 
@@ -303,6 +304,8 @@ header{
         display: none;
         margin-top: 10px;
 
+      
+
         /*---Caso no futuro incomode, configs para tornar o menu flutuante---*/
 
         /* position: absolute;
@@ -312,6 +315,10 @@ header{
         padding: 5px; */
 
         /*--------------------*/
+    }
+
+    .cont_logo{
+        margin-left:0 ;
     }
  
     .user{
