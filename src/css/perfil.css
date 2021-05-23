@@ -47,6 +47,10 @@
     grid-area:atalho_selec;
     width: 100%;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .logs{
@@ -60,16 +64,76 @@
     cursor: pointer;
     box-shadow: none !important;
 }
+/* .container_atalho .ata_select{
+    height: 100px;
+} */
 
-.container_atalho div{
+.agendas{
+    width: 90% !important;
+    height: 70vh !important;
+    /* overflow-y:auto; */
+    
+}
+.ata_select{
     width: 100%;
-    min-height: 100vh;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.21fr 1fr;
+    grid-template-areas: 
+    'titulo'
+    'tela';
+}
+.container_atalho .screen_title{
+    grid-area: titulo;
+    align-self: end;
+    /* margin-top: 120px;
+    position: relative; */
+}
+.screen_exibe{
+    grid-area: tela;
+    width: 90% ;
+    height: 70vh ;
+    overflow-y:auto;
 }
 
+.screen_exibe::-webkit-scrollbar {
+    border-right: 1px solid black;
+    width: 5px;
+  }
+
+  .screen_exibe::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.418);
+    
+  }
+.perfil_edit .input{
+    outline: none;
+}
+/* .perfil_edit .input{
+    outline: none;
+} */
+.perfil_edit{
+    margin-top: 30px;
+}
+
+.perfil_edit label{
+    user-select: none;
+}
+
+[class*="fa-eye"]{
+    color: #5b5ca8;
+    font-size: 1.2em;
+}
+
+.input{
+    width: 50% !important;
+}
+
+.pass_view{
+    font-size: 0.8em;
+    color: #5b5ca8;
+    user-select: none;
+}
 /*cel*/
 @media(max-width:680px){
     .container_perfil{
@@ -114,7 +178,7 @@
         }
     }
 
-    .form_btn{
+   .controls_perfil .form_btn{
         margin-left: 10px;
     }
 
@@ -122,6 +186,26 @@
         justify-content: flex-start;
         margin-top: 50px;
         padding: 5px;
+        /* text-align: center; */
+    }
+    .screen_title{
         text-align: center;
     }
+
+    [class*="fa-eye"]{
+        margin-top: 10px;
+    }
+
+    .agendas{
+        flex-direction: row !important;
+    }
+
+    .input{
+        width: 100% !important;
+    }
+
+    .screen_exibe{
+        margin: auto;
+    }
+
 }
