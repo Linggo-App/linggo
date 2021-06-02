@@ -89,7 +89,8 @@
 .add_agenda{
     width: 95%;
     height: 70vh;
-    border: 3px solid #23518c;
+    /* border: 3px solid #f49236; */
+     border: 3px solid #5b5ca8;
     align-self: center;
     display: flex;
     flex-direction: column;

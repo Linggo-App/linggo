@@ -1,7 +1,7 @@
 <ul>
     <li>
     <div id="Logo">
-        <img src="../../assets/Linggo-Logo.png" alt="">
+        <img src="../../assets/LingoApp_Branco_Cortada.png" alt="LinggoApp">
         <p>Linggo APP - Organizador de tarefas.</p>
     </div>
     </li>

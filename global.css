@@ -21,8 +21,9 @@ ul li a{
 header{
     width: 100%;
     padding: 10px;
-    background: black;
-    color: white;
+    /* background: #fff; */
+    background: #5b5ca8;
+    /* background: #5b5ca8b6; */
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: 50px 1fr;
@@ -30,15 +31,26 @@ header{
      "menu logo user"
     ;
     align-items: center;
-    /* overflow: hidden; */
+    border-bottom: 1px solid #dadce0;
+    overflow: hidden;
 }
-.logo, .user{
+ /* .user{
     align-self: flex-start;
-}
+} */
 
+.cont_logo{
+    width: 10px;
+    margin: 0px auto;
+}
 .logo{
     grid-area: logo;
-    text-align: center;
+    width: auto;
+    height: 120px;
+  
+}
+
+.logo:hover{
+    transform: scale(1.1);
 }
 
 .menu ul{
@@ -53,21 +65,12 @@ header{
 .menu ul li a{
     display: block;
     padding: 10px;
-    color: white;
     font-size: 0.8em;
+    /* color: black; */
+    /* color: #5b5ca8; */
+    color: white;
 }
 
-.logs{
-    padding: 0;
-    height: auto;
-    width: auto;
-    background: transparent !important;
-    border: none !important;
-    color:blue;
-    font-size: 0.8em !important;
-    cursor: pointer;
-    box-shadow: none !important;
-}
 
 
 #menu_btn{
@@ -75,17 +78,22 @@ header{
     cursor: pointer;
     display: none;
     padding: 5px;
+    color: white;
+  
 }
 
 #menu_btn i{
     font-size: 1.3em;
 }
 .menu__createbtn{
-    background:purple;
+    background:#f49236;
     border-radius: 10px;
-    border: 1px solid rgb(190, 65, 190);
+    border: 1px solid #f39339;
     flex-grow: 1;
     text-align: center;
+}
+.menu__createbtn a{
+    color: white !important;
 }
 .user{
     grid-area: user;
@@ -99,6 +107,8 @@ header{
     margin-right: 10px;
     width: 50px;
     height: 50px;
+    /* border: 1px solid black; */
+    /* border: 1px solid #5b5ca8; */
     border: 1px solid white;
     border-radius: 100%;
     overflow: hidden;
@@ -200,7 +210,7 @@ header{
 .form_btn .bg{
     position: absolute;
     width: 0;
-    background: #23518c;
+    background: #5b5ca8;
     padding: 10px;
     left: 0;
     height: 100vh;
@@ -225,7 +235,7 @@ header{
 
 .input{
     position: relative;
-    border: 1px solid #23518c;
+    border: 1px solid #5b5ca8;
     padding: 10px;
     background: white;
     width: 80%;
@@ -246,7 +256,7 @@ header{
     left: 0;
     margin-left: 10px;
     font-size: 1.2rem;
-    color: #23518c;
+    color: #5b5ca8;
     background: white;
     opacity: 0.5;
     user-select: none;
@@ -261,6 +271,8 @@ header{
 
 .user a{
     text-decoration: none;
+    /* color: black; */
+    /* color:  #5b5ca8; */
     color: white;
 }
 
@@ -292,6 +304,8 @@ header{
         display: none;
         margin-top: 10px;
 
+      
+
         /*---Caso no futuro incomode, configs para tornar o menu flutuante---*/
 
         /* position: absolute;
@@ -301,6 +315,10 @@ header{
         padding: 5px; */
 
         /*--------------------*/
+    }
+
+    .cont_logo{
+        margin-left:0 ;
     }
  
     .user{
@@ -390,40 +408,40 @@ header{
     display: block;
 }
 
-
 /* footer css */
 footer{
     width: 100%;
     height: auto;
     /* margin-top:100px; */
-    color: #3c4043;
+    /* color: #3c4043; */
+    /* color: black; */
+    color: white;
     font-size: 12px;
     line-height: 50px;
-    background:#fff;
-    padding: 0.5em 5em;
+    padding: 2em 5em 0.5em 5em;
+    background: #5b5ca8;
     border-top: 1px solid #dadce0;
 }
 
 footer ul{ height: 100%; }
 
-footer ul, .siga,.collaborators, .collaborators a{ box-sizing: unset; display: flex; }
+footer ul, .siga,.collaborators, .collaborators a{box-sizing: unset;display: flex;}
 
-footer ul{ justify-content: space-between; }
+footer ul{justify-content: space-around;align-items: center;}
 
-#Logo > p{ align-self: center; }
+#Logo > p{ margin: 0 10px; }
 
-#Logo { display: flex; }
+#Logo {display: flex;flex-direction: column;}
 
 #Logo img{margin: 0 10px;width: 100px;height: 100px;}
 
-.siga, .collaborators,.collaborators a{ align-items: center; }
+/* .siga, .collaborators,.collaborators a{align-items: center;} */
 
-.siga{ margin-right: 150px; }
+/* .siga{ margin-right: 150px; } */
 
 #Logo img{
-    margin: 0 10px;
-    width: 100px;
-    height: 100px;
+    width: auto;
+    height: 14vh;
 }
 
 /* footer ul li .footer-link-content{
@@ -494,15 +512,16 @@ label[for="checkGit"] img{
     width: 25px;
     border-radius: 40px;
     -webkit-border-radius: 40px;
-    background-color: #171516;
+    background-color: #27274f;
     transition-timing-function: ease;
-    box-shadow: 1px 2px 5px 1px black;
+    box-shadow: 0 1px 1px 0 rgb(60 64 67 / 42%), 
+    0 1px 4px 1px rgb(60 64 67 / 40%);
 }
 
 .collaborators a:hover{
     cursor: pointer;
     width: 170px;
-    background-color: #1f1c1d;
+    background-color: #27274f;
 }
 
 .collaborators img{
@@ -556,7 +575,7 @@ label[for="checkGit"] img{
         text-align: center;
         align-items: center;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .siga{ margin-right: 0px; }

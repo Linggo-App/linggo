@@ -51,7 +51,7 @@
                     $res=mysqli_query($con,$sql);
     
                     if($res){
-                        echo "<script>window.location.replace('http://".$serv."/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
+                        echo "<script>window.location.replace('http://".$serv."/src/php/rotina.php?id_tab=".$id_tab."');</script>";
                     }
     
                 }
@@ -75,7 +75,7 @@
                 <div class="modal-columns-config-box">
                     <form action="" method="post">
                     <label for="new-column-name">Nome da coluna</label>
-                    <input type="text" name="new-column-name" placeholder="Dê um nome a sua coluna (Segunda, Trabalho)">
+                    <input type="text" name="new-column-name" placeholder="Dê um nome a sua coluna (Segunda, Trabalho)" maxlength="15">
                     <button type="submit" class="btn-modal-columns" name="btn-create-column">Criar coluna</button>
                     </form>
                 </div>
@@ -99,7 +99,7 @@
                     $res=mysqli_query($con,$sql);
 
                     if($res){
-                        echo "<script>window.location.replace('http://".$serv."/linggo/src/php/rotina.php?id_tab=".$id_tab."');</script>";
+                        echo "<script>window.location.replace('http://".$serv."/src/php/rotina.php?id_tab=".$id_tab."');</script>";
                     }
                     
                 }
@@ -121,9 +121,29 @@
                 </div>
                 <div class="modal-columns-config-box">
                     <p>Tem certeza que deseja deletar esse Projeto?</p>
+                    <p>
+                        Projetos deletados serão armazenados no seu 
+                        <?php 
+                            echo 
+                            "<a href='./perfil.php' target='_blank'>
+                            perfil
+                            </a>";
+                        ?>
+                    </p>
                     <button type="submit" class="btn-modal-columns" name="btn-delete-project">Deletar Projeto</button>
                 </div>
             </div>
+
+            <?php
+                if(isset($_POST["btn-delete-project"])){
+                    $sql="UPDATE usuarios_rotinas set STATUS='disabled' WHERE ID_ROTINA=$id_tab";
+                    $res=mysqli_query($con,$sql);
+
+                    if($res){
+                        echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
+                    }
+                }
+            ?>
 
             <!-- Rename column modal content -->
             <div class="modal-columns" id="rename-columns">
@@ -141,7 +161,7 @@
                 <div class="modal-columns-config-box">
               
                     <label for="new-column-name">Nome da coluna</label>
-                    <input type="text" name="new-column-name" placeholder="Renomeie a coluna (Quarta, Férias, etc...)">
+                    <input type="text" name="new-column-name" placeholder="Renomeie a coluna (Quarta, Férias, etc...)" maxlength="15">
                     <button type="submit" class="btn-modal-columns" name="btn-rename-column">Renomar coluna</button>
                 </div>
             </div>
@@ -210,7 +230,7 @@
                 </div>
                 <div class="modal-columns-config-box">
                     <label for="new-task-name">Nome da tarefa</label>
-                    <input type="text" name="new-task-name" id="new-task-name" placeholder="Renomeie a tarefa (Matemática, Português, etc...)">
+                    <input type="text" name="new-task-name" id="new-task-name" placeholder="Renomeie a tarefa (Matemática, Português, etc...)" maxlength="15">
                     <label for="new-time-task">Mudar horário da tarefa</label>
                     <input type="time" name="new-time-task" id="new-time-task">
                     <button type="submit" class="btn-modal-tasks" name="btn-edit-tasks">Salvar alterações</button>
@@ -282,7 +302,7 @@
 
                 if($res){
                     echo"<form method='post'>
-                    <input id='box-routine-title' type='text' value='".$row_info["TITULO_ROTINA"]."' placeholder='' onClick='this.select();' name='tab_titulo'>
+                    <input id='box-routine-title' type='text' value='".$row_info["TITULO_ROTINA"]."' placeholder='' onClick='this.select();' name='tab_titulo' maxlength='15'>
                     <input type='submit' name='update_titulo' id='rotina_titulo' style='display:none'>
                     </form>";
                     
