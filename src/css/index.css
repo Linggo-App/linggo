@@ -1,3 +1,8 @@
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .container_index{
     width: 100%;
     min-height: 100vh;
@@ -21,6 +26,369 @@
     font-size: 0.9em;
 }
 
-.btn-primary{background-color:#4527a0;  border:1px solid  #341b81;
-margin:10px; padding:15px; border-radius:12px;}
+.btn-primary{
+     background:#f49236; 
+     border: 1px solid #f39339;
+     margin:10px;
+     padding:15px;
+     border-radius:12px;
+     color: white;
+     cursor: pointer;
+}
+
+ header{
+    grid-template-areas: 
+     "menu menu logo"
+    ;
+    /* position: fixed;
+    top: 0;
+    z-index: 10000; */
+} 
+
+.menu__createbtn{
+    flex-grow: 0;
+    width: 200px;
+}
+
+
+[class*="container_"]{
+    width: 100%;
+    /* padding:20px; */
+    word-break: break-all;
+    margin-top: 0px;
+    padding: 30px;
+    overflow:hidden;
+}
+
+
+
+
+[class*="container_1"]{
+    background: #5b5ca8;
+    color: white;
+}
+
+
+[class*="container_2"]{
+    background: white ;
+    color: #5b5ca8;
+}
+
+
+.title{
+    text-align: center;
+    font-weight: bold;
+}
+
+[class*="container_"] p{
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+
+/* #sobre .text{
+    margin-top: 30px;
+} */
+
+
+.cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.card{
+    background: #f49236;
+    color: white;
+    width: 250px;
+    height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    word-break: break-all;
+    transition: all 2s;
+    position: relative;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.63);
+}
+
+.card .img{
+    min-width: 100px;
+   min-height: 100px;
+    border: 1px solid white;
+    border-radius: 100%;
+    transform: scale(1.5) translateY(75px);
+    transition: all .5s;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .card_info{
+  transform: translateY(1000px);
+  transition: transform .5s;
+  transition-timing-function: ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top:10px;
+}
+
+.card_info h2{
+    margin-top: 10px;
+    font-weight: bold;
+}
+.card:hover .card_info{
+  transform: translateY(0px);
+  
+}
+
+.card:hover .img{
+    transform:scale(1);
+}
+
+.tutorials{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 100%;
+    /* margin-top: 10px; */
+    padding: 0px;
+    position: relative;
+    
+}
+
+.slide{
+    width: 100%;
+    height:auto;
+    position: relative;
+    overflow: hidden;
+    /* padding: 0px !important; */
+    display: flex;
+    transform: scale(0.8);
+    margin-top: -50px;
+}
+
+.prints{
+    min-width: 100%;
+    height: auto;
+    background: #f49236;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; 
+     transform: scale(0.9);
+    /* display: table; */
+    margin-top: -30px;
+    position: relative;
+}
+
+.prints .title{
+    padding: 0;
+    height: 20px;
+    font-size: 2.5em;
+    order: 1;
+    text-transform: capitalize;
+}
+.print{
+    overflow: hidden;
+    transform: scale(0.9);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+   order: 2;
+}
+
+/* .print img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+/* .print img{display: none;}
+
+.prints .text{
+    width: 100%;
+    margin-top: 20px;
+    font-size: 1.4em;
+    order: 3;
+}
+
+ */
+
+[class*="fa-chevron"]{
+    position: absolute;
+    font-size: 3em;
+    cursor: pointer;
+    top:50%;
+    /* left:50%; */
+    /* transform: translate(-50%, -50%); */
+    z-index: 10000;
+    opacity: 0.5;
+}
+[class*="fa-chevron"]:hover{
+    opacity: 1;
+}
+[class*="-left"]{
+    left: 0;
+    /* margin-left: 100px; */
+}
+
+[class*="-right"]{
+    right: 0;
+    /* margin-right: 100px; */
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -65px;
+}
+
+#dotteds{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+#dotteds .dotted{
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 100%;
+    opacity: 0.5;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.dotted.active{
+    opacity: 1 !important;
+}
+
+.chaves{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    
+}
+
+.chave{
+    width: 300px;
+    height: 300px;
+    word-break: break-all;
+    overflow: hidden;
+    background: #f49236;
+    color: white;
+    padding: 20px;
+}
+
+.chave h2{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.9em;
+}
+
+#cadastre-se{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cadastre-se h2{
+    text-align: center;
+    /* font-size: 2em; */
+}
+
+#cadastre-se a{
+    text-decoration: none;
+    color: white;
+    background-color: #f49236 !important;
+    display: block;
+    padding: 20px;
+    flex-grow: 1;
+}
+@media(max-width:680px){
+    header{
+        grid-template-areas: 
+        "menu_btn menu_btn logo"
+        "menu menu menu"
+        !important;
+       /* overflow: hidden; */
+       position: relative;
+       
+    }
+
+    .cards{
+        flex-direction: column;
+    }
+
+    .cards .card + .card{
+        margin-top:50px;
+    }
+    
+    .chaves{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .chaves .chave + .chave{
+        margin-top: 50px;
+    }
+
+    #marketing{
+        padding: 0 !important;
+    }
+
+    #marketing .title{
+        font-size: 1.5em;
+    }
+
+    [class*="container_"]{
+        margin-top: 50px;
+    }
+
+
+  
+}
+
+@media(max-width:900px){
+    header{
+        grid-template-areas: 
+        "menu_btn menu_btn logo"
+        "menu menu menu"
+       ;
+       /* overflow: hidden; */
+       position: relative;
+       
+    }
+
+   
+   
+}
 
