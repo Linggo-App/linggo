@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
-    <script src="./src/js/jquery-3.5.1.min.js"></script>
-    <script src="./src/js/index.js"></script>
+   <!-- <script src="./src/js/jquery-3.5.1.min.js"></script>
+    <script src="./src/js/index.js"></script>-->
 </head>
 
 <body>
@@ -92,203 +92,244 @@
     <div class="container_1 " id="tutorial">
          <h1 class="title">Tutorial</h1>
          <div class="tutorials">
-         <i class="fas fa-chevron-left"></i>
-            <i class="fas fa-chevron-right"></i>
-            <div id="dotteds">
-                <!-- <span class="dotted"></span>
-                <span class="dotted"></span>
-                <span class="dotted"></span> -->
-            </div>
-            <div class="slide">
-                <!-- Tutorial do cadastro -->
-                <div class="prints cadastro">
-                <!-- <h1 class="title">Titulo</h1> -->
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/cadastro/cadastro_login.jpeg)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/cadastro/cadastro_login.jpeg"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints cadastro">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/cadastro/cadastro_login_opt2.jpeg)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/cadastro/cadastro_login_opt2.jpeg"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints cadastro">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/cadastro/invalid_user.png)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/cadastro/invalid_user.png"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints cadastro">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/cadastro/validando_user.jpeg)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/cadastro/validando_user.jpeg"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints cadastro">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/cadastro/registred.png)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/cadastro/registred.png"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints cadastro">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/cadastro/login.png)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/cadastro/login.png"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                 <!-- Tutorial do criar projetos -->
-                 <div class="prints projetos">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/projetos/projetos_inicio.png)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/projetos/projetos_inicio.png"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints projetos">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/projetos/select_cores.jpeg)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/projetos/select_cores.jpeg"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints projetos">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/projetos/pallet_color.png)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/projetos/pallet_color.png"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints projetos">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/projetos/titulo_projeto.png)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/projetos/titulo_projeto.png"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints projetos">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/projetos/final.jpeg)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/projetos/final.jpeg"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints projetos">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/projetos/rename_project.png)">
-                        <!-- <img src="./assets/master-assets/img/slide_img/projetos/rename_project.png"> -->
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints projetos">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/projetos/delet_project.png)">
-                        <img src="./assets/master-assets/img/slide_img/projetos/delet_project.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-
-                  <!-- Tutorial do criar colunas -->
-                <div class="prints colunas">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/colunas/coluna_inicio.png)">
-                        <img src="./assets/master-assets/img/slide_img/colunas/coluna_inicio.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints colunas">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/colunas/criar_coluna.png)">
+             <details>
+                 <summary class="btn-primary" >Cadastro</summary>
+                 <h1 class="title">Cadastro</h1>
+                 <section>
+                     <div class="prints_1">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/cadastro/cadastro_login.jpeg">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/cadastro/cadastro_login_opt2.jpeg">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_1">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/cadastro/invalid_user.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/cadastro/validando_user.jpeg">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_1">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/cadastro/registred.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/cadastro/login.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                 </section>
+             </details>
+             <details>
+                 <summary class="btn-primary" >Criar Projetos</summary>
+                 <h1 class="title">Criar Projetos</h1>
+                 <section>
+                     <div class="prints_1">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/projetos/projetos_inicio.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
+                           <img src="./assets/master-assets/img/slide_img/projetos/select_cores.jpeg">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_1">
+                        <div class="print">
+                          <img src="./assets/master-assets/img/slide_img/projetos/pallet_color.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
+                             <img src="./assets/master-assets/img/slide_img/projetos/titulo_projeto.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_1">
+                        <div class="print">
+                             <img src="./assets/master-assets/img/slide_img/projetos/final.jpeg">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
+                             <img src="./assets/master-assets/img/slide_img/projetos/rename_project.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_1">
+                        <div class="print">
+                             <img src="./assets/master-assets/img/slide_img/projetos/delet_project.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                 </section>
+             </details>
+             <details>
+                 <summary class="btn-primary" >Criar Colunas</summary>
+                 <h1 class="title">Criar Colunas</h1>
+                 <section>
+                     <div class="prints_1">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/colunas/coluna_inicio.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
                         <img src="./assets/master-assets/img/slide_img/colunas/criar_coluna.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints colunas">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/colunas/coluna_opt.png)">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_1">
+                        <div class="print">
                         <img src="./assets/master-assets/img/slide_img/colunas/coluna_opt.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints colunas">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/colunas/rename_column.png)">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
                         <img src="./assets/master-assets/img/slide_img/colunas/rename_column.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints colunas">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/colunas/delete_column.png)">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_1">
+                        <div class="print">
                         <img src="./assets/master-assets/img/slide_img/colunas/delete_column.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <!-- Tutorial do criar tarefas -->
-                <div class="prints tarefas">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/tarefas/criar_tarefa.png)">
-                        <img src="./assets/master-assets/img/slide_img/tarefas/criar_tarefa.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints tarefas">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/tarefas/definindo_tarefa.png)">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                 </section>
+             </details>
+             <details>
+                 <summary class="btn-primary" >Criar Tarefas</summary>
+                 <h1 class="title">Criar Tarefas</h1>
+                 <section>
+                     <div class="prints_1">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/tarefas/criar_tarefa.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
                         <img src="./assets/master-assets/img/slide_img/tarefas/definindo_tarefa.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints tarefas">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/tarefas/edit_tarefa.png)">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_1">
+                        <div class="print">
                         <img src="./assets/master-assets/img/slide_img/tarefas/edit_tarefa.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-                <div class="prints tarefas">
-                    <div class="print" style="background-image: url(./assets/master-assets/img/slide_img/tarefas/delet_tarefa.png)">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
                         <img src="./assets/master-assets/img/slide_img/tarefas/delet_tarefa.png">
-                    </div>
-                    <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec, volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt. Donec vitae purus ut nisl consectetur egestas quis eget nulla. 
-                    </div>
-                </div>
-            </div>
-            <div class="buttons">
-                <button value="cadastro" class="btn-primary">Cadastro/Login</button>
-                <button value="projetos" class="btn-primary">Criar Projetos</button>
-                <button value="colunas" class="btn-primary">Criar Colunas</button>
-                <button value="tarefas" class="btn-primary">Criar Tarefas</button>
-            </div>
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                 </section>
+             </details>
+             <details>
+                 <summary class="btn-primary" >Perfil</summary>
+                 <h1 class="title">Perfil</h1>
+                 <section>
+                     <div class="prints_1">
+                        <div class="print">
+                            <img src="./assets/master-assets/img/slide_img/tarefas/criar_tarefa.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
+                        <img src="./assets/master-assets/img/slide_img/tarefas/definindo_tarefa.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_1">
+                        <div class="print">
+                        <img src="./assets/master-assets/img/slide_img/tarefas/edit_tarefa.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                     <div class="prints_2">
+                        <div class="print">
+                        <img src="./assets/master-assets/img/slide_img/tarefas/delet_tarefa.png">
+                        </div>
+                        <div class="text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dui ex, tempor eget nibh nec volutpat vulputate lectus. Donec non lectus at massa hendrerit tincidunt.
+                        </div>
+                     </div>
+                 </section>
+             </details>
          </div>
     </div>
     <div class="container_2" id="marketing">

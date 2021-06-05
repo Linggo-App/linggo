@@ -8,6 +8,21 @@ body{
     width: 100%;
     overflow-x: hidden;
 }
+::-webkit-scrollbar {
+    width: 10px;
+    height: 16px;
+   }
+   ::-webkit-scrollbar-thumb {
+    background: #f49236;
+    /* border-radius: 15px; */
+   }
+   ::-webkit-scrollbar-thumb:hover{
+    background: #f9d4ff;
+   }
+   ::-webkit-scrollbar-track{
+    background: #5b5ca8;
+    /* border-radius: 15px; */
+   }
 ul li{
     list-style: none;
 }
@@ -156,6 +171,8 @@ header{
 .modal::-webkit-scrollbar{
     visibility: hidden;
 }
+
+
 
 .overlay {
     position: fixed;
