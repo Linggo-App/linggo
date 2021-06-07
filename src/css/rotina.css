@@ -200,7 +200,7 @@ input[type="checkbox"]:checked ~ .dropdown-column-editor{ display: block; }
 
 .tasks-container{ 
     padding: 8px;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: calc(100vh - 200px);
 }
 /*                                              */

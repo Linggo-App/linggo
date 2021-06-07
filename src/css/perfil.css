@@ -72,6 +72,7 @@
     width: 90% !important;
     height: 70vh !important;
     /* overflow-y:auto; */
+    align-items: flex-start !important;
     
 }
 .ata_select{
@@ -156,6 +157,7 @@
         overflow-x: auto;
         margin-top: 20px;
         position: relative;
+        padding: 10px;
     }
 
     .atalhos::before{
