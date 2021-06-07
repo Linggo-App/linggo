@@ -80,6 +80,12 @@ body{
     font-weight: bold;
 }
 
+.text{
+    word-break: keep-all;
+    padding: 10px;
+    font-size: 1.2em;
+}
+
 [class*="container_"] p{
     margin-top: 10px;
     font-size: 1.1em;
@@ -122,7 +128,7 @@ body{
    min-height: 100px;
     border: 1px solid white;
     border-radius: 100%;
-    transform: scale(1.5) translateY(75px);
+    transform: scale(1.5) translateY(-80%);
     transition: all .5s;
     overflow: hidden;
     position: relative;
@@ -130,6 +136,7 @@ body{
     justify-content: center;
     align-items: center;
     background: white;
+    top:50%;
 }
 
 .img img{
@@ -153,6 +160,8 @@ body{
     margin-top: 10px;
     font-weight: bold;
 }
+
+
 .card:hover .card_info{
   transform: translateY(0px);
   
@@ -160,6 +169,7 @@ body{
 
 .card:hover .img{
     transform:scale(1);
+    top:0;
 }
 
 details{
@@ -207,56 +217,13 @@ details{
     margin:0 20px;
 }
 
-[class*="fa-chevron"]{
-    position: absolute;
-    font-size: 3em;
-    cursor: pointer;
-    top:50%;
-    /* left:50%; */
-    /* transform: translate(-50%, -50%); */
-    z-index: 10000;
-    opacity: 0.5;
-}
-[class*="fa-chevron"]:hover{
-    opacity: 1;
-}
-[class*="-left"]{
-    left: 0;
-    /* margin-left: 100px; */
-}
 
-[class*="-right"]{
-    right: 0;
-    /* margin-right: 100px; */
-}
-
-#dotteds{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-}
-
-#dotteds .dotted{
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 100%;
-    opacity: 0.5;
-    padding: 5px;
-    margin-left: 10px;
-}
-
-.dotted.active{
-    opacity: 1 !important;
-}
 
 .chaves{
     width: 100%;
     display: flex;
     justify-content: space-around;
-    margin-top: 50px;
+    align-items: center;
     flex-wrap: wrap;
     
 }
@@ -264,12 +231,12 @@ details{
 .chave{
     width: 300px;
     height: 300px;
-    word-break: break-all;
     overflow: hidden;
     background: #f49236;
     color: white;
     padding: 20px;
     margin-top: 50px;
+
 }
 
 .chave h2{

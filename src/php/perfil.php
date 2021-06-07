@@ -100,7 +100,7 @@
                                 echo "<script>alert('não');</script>";
                             }
                         }
-
+                        //Trocando Password
                         if(isset($_POST["upd_pass"])){
                             $pass_atual=md5($_POST["pass_atual"]);
                             $pass_new=md5($_POST["pass_new"]);
@@ -118,6 +118,7 @@
         
                                 if($res){
                                    // $_SESSION["username"]=$new_username;
+                                   echo "<script>alert('Sua Senha foi alterada!');</script>";
                                     echo "<script>window.location.replace('http://".$serv."src/php/perfil');</script>";
                                 }else{
                                     echo "<script>alert('não');</script>";
