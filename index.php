@@ -14,6 +14,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
    <!-- <script src="./src/js/jquery-3.5.1.min.js"></script>
     <script src="./src/js/index.js"></script>-->
+
+    <style>
+         header{
+            grid-template-areas: 
+            "menu menu logo"
+            ;
+            /* position: fixed;
+            top: 0;
+            z-index: 10000; */
+        } 
+
+        .menu__createbtn{
+            flex-grow: 0;
+            width: 200px;
+        }
+
+        @media(max-width:680px){
+    header{
+        grid-template-areas: 
+        "menu_btn menu_btn logo"
+        "menu menu menu"
+        !important;
+       /* overflow: hidden; */
+       position: relative;
+       
+    }
+        }
+
+        @media(max-width:900px){
+    header{
+        grid-template-areas: 
+        "menu_btn menu_btn logo"
+        "menu menu menu"
+       ;
+       /* overflow: hidden; */
+       position: relative;
+       
+    }
+}
+</style>
 </head>
 
 <body>
@@ -25,9 +65,9 @@
         <nav class="menu">
     
             <ul>
-                <li><a href="#sobre" target="blank"><i class="fas fa-info-circle"></i> Sobre</a></li>
-                <li><a href="#equipe" target="blank"><i class="fas fa-users"></i> Equipe</a></li>
-                <li><a href="#" target="blank"><i class="fas fa-question-circle"></i> Suporte</a></li>
+                <li><a href="#sobre" target="_self"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="#equipe" target="_self"><i class="fas fa-users"></i> Equipe</a></li>
+                <li><a href="https://www.facebook.com/Linggo-APP-104781658511510/" target="_blank"><i class="fas fa-question-circle"></i> Suporte</a></li>
                 <li class="menu__createbtn"><a href="./src/php/add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></li>
             </ul>
         </nav>
@@ -36,7 +76,7 @@
 
     <div class="container_index">
             <img src="./assets/Linggo-Logo.png" alt="" >
-            <div class="btn-primary"><a href="./src/php/add_agenda.php" target="__self"><i class="fas fa-plus"></i> Criar Projeto</a></div>
+            <div class="btn-primary"><a href="./src/php/add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></div>
     </div>
     <div class="container_1"  id="sobre">
         <h1 class="title">Sobre</h1>
