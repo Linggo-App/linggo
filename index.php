@@ -14,6 +14,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
    <!-- <script src="./src/js/jquery-3.5.1.min.js"></script>
     <script src="./src/js/index.js"></script>-->
+
+    <style>
+         header{
+            grid-template-areas: 
+            "menu menu logo"
+            ;
+            /* position: fixed;
+            top: 0;
+            z-index: 10000; */
+        } 
+
+        .menu__createbtn{
+            flex-grow: 0;
+            width: 200px;
+        }
+
+        @media(max-width:680px){
+    header{
+        grid-template-areas: 
+        "menu_btn menu_btn logo"
+        "menu menu menu"
+        !important;
+       /* overflow: hidden; */
+       position: relative;
+       
+    }
+        }
+
+        @media(max-width:900px){
+    header{
+        grid-template-areas: 
+        "menu_btn menu_btn logo"
+        "menu menu menu"
+       ;
+       /* overflow: hidden; */
+       position: relative;
+       
+    }
+}
+</style>
 </head>
 
 <body>

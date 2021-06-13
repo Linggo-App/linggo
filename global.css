@@ -260,6 +260,7 @@ header{
     align-self: center;
     border-radius: 5px;
     cursor: text;
+    display: flex;
 }
 .input input{
     outline: none;

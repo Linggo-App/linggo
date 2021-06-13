@@ -36,20 +36,6 @@ body{
      cursor: pointer;
 }
 
- header{
-    grid-template-areas: 
-     "menu menu logo"
-    ;
-    /* position: fixed;
-    top: 0;
-    z-index: 10000; */
-} 
-
-.menu__createbtn{
-    flex-grow: 0;
-    width: 200px;
-}
-
 
 [class*="container_"]{
     width: 100%;
@@ -264,16 +250,7 @@ details{
     padding: 20px;
     flex-grow: 1;
 }
-@media(max-width:680px){
-    header{
-        grid-template-areas: 
-        "menu_btn menu_btn logo"
-        "menu menu menu"
-        !important;
-       /* overflow: hidden; */
-       position: relative;
-       
-    }
+@media(max-width:680px){ 
 
     .cards{
         flex-direction: column;
@@ -323,15 +300,6 @@ details{
 }
 
 @media(max-width:900px){
-    header{
-        grid-template-areas: 
-        "menu_btn menu_btn logo"
-        "menu menu menu"
-       ;
-       /* overflow: hidden; */
-       position: relative;
-       
-    }
 
    
    

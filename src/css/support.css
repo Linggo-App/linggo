@@ -1,0 +1,21 @@
+form{
+    width: 90%;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+[class*="container_"] p{
+    margin-top: 0px;
+}
+textarea{
+    outline: none;
+    font-size: 1.2rem;
+}
+
+@media(max-width:680px){
+    [class*="container_"]{
+        margin-top:0;
+    }
+}
