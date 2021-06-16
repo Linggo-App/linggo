@@ -30,9 +30,9 @@
         <nav class="menu">
     
             <ul>
-                <li><a href="#" target="blank"><i class="fas fa-info-circle"></i> Sobre</a></li>
-                <li><a href="#" target="blank"><i class="fas fa-users"></i> Equipe</a></li>
-                <li><a href="#" target="blank"><i class="fas fa-question-circle"></i> Suporte</a></li>
+                <li><a href="../../index.php#sobre" target="_self"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                <li><a href="../../index.php#equipe" target="_self"><i class="fas fa-users"></i> Equipe</a></li>
+                <li><a href="https://www.facebook.com/Linggo-APP-104781658511510/" target="_blank"><i class="fas fa-question-circle"></i> Suporte</a></li>
                 <li class="menu__createbtn"><a href="./add_agenda.php" target="_self"><i class="fas fa-plus"></i> Criar Rotina</a></li>
              
             </ul>
