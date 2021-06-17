@@ -41,7 +41,6 @@
                                        <input type="submit" id="teste" name="register" value="" style="display:none;">
                                          <span class="bg"></span>
                                           <p>Enviar</p>
-
                                      </label>
                                     <!-- <input type="submit" id="teste" name="register" value="Cadastrar"> -->
                                 </td>

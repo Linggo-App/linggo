@@ -34,7 +34,7 @@
                         <span class="bg"></span>
                         <p>Editar Perfil</p></div>
                     <div class="btn_atalho  form_btn" id="btn_pjex"><span class="bg"></span> <p>Projetos Excluidos</p></div>
-                    <!-- <div class="btn_atalho  form_btn" id="btn_ticket"><span class="bg"></span> <p>Tickets</p></div> -->
+                    <div class="btn_atalho  form_btn" id="btn_security"><span class="bg"></span> <p>Segurança</p></div>
 
                     <form method="post">
             <input type="submit" name="logout" class="logs form_btn" value="Logout">
@@ -169,6 +169,52 @@
                 <!-- <div class="ata_select" id="ticket">
                 <h1 class="screen_title">  Tickets</h1>
                 </div> -->
+                <div class="ata_select" id="security">
+                <h1 class="screen_title">Perguntas de Segurança</h1>
+                <div class="screen_exibe">
+                    <form class="perfil_edit" action="" method="post">
+                        <label class="lbl_edit" for="inp_answer1">Primeira escola em que estudou?</label><br><br>
+                        <input type="text" id="inp_answer1" name="inp_answer1" class="input" onClick='this.select();' value="<?php echo $_SESSION["p1"]; ?>"  placeholder="Primeira escola em que estudou" required>
+                        <br><br>
+                        <label class="lbl_edit" for="inp_answer2">Nome do Melhor Amigo?</label><br><br>
+                        <input type="text" id="inp_answer2" name="inp_answer2" class="input" onClick='this.select();' value="<?php echo $_SESSION["p2"]; ?>"  placeholder="Nome do Melhor Amigo" required>
+                        <br><br>
+                        <label class="lbl_edit" for="inp_answer3">Nome da mãe?</label><br><br>
+                        <input type="text" id="inp_answer3" name="inp_answer3" class="input" onClick='this.select();' value="<?php echo $_SESSION["p3"]; ?>"  placeholder="Nome da mãe" required>
+                        <br><br>
+                        <label for="upd_answer" class="form_btn btn_reg" id="btn_log">
+                                <input type="submit" id="upd_answer" name="upd_answer" value="" style="display:none;">
+                                 <span class="bg"></span>
+                                 <p>Salvar alteração</p>
+                        </label>
+                    </form>
+                </div>
+                </div>
+                    <!-- Update no usuário -->
+                    <?php
+                        //Trocar nome de usuário
+                        if(isset($_POST["upd_answer"])){
+                            $inp_answer1=$_POST["inp_answer1"];
+                            $inp_answer2=$_POST["inp_answer2"];
+                            $inp_answer3=$_POST["inp_answer3"];
+                            $id_user=$_SESSION["id_user"];
+                            $sql="UPDATE usuarios set FIRST_SCHOOL='$inp_answer1', BEST_FRIEND='$inp_answer2', MOM='$inp_answer3' WHERE ID_USUARIO=$id_user";
+                            $res=mysqli_query($con,$sql);
+    
+                            if($res){
+                                $_SESSION["p1"]=$inp_answer1;
+                                $_SESSION["p2"]=$inp_answer2;
+                                $_SESSION["p3"]=$inp_answer3;
+                                echo "<script>alert('Respostas atualizadas com sucesso!');</script>";
+                                echo "<script>window.location.replace('http://".$serv."src/php/perfil');</script>";
+                            }else{
+                                echo "<script>alert('Não foi possivel atualizar');</script>";
+                            }
+                        }
+                    ?>
+                 </div>
+              
+                </div>
             </div>
     </div>
         

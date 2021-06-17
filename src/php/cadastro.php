@@ -111,6 +111,9 @@
           session_start();
           //Para a página de projetos
             $_SESSION["id_user"]=$row_info["ID_USUARIO"];
+            $_SESSION["p1"]=$row_info["FIRST_SCHOOL"];
+            $_SESSION["p2"]=$row_info["BEST_FRIEND"];
+            $_SESSION["p3"]=$row_info["MOM"];
 
          echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
 

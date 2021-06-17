@@ -15,12 +15,12 @@ $(document).ready(function(){
         $("#apresent").hide();
         $("#proj_exc").show();
     })
-//Exibir tela de tickets
-    // $("#btn_ticket").click(function(){
-    //     $(".ata_select").hide();
-    //     $("#apresent").hide();
-    //     $("#ticket").show();
-    // })
+//Exibir tela de segurança
+    $("#btn_security").click(function(){
+        $(".ata_select").hide();
+        $("#apresent").hide();
+        $("#security").show();
+    })
 
     //Exibir valor input senha atual
     $("#show_pass").click(function(){
