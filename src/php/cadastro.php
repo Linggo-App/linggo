@@ -36,11 +36,11 @@
                                     
                                     <input type="email" name="login-email" placeholder="Email" maxlength="45" required>
                                     <input type="password" name="login-senha" placeholder="Senha" required >
+                                    <a href="./rec_senha.php" target="_blank" style="display: block; padding:20px 0px;">Esqueci a senha</a>
                                     <label for="log" class="form_btn btn_reg" id="btn_log">
                                        <input type="submit" id="log" name="login" value="" style="display:none;">
                                          <span class="bg"></span>
                                           <p>Login</p>
-
                                      </label>
                                     <!-- <input type="submit" name="login" value="Logar"> -->
                                 </td>
@@ -64,6 +64,9 @@
                                 <td>
                                     <input type="text" name="register-nome" placeholder="Apelido*" minlength="6" maxlength="45" required>
                                     <input type="email" class="email" name="register-email" placeholder="E-mail*" maxlength="45" required><span class="validation">Teste</span>
+                                    <input type="text" id="first_school" name="first_school" placeholder="Primeira escola em que estudou*" required>
+                                    <input type="text"  id="bf" name="bf" placeholder="Nome do Melhor Amigo*" required>
+                                    <input type="text"  id="mom" name="mom" placeholder="Nome da mãe*" required>
                                     <input type="password" class="senha" id="senha" name="register-senha" placeholder="Senha*" required>
                                     <input type="password" class="senha" id="c_senha" name="register-conf-senha" placeholder="Confirmar senha*" required><span class="validation">Teste</span>
                 
@@ -108,6 +111,9 @@
           session_start();
           //Para a página de projetos
             $_SESSION["id_user"]=$row_info["ID_USUARIO"];
+            $_SESSION["p1"]=$row_info["FIRST_SCHOOL"];
+            $_SESSION["p2"]=$row_info["BEST_FRIEND"];
+            $_SESSION["p3"]=$row_info["MOM"];
 
          echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
 
@@ -133,6 +139,9 @@
     
         $nick=$_POST["register-nome"];
         $email=$_POST["register-email"];
+        $first_school=$_POST["first_school"];
+        $bf=$_POST["bf"];
+        $mom=$_POST["mom"];
         $password=md5($_POST["register-senha"]);
 
         $sql_ver="SELECT EMAIL FROM usuarios WHERE EMAIL='$email'";
@@ -144,7 +153,7 @@
         }else{
 
 
-        $sql="INSERT INTO usuarios (ID_USUARIO,APELIDO,EMAIL,SENHA) VALUES (null,'$nick','$email','$password')";
+        $sql="INSERT INTO usuarios (ID_USUARIO,APELIDO,EMAIL,SENHA,FIRST_SCHOOL,BEST_FRIEND,MOM) VALUES (null,'$nick','$email','$password','$first_school','$bf','$mom')";
         $res=mysqli_query($con,$sql);
 
         if($res){
