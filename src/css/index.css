@@ -1,308 +1,344 @@
-body{
-    width: 100%;
-    overflow-x: hidden;
-}
-
-.container_index{
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.container_index a{
-    text-decoration: none;
-    color: white;
-}
-
-.container_index img{
-    width: auto;
-    height: 50vh;
-}
-
-.btn-primary a:hover{
-    font-size: 0.9em;
-}
-
-.btn-primary{
-     background:#f49236; 
-     border: 1px solid #f39339;
-     margin:10px;
-     padding:15px;
-     border-radius:12px;
-     color: white;
-     cursor: pointer;
-}
-
-
-[class*="container_"]{
-    width: 100%;
-    /* padding:20px; */
-    word-break: break-all;
-    margin-top: 0px;
-    padding: 30px;
-    overflow:hidden;
-}
-
-
-
-
-[class*="container_1"]{
-    background: #5b5ca8;
-    color: white;
-}
-
-
-[class*="container_2"]{
-    background: white ;
-    color: #5b5ca8;
-}
-
-
-.title{
-    text-align: center;
-    font-weight: bold;
-}
-
-.text{
-    word-break: keep-all;
-    padding: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-[class*="container_"] p{
-    margin-top: 10px;
-    font-size: 1.1em;
-}
-
-
-/* #sobre .text{
-    margin-top: 30px;
-} */
-
-
-.cards{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-
-.card{
-    background: #f49236;
-    color: white;
-    width: 250px;
-    height: 400px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    word-break: break-all;
-    transition: all 2s;
-    position: relative;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.63);
-    margin-top: 50px;
-}
-
-.card .img{
-    min-width: 100px;
-   min-height: 100px;
-    border: 1px solid white;
-    border-radius: 100%;
-    transform: scale(1.5) translateY(-80%);
-    transition: all .5s;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    top:50%;
-}
-
-.img img{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.card .card_info{
-  transform: translateY(1000px);
-  transition: transform .5s;
-  transition-timing-function: ease-in-out;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-top:10px;
-}
-
-.card_info h2{
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-
-.card:hover .card_info{
-  transform: translateY(0px);
-  
-}
-
-.card:hover .img{
-    transform:scale(1);
-    top:0;
-}
-
-details{
-    background: #f49236;
-    border-radius: 15px;
-    margin-top: 20px;
-   
-}
-
-[class*='prints_']{
-    width: 100%;
-    max-width: 960px;
-    display: flex;
-    background: #f49236;
-    margin: 50px auto;
-    justify-content: center;
-    align-items: center;
-}
-
-.prints_1{
-    flex-direction: row;
-}
-.prints_2{
-    flex-direction: row-reverse;
-}
-
-.print{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-.print img{
-    width: 100%;
-    height: 100%;
-    max-width: 960px;
-    max-height: 600px;
-    object-fit: cover;
-    object-position: center;
-}
-
-[class*='prints_'] .text{
-    width: 50%;
-    margin:0 20px;
-}
-
-
-
-.chaves{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    
-}
-
-.chave{
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    background: #f49236;
-    color: white;
-    padding: 20px;
-    margin-top: 50px;
-
-}
-
-.chave h2{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1.9em;
-}
-
-#cadastre-se{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#cadastre-se h2{
-    text-align: center;
-    /* font-size: 2em; */
-}
-
-#cadastre-se a{
-    text-decoration: none;
-    color: white;
-    background-color: #f49236 !important;
-    display: block;
-    padding: 20px;
-    flex-grow: 1;
-}
-@media(max-width:680px){ 
-
-    .cards{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .cards .card + .card{
-        margin-top:50px;
-    }
-    
-    .chaves{
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .chaves .chave + .chave{
-        margin-top: 50px;
-    }
-
-    #marketing{
-        padding: 0 !important;
-    }
-
-    #marketing .title{
-        font-size: 1.5em;
-    }
-
-    [class*="container_"]{
-        margin-top: 50px;
-    }
-
-    [class*="prints_"]{
-       /* flex-direction: column; */
-       flex-wrap: wrap;
-    }
-
-
-[class*="prints_"] .text{
-    width: 100% !important
-}
-
-
-    
-}
-
-@media(max-width:900px){
-
-   
-   
-}
-
+body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/*configura a tela de apresentação da tela home, ocupando o 100% da tela e os itens felxiveis em direção de coluna alinhados no centro*/
+.container_index{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/*resetando configurações padrões do link e aplicando um color white*/
+.container_index a{
+    text-decoration: none;
+    color: white;
+}
+
+/*aplicando uma altura de 50vh (metade do seu tamanho original) e width auto para não perder a qualidade*/
+.container_index img{
+    width: auto;
+    height: 50vh;
+}
+
+/*efeito hover para o botão central, o link diminui o font-size*/
+.btn-primary a:hover{
+    font-size: 0.9em;
+}
+
+/*configurando o btn-primary para um background laranja, uma borda laranja um pouco mais fraca, uma margin de 10px para todos os lados e um espaçamento interno de 10px, além de um cursor pointer*/
+.btn-primary{
+     background:#f49236; 
+     border: 1px solid #f39339;
+     margin:10px;
+     padding:15px;
+     border-radius:12px;
+     color: white;
+     cursor: pointer;
+}
+
+/*configuração geral para todos os containers da página, com largura de 100%, espaçamento interno 30px e word-break para quebrar as linhas quando for necessário*/
+[class*="container_"]{
+    width: 100%;
+    /* padding:20px; */
+    word-break: break-all;
+    margin-top: 0px;
+    padding: 30px;
+    overflow:hidden;
+}
+
+
+
+/*definindo um padrão oara os containers, esse adquire um background azul e cor de letras branco*/
+[class*="container_1"]{
+    background: #5b5ca8;
+    color: white;
+}
+
+/*o container_2 adquire o background branco e cor em azul*/
+[class*="container_2"]{
+    background: white ;
+    color: #5b5ca8;
+}
+
+/*configurações para os titulos, alinhando eles ao centro e aplicando um negrito para destacá-los*/
+.title{
+    text-align: center;
+    font-weight: bold;
+}
+
+/*configurações para a class text, com tamanho da font 1.2em, negrito e word-break keep all para quebras as palavras inteira na quebra de linhas quando for necessário*/
+.text{
+    word-break: keep-all;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/*configurando os paragrafos dentro dos containers, 10px de distancia do topo e tamanho da fonte 1.1em*/
+[class*="container_"] p{
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+
+/* #sobre .text{
+    margin-top: 30px;
+} */
+
+/*container dos cards, largura de 100%, itens flexives com quebra de linha quando necessário e space-around para adquirir espaços iguais entre seus itens*/
+.cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+/*configuração dos cards, background laranja, cor de etxtos em branco, flex-direction column e itens alinhandos no centro*/
+.card{
+    background: #f49236;
+    color: white;
+    width: 250px;
+    height: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    word-break: break-all;
+    transition: all 2s;
+    position: relative;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.63);
+    margin-top: 50px;
+}
+
+/*configuração das imagens dentro dos cards, valores iguais de altura e largura para poder arredondar com border-radius 100%, scala de 1.5 para aumentar um pouco seu tamanho e transition all para todas as animações*/
+.card .img{
+    min-width: 100px;
+   min-height: 100px;
+    border: 1px solid white;
+    border-radius: 100%;
+    transform: scale(1.5) translateY(-80%);
+    transition: all .5s;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    top:50%;
+}
+
+/*configuração de img, posição absoluta para flutuar dentro dos cards, tamanho de 100% para a imagem ocupar inteiramente o container das img*/
+.img img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*configurações das informações no cards, translate 1000 para ficar escondido inicialmente, transição para animar os translate, display flex para alinhar os textos ao centro e margin top para distanciar 10px do topo*/
+.card .card_info{
+  transform: translateY(1000px);
+  transition: transform .5s;
+  transition-timing-function: ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top:10px;
+}
+
+/*configurando o titulo do card, com negrito para destacar*/
+.card_info h2{
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/*hover para trazer as informações do card*/
+.card:hover .card_info{
+  transform: translateY(0px);
+  
+}
+
+/*container img voltando ao normal durante o hover*/
+.card:hover .img{
+    transform:scale(1);
+    top:0;
+}
+
+/*configurações para o deteails*, background laranja, borda arrendondada de 15px e margin de 20 px de distancia um do outro*/
+details{
+    background: #f49236;
+    border-radius: 15px;
+    margin-top: 20px;
+   
+}
+
+/*configurações para prints, tamanho de 100%, display flex para alinhar as imagens no centro e margin de 50px do topo e do bottom*/
+[class*='prints_']{
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    background: #f49236;
+    margin: 50px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+/*deixar a primeira coluna em uma direção*/
+.prints_1{
+    flex-direction: row;
+}
+
+/*print 2 deixa na direção inversa*/
+.prints_2{
+    flex-direction: row-reverse;
+}
+
+/*organizando as imagens dentro do container, display flex para alinhar ao centro*/
+.print{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/*imagem com o tamanho 100% do container*/
+.print img{
+    width: 100%;
+    height: 100%;
+    max-width: 960px;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*texto para classe print, largura de 50% e margin de 20px laterais*/
+[class*='prints_'] .text{
+    width: 50%;
+    margin:0 20px;
+}
+
+
+/*configurações para container de chaves, flexivel com itens com espaçamento iguais e qubram linhas quando necessário*/
+.chaves{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+/*configuração padrão da chave, tamanho igual para se tornar um quadrado, 50px de distancia do topo background laranja e cor de texto branco*/
+.chave{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background: #f49236;
+    color: white;
+    padding: 20px;
+    margin-top: 50px;
+
+}
+
+/*configurações especificas para titulo das palavras chaves e tamanho de font 1.9 em*/
+.chave h2{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.9em;
+}
+
+/*container de cadastro, alinhando o link ao centro*/
+#cadastre-se{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*o h2 dentro link sendo alinhando ao centro*/
+#cadastre-se h2{
+    text-align: center;
+    /* font-size: 2em; */
+}
+
+/*link com cor laranja pegando 100% do container e display block para dar uma area maior de click*/
+#cadastre-se a{
+    text-decoration: none;
+    color: white;
+    background-color: #f49236 !important;
+    display: block;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+/*tela de smartphones*/
+@media(max-width:680px){ 
+/*container dos cards assume a direção de coluna*/
+    .cards{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+/*margin de topo para separar os cards*/
+    .cards .card + .card{
+        margin-top:50px;
+    }
+    
+    /*deixando as palavras chaves em coluna, um em baixo do outro*/
+    .chaves{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+/*margin de topo para separar*/
+    .chaves .chave + .chave{
+        margin-top: 50px;
+    }
+
+/*zerando os espaçamento interno das palavras chaves*/
+    #marketing{
+        padding: 0 !important;
+    }
+
+/*aumentando o titulo do container*/
+    #marketing .title{
+        font-size: 1.5em;
+    }
+
+/*todos os containers adquirem margin de 50px do topo*/
+    [class*="container_"]{
+        margin-top: 50px;
+    }
+
+/*os prints ficam com flex-wrap para quebrar quando necessário*/
+    [class*="prints_"]{
+       /* flex-direction: column; */
+       flex-wrap: wrap;
+    }
+
+/*todos os textos dos prints, assumem largura de 100%*/
+[class*="prints_"] .text{
+    width: 100% !important
+}
+
+
+    
+}
+
+@media(max-width:900px){
+
+   
+   
+}
+

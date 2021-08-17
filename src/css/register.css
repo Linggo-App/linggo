@@ -1,88 +1,90 @@
 /* #4527a0 */
 
+/*
+    Define que todos os elementos "#login-register-page, form, table, #login-container, 
+    #register-container, .title-login-register", teram um comprimento de 100%
+*/
 #login-register-page, form, table, #login-container, 
 #register-container, .title-login-register{ width: 100%; }
 
+
 #login-register-page{
-    height: 100%;
-    display: flex;
-    overflow: hidden;
-    /* position: absolute; */
-    align-items: center;
-    justify-content: center; 
+    height: 100%; /* Define a altura para ocupar 100% */
+    display: flex; /* Define o elemento como flexível */
+    overflow: hidden; /* Defina que todo elemento que transbordar será escondido */
+    align-items: center; /* Alinha os elementos verticalmente */
+    justify-content: center; /* Alinha os elementos horizontalmente */
 }
 
 #align-form{
-    margin: 5rem;
-    padding: 25px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 5px;
-    background-color: #fff;
-    border: 1px solid #dadce0;
+    margin: 5rem; /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
+    padding: 25px; /* Define um preenchimento de topo,fundo,direta e esqueda de 25px */
+    display: flex; /* Define o elemento como flexível */
+    justify-content: center; /* Alinha os elementos horizontalemnte */
+    overflow: hidden; /* Defina que todo elemento que transbordar será escondido */
+    border-radius: 5px; /* Adiciona um arredondamento na borda de 5px */
+    background-color: #fff; /* Define cor de fundo */
+    border: 1px solid #dadce0; /* Define uma borda solida, com 1px de altura */
+    /* Adiciona uma sombra ao elemento */
     box-shadow: 
         0 1px 2px 0 rgba(60,64,67,0.302), 
         0 2px 6px 2px rgba(60,64,67,0.149);
 }
 
-table{ border-spacing: 15px; }
+table{ border-spacing: 15px; } /* Adiciona um espaçamento das bordas de 15px */
 
-#table-register{ border-left: 1px solid #d1d3d6; }
+#table-register{ border-left: 1px solid #d1d3d6; } /* Adiciona uma borda á esquerda solida de 1px de altura */
 
+
+/*
+    Define oa elementos "#register-container, #login-container" com posição relativa,
+    borda solida de 1px de altura e arredondamento da borda de 5px.
+*/
 #register-container, #login-container{
-    position: relative;
+    position: relative; 
     border: 1px solid;
     border-radius: 5px;
 }
 
 .title-login-register p:first-child{
-    font-weight: bold;
-    font-size: 1.5em;
-    text-align: center;
-    color: #5f6368;
+    font-weight: bold; /* Define texto como negríto */
+    font-size: 1.5em;  /* Define tamanho da fonte para 1.5em */
+    text-align: center; /* Alinha o texto ao centro  */
+    color: #5f6368; /* Adiciona cor ao texto */
 }
 
 .title-login-register p{ 
-    color: #3c4043;
-    margin: 5px 0px;
-    text-align: center;
+    color: #3c4043b8; /* Adiciona cor ao texto */
+    margin: 5px 0px; /* Adiciona margin ao topo e fundo de 5px */
+    text-align: center; /* Alinha o texto ao centro1 */
+    font-weight: bold; /* Define o texto como negríto */
+    font-size: 0.9em; /* Defina tamanho da fonte para 0.9em */
  }
 
 .title-login-register{
-    padding: 10px;
-    border-radius: 5px 5px 0px 0px;
-    background-color: #fff;
+    padding: 10px; /* Adiciona um preenchimento de topo,fundo,direita e esquerda de 10px */
+    border-radius: 5px 5px 0px 0px; /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
+    background-color: #fff; /* Adiciona cor de fundo */
 }
 
 tr:nth-child(2) > td {
-    border-radius: 0px 0px 5px 5px;
-    border-top: 0px;
-    padding: 15px;
+    border-radius: 0px 0px 5px 5px; /* Adiciona um arredandamento para as boradas fundo esquerda e fundo direita de 5px */
+    border-top: 0px; /* Define a borda do topo como 0 */
+    padding: 15px; /* Adiciona preenchimento de 15px para o topo,fundo,direita e esquerda */
 }
 
 input{
-    width: 100%;
-    height: 50px;
-    padding: 20px;
+    width: 100%; /* Define um comprimento de 100% */
+    height: 50px; /* Define uma altura de 50px */
+    padding: 20px; /* Adiciona preenchimento de 20px para o topo,fundo,direita e esquerda */
     margin: 5px 0px 5px 0px;
     /* border-radius: 5px; */
-    border: 1px solid #d1d2d4;
-    outline: none;
+    border: 1px solid #d1d2d4; /* Adiciona borda solida de 1px de altura */
+    outline: none;  /* Remove o contorno do texto */
 }
 
- /* input[type="submit"]{
-    color: white;
-    cursor: pointer;
-    font-size: 1.1em;
-    font-weight: bold;
-    border-radius: 5px;
-    background-color: #4527a0;
-    box-shadow: 1px 1px 1px 1px #333896;
-    border: none;
-} */
 .btn_reg{
-    width: 100% !important;
+    width: 100% !important; 
     font-size: 1.1em;
     font-weight: bold;
     border-radius: 5px !important;
@@ -114,14 +116,22 @@ input{
 .validation.invalid{
     color: crimson;
 }
+
 /* Responsividade Celular e Tablet */
 @media screen and (min-width:300px) and (max-width:800px) {
+    /* 
+        Adiciona uma margin de 15px para topo,fundo,direita e esquerda e um preenchimento de 5px para ambos os lados, 
+        Por fim define os elementos em formato de coluna.
+    */
     #align-form{ 
         margin: 15px;
         padding: 5px;
         flex-direction: column;
      }
 
+    /*
+        Define os alinhametos, posições e display com "não setado"
+    */
      #login-register-page{
          display: unset;
          position: unset;
@@ -129,5 +139,8 @@ input{
          justify-content: unset;
     }
 
+    /*
+        Define borda á esquerda como "não setada" e borda ao topo solida de 1px de altura.
+    */
      #table-register{ border-left: unset; border-top: 1px solid gray; }
 }

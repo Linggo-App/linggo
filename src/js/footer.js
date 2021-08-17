@@ -1,68 +1,67 @@
-/* #4527a0 */
+/*********************************************************************************/
+// A palavra "desenvolvedores" foi tracada por dev's e "desenvolvedor" por dev. //
+/*******************************************************************************/
 
-/* Creators informations */
+
+/* Informações do GitHub dos dev's */
 const creatorsNames = [
     "Caio Valdoveste", 
     "Leticia Smidt", 
-    "Rafael Santos", 
-    "Ricardo Felix"
+    "Rafael Santos"
 ];
 
 const creatorsgitImg = [
     "https://avatars2.githubusercontent.com/u/62577482?s=460&u=9cd418ac4c3ff1b1817567f32848c642fc5c4976&v=4",
     "https://avatars.githubusercontent.com/u/71861617?v=4",
-    "https://avatars0.githubusercontent.com/u/64908399?s=460&u=cb6bc7163c5cbf01cbe06bca0237975c0d5e2928&v=4",
-    "https://avatars3.githubusercontent.com/u/68129713?s=460&u=6a039f994ea8301c13882d58a490b975eece3585&v=4"
+    "https://avatars0.githubusercontent.com/u/64908399?s=460&u=cb6bc7163c5cbf01cbe06bca0237975c0d5e2928&v=4"
 ];
 
 const creatorsGit = [
     "https://github.com/Valdoveste", 
     "https://github.com/leticia-cyber", 
-    "https://github.com/RafaelSantos1234", 
-    "https://github.com/technical-student-Ricardo-Felix"
+    "https://github.com/RafaelSantos1234"
 ];
 
-const containerPersonal = document.getElementById("git-collaborators-list");
+const containerPersonal = document.getElementById("git-collaborators-list"); // Variável que armazena o elemnto com id "git-collaborators-list"
 
-var gitUsername, gitAnchor, gitImage, gitLogo; // Git variables
+var gitUsername, gitAnchor, gitImage, gitLogo; // Variáveis para armanezar informações do GitHub dos dev's.
 
-var containerProfile, classProfile, idProfile, contentProfile, imageProfile, nameProfile; // Profile variables
+var containerProfile, classProfile, idProfile, contentProfile, imageProfile, nameProfile; // Variáveis que para armazenar as informaões dos dev's em elemento do HTML.
 
-var checkbox, clock, stateCounter = 0; // Animation variables
+var checkbox, clock, stateCounter = 0; // Variáveis de animação.
 
-for(let i = 0; i < 4; i++){
+
+for (let i = 0; i < 3; i++)
+{
     /* 
-        This code creates all elements 
-        that will be needed, to show all 
-        collaborators of the project. 
+        Cria todos os elementos que serão necessário para 
+        conter as informações dos dev's.
     */
-    containerProfile = document.createElement("div");
-    gitAnchor = document.createElement("a");
-    gitImage = document.createElement("img");
-    gitUsername = document.createElement("p");
+    containerProfile = document.createElement("div"); // Criando elemento div
+    gitAnchor = document.createElement("a"); // Criando elemento anchor
+    gitImage = document.createElement("img"); // Criando elemento img
+    gitUsername = document.createElement("p"); // Criando elemento p
 
-    /* 
-        Setting the hyper-link, image source and 
-        the name of each collaborator.
-    */
-    gitAnchor.href = creatorsGit[i];
-    gitUsername.innerText = creatorsNames[i];
-    gitImage.src = creatorsgitImg[i];
+    gitAnchor.href = creatorsGit[i]; // Adicionando o Link do GitHun dos dev na elemnto com a tag "a"(gitAnchor).
+    gitUsername.innerText = creatorsNames[i]; // Adicionando o Nome dos dev no elemente com a tag "p"(gitUsername).
+    gitImage.src = creatorsgitImg[i]; // Adicionando o imagen dos dev no elemente com a tag "img"(gitImage).
 
-    containerProfile.setAttribute("class", "collaborators");
+    containerProfile.setAttribute("class", "collaborators"); // Atribuindo a classe "collaborators" na tag "div"(containerProfile).
     /* 
-        Here I added id for each element,
-        cuz this will be easier to create 
-        the animations of fade and scale-out & in.
+        Adicionando ID para cada um dos elementos criados anteriormente.
     */
-   for(let k = 0; k < 5; k++){
+   for (let k = 0; k < 4; k++)
+   {
        containerProfile.setAttribute("id", i);   
        gitUsername.setAttribute("id", i); 
        gitAnchor.setAttribute("id", i);   
        gitImage.setAttribute("id", i);  
     }
     
-    /* Inserting the elements in the anchor and the anchor on the container. */
+    /* 
+        Adicionando todos os elementos criados anteriormenete dentro
+        da tag "a"(gitAnchor) e a mesma dentro de "div"(containerPersonal).
+    */
     gitAnchor.appendChild(gitImage);
     gitAnchor.appendChild(gitUsername);
     containerProfile.appendChild(gitAnchor);
@@ -70,34 +69,53 @@ for(let i = 0; i < 4; i++){
     containerPersonal.appendChild(containerProfile);
 }
 
-/* Selecting all the elements I'll need. */
+/* 
+    Selecionando todos os elemento criados no bloco anterior.
+*/
 contentProfile = document.querySelectorAll(".collaborators a");
 classProfile = document.querySelectorAll(".collaborators");
 imageProfile = document.querySelectorAll(".collaborators a img");
 nameProfile = document.querySelectorAll(".collaborators a p");
 
-for(let items of classProfile){
-    items.addEventListener("mouseover", (event) => {
+for (let itemsI of classProfile) // Armazenando todos os "classProfile" em "itemsI".
+{
+    itemsI.addEventListener("mouseover", (event) => { // Adiciona um "ouvinte" do evento de "mouseover" a cada um dos items dentro de "itemsI".
         
-        idProfile = event.target.id; // Catch the id that mouse's over.
+        idProfile = event.target.id; // Captura o id do elemento que mouse do usuário estiver em cima.
 
-        imageProfile[idProfile].style.width="35px";
+        /*
+            Altera o tamanha em comprimento e altura da imagen do desenvolvedor selecionado no momento em 35px.
+        */
+        imageProfile[idProfile].style.width="35px"; 
         imageProfile[idProfile].style.height="35px";
 
-        /* Verify if one of the contentProfile need a display change. */
-        for(let items of contentProfile){
-            items.addEventListener("transitionend", event => {
-                if(items.offsetWidth == 35){
+        /*
+            Este bloco gerencia quando o nome do desenvolvedor deve aparecer.
+        */
+        for(let itemsJ of contentProfile) // Armazenando todos os "classProfile" em "itemsJ".
+        {
+
+            itemsJ.addEventListener("transitionend", event => { // Adiciona um "ouvinte" do evento de "transitionend" a cada um dos items dentro de "itemsJ".
+                /*
+                    Verifica se o "itemsJ.offsetWidth" que informa o tamanho do elemento, 
+                    for igual á 35px, o nome do dev será mantido invisível, se não
+                    será trocado seu estilo de "display:none" para "display:flex".
+                */
+                if (itemsJ.offsetWidth == 35)
+                {
                     nameProfile[idProfile].style.display="none"; 
-                }else if(items.offsetWidth  > 170){ 
+                }else if (itemsJ.offsetWidth  > 170){ 
                     nameProfile[idProfile].style.display="flex";
                 }
             });
 
-            /* While the transition in running the display must be none. */ 
-            items.addEventListener("transitionrun", event => {
-                for(let i = 0; i < 4; i++){
-                    nameProfile[i].style.display="none";
+            /*
+                Este bloco Impede que o nome do dev, apareça enquanto a animação estiver "correndo".
+            */
+            itemsJ.addEventListener("transitionrun", event => { // Adiciona um "ouvinte" do evento de "transitionrun" a cada um dos items dentro de "itemsJ".
+                for(let i = 0; i < 3; i++)
+                {
+                    nameProfile[i].style.display="none"; // Altera o estilo do "nameProfile[i]" para "display:none".
                 } 
             });
             
@@ -106,57 +124,80 @@ for(let items of classProfile){
     });
 }
 
-for(let items of classProfile){
-    items.addEventListener("mouseout", (event) => {
+/*
+    Este bloco gerencia o tamanho dos ícones dos dev's, quando o mouse não está mais em cima do ícone.
+*/
+for(let itemsI of classProfile) // Armazenando todos os "classProfile" em "itemsI".
+{
+    itemsI.addEventListener("mouseout", (event) => { // Adiciona um "ouvinte" do evento de "mouseover" a cada um dos items dentro de "itemsI".
         
-        idProfile = event.target.id; // Catch the id that mouse's over.
+        idProfile = event.target.id; // Captura o id do elemento que mouse do usuário estiver em cima.
 
+        /*
+            Altera o tamanha em comprimento e altura da imagen do desenvolvedor selecionado no momento em 25px.
+        */
         imageProfile[idProfile].style.width="25px"
         imageProfile[idProfile].style.height="25px"
 
     });
 }
 
-checkbox = document.getElementById("checkGit"); 
-checkbox.checked = false;
+checkbox = document.getElementById("checkGit"); // Variável que armazena elemento com a id "checkGit".
+checkbox.checked = false; // Altera o "checkbox" para  false.
 
-gitLogo = document.querySelectorAll("label[for='checkGit'] img")[0]; 
+gitLogo = document.querySelectorAll("label[for='checkGit'] img")[0];  // Variável que armazena elemento com a tag "img"
 
-checkbox.addEventListener("click", (event) => {
+checkbox.addEventListener("click", (event) => { // Adiciona um "ouvinte" do evento de "click" a cada um dos items dentro de "itemsI".
 
-    /* This part just make hover on gitlogo works better. */
+    // Enviando os parametros para a funão que anima a lojo do GitHub.
     gitLogo.addEventListener("mouseout", eventOpacityout => { opacityChanger("0.5"); });
     gitLogo.addEventListener("mouseover", eventOpacityover => { opacityChanger("1"); });
 
+    /*
+        Esta função realiza a animação de opacidade para quando o mouse estiver ou não em cima da logo do GitHub.
+    */
     function opacityChanger(value){
-        if(!event.target.checked && stateCounter == 0){ gitLogo.style.opacity = value; }
+        if (!event.target.checked && stateCounter == 0) 
+            gitLogo.style.opacity = value; 
     }
 
-    if(event.target.checked && stateCounter == 0){
+    /*
+        Esse bloco é responsável por chamar a função que irá exibir ou esconder os ícones do dev's. 
+    */
+    if (event.target.checked && stateCounter == 0)
+    {
         clock = setInterval(animationStart, 500); 
         gitLogo.style.opacity="1";
         animationStart();
-    }else if(!event.target.checked && stateCounter == 4){
+    } else if(!event.target.checked && stateCounter == 3) {
         clock = setInterval(animationEnd, 500);
         animationEnd(); 
     }
 
-    /* Animation scale to 1 of each element. */
-    function animationStart(){
-        if(stateCounter > 3){
+    /* 
+        Este função realiza a animaçõao que exibe todos os ícone dos dev's.
+    */
+    function animationStart()
+    {
+        if (stateCounter > 2)
+        {
             clearInterval(clock);
-        }else{
+        } else {
             contentProfile[stateCounter].style.transform = "scale(1)";
             stateCounter++;
         }
     }
         
-    /* Animation scale to 0 of each element. */
-    function animationEnd(){
-        if(stateCounter <= 0){
+    /* 
+        Este função realiza a animaçõao que escondete todos os ícone dos dev's.
+    */
+    function animationEnd()
+    {
+        if (stateCounter <= 0)
+        {
             clearInterval(clock);
             gitLogo.style.opacity="0.5";
-        }else{
+        } else {
             stateCounter--;
             contentProfile[stateCounter].style.transform = "scale(0)";
         }

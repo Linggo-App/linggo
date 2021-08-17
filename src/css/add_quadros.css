@@ -1,231 +1,260 @@
-/*Tela Principal*/
-.div_consulta{
-    margin-top: 40px;
-    margin-left: 35px;
-}
-.consulta{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 17px;
-    align-items: center;
-}
-/* .div_consulta .titulo{
-
-} */
-.barra_busca{
-    width: 300px;
-    height: 30px;
-    /* border: 1px solid black; */
-    overflow: hidden;
-    background: #f3efef;
-    display: flex;
-    align-items: center;
-}
-.barra_busca input[type="text"]{
-    width: 270px;
-    height:28px ;
-    border: none;
-    outline: none;
-    padding: 5px;
-    background:none;
-}
-.btn_search{
-    cursor: pointer;
-    padding: 5px;
-}
-.consulta select{
-    margin: 10px;
-    background: #f3efef;
-    outline: none;
-    border: none;
-    padding: 5px;
-}
-
-.agendas{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    /* border: 1px solid; */
-    margin:40px 0px;
-    align-items: center;
-}
-.schedules{
-    width: 275px;
-    height: 246px;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-    /* background: #a6e24e; */
-    overflow: hidden;
-    color: white;
-    position: relative;
-    text-decoration: none;
-    word-break: break-all;
-    padding: 5px;
-}
-.create_schedule {
-    background: grey;
-    color: #000;
-}
-.create_schedule i{
-    font-size: 4em;
-}
-.schedules{
-    opacity: 0.9;
-    cursor: pointer;
-}
-.schedules h1{
-    font-size: 2.5em;
-    font-weight: bold;
-}
-.schedules:hover{
-    opacity: 1;
-}
-
-.add_agenda{
-    width: 95%;
-    height: 70vh;
-    /* border: 3px solid #f49236; */
-     border: 3px solid #5b5ca8;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 10px;
-    position: relative;
-}
-
-
-.container_form{
-    border: none;
-    width: 100%;
-}
-.form_part1{
-    transition: transform 0.2s;
-
-}
-.form_part1.active{
-    transform: translateX(-1500px);
-    position: absolute;
-}
-.form_part2{
-    transform: translateX(1500px);
-    transition: transform 0.2s;
-    position: absolute;
-
-}
-.form_part2.active{
-    transform: translateX(0px);
-}
-
-/*formulário de cadastro*/
-.cor{
-    width: 100%;
-    height: 80px;
-    padding: 10px;
-    border-bottom: 1px solid;
-  
-    
-}
-.cor .form_btn p{
-    margin: 0;
-}
-
-.modal_color .form_btn{
-    border:1px solid black;
-    align-self: center;
-    margin-top: 10px;
-    width: 100%;
-}
-
-
-
-.close_color{
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-.color_content{
-    width: 100%;
-    height: auto;
-    border: 1px solid black;
-    margin-top: 5px;
-    display: flex;
-    flex-wrap:wrap;
-    align-items: center;
-    align-self: center;
-    overflow: hidden;
-    background-color: white;
-}
-.color_content span{
-    width: 35px;
-    height: 35px;
-    border: 1px solid black;
-    display: block;
-    margin: 2px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.color_content span::after{
-    content: "✔";
-    display: none;
-}
-
-.color_content label{
-    display: table;
-}
- input[type="radio"]{
-    display: none;
-}
-
-input[type="radio"]:checked ~ span::after{
-    display: block;
-}
- .modal_color{
-    position: fixed;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0);
-    border: 1px solid black;
-    background: white;
-    width: 230px;
-    height: 300px;
-    overflow-y: scroll;
-    z-index: 10;
-    transition: 200ms ease-in-out;  
-    overflow: hidden;
-    padding: 5px;
-    -ms-overflow-style: none; /* IE 11 */
-    scrollbar-width: none; /* Firefox 64 */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-
-
-}
-
- .modal_color.active{
-    transform: translate(-50%,-50%) scale(1);
-}
-
-.schedule_update{
-    color: black;
-    position: absolute;
-    flex-shrink: 1;
-    top: 0;
-    right: 0;
-    font-size: 1.9em;
-}
-.schedules .schedule_update{
-    display: none;
-}
-.schedules:hover .schedule_update{
-    display: block;
-}
+/*Tela Principal*/
+/*.div_consulta{
+    margin-top: 40px;
+    margin-left: 35px;
+}
+.consulta{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 17px;
+    align-items: center;
+}*/
+/* .div_consulta .titulo{
+
+} */
+/*.barra_busca{
+    width: 300px;
+    height: 30px;
+     border: 1px solid black;
+    overflow: hidden;
+    background: #f3efef;
+    display: flex;
+    align-items: center;
+}*/
+/*.barra_busca input[type="text"]{
+    width: 270px;
+    height:28px ;
+    border: none;
+    outline: none;
+    padding: 5px;
+    background:none;
+}
+.btn_search{
+    cursor: pointer;
+    padding: 5px;
+}
+.consulta select{
+    margin: 10px;
+    background: #f3efef;
+    outline: none;
+    border: none;
+    padding: 5px;
+}*/
+
+/*configura o container onde ficam as agendas, deixando os itens dentro dele flexiveis e alinhando verticalmente, além de uma margin de 40px do top e do bottom*/
+.agendas{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /* border: 1px solid; */
+    margin:40px 0px;
+    align-items: center;
+}
+
+/*configurações gerais de todos os projetos criados dinâmicamente, com largura de 275px e altura de 246px para deixar meio retangular, um display flex para alinha os textos que ficarão dentro e uma amrgin de 5px para distanciar um projeto do outro*/
+.schedules{
+    width: 275px;
+    height: 246px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    /* background: #a6e24e; */
+    overflow: hidden;
+    color: white;
+    position: relative;
+    text-decoration: none;
+    word-break: break-all;
+    padding: 5px;
+}
+
+/*configurações especificas para o botão de criação dos projetos, com background grey e color black para diferenciar dos outros projetos criados dinamicamente.*/
+.create_schedule {
+    background: grey;
+    color: #000;
+}
+
+/*aumentando o tamanho do icone de + dentro do botão de criação dos projetos*/
+.create_schedule i{
+    font-size: 4em;
+}
+
+/*adiciona um cursor pointer aos projetos e diminui a opacidade para dar um efeito com hover*/
+.schedules{
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+/*configura o titulo que ficará dentro do projeto, aumenta seu tamanho de fonte e deixando em negrito para ter um destaque*/
+.schedules h1{
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/*aplica o efeito de hover nos projetos aumentando a opacidade para 1*/
+.schedules:hover{
+    opacity: 1;
+}
+
+/*aplica estilo ao formulário de cadastro dos projetos, um width não ocupando toda a tela, com display felx em direção de coluna e space-around para dar espaços iguais para todos os componentes dentro do formulário*/
+.add_agenda{
+    width: 95%;
+    height: 70vh;
+    /* border: 3px solid #f49236; */
+     border: 3px solid #5b5ca8;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    position: relative;
+}
+
+/*um segundo container para o formulário que aplica 100% de largura*/
+.container_form{
+    border: none;
+    width: 100%;
+}
+/*.form_part1{
+    transition: transform 0.2s;
+
+}
+.form_part1.active{
+    transform: translateX(-1500px);
+    position: absolute;
+}
+.form_part2{
+    transform: translateX(1500px);
+    transition: transform 0.2s;
+    position: absolute;
+
+}
+.form_part2.active{
+    transform: translateX(0px);
+}*/
+
+/*aplica uma configuração para o container de cor, com largura 100%, um espaçamento interno de 10px e uma borda no bottom para separar o cotainer do input de titulo que fica logo a baixo*/
+.cor{
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border-bottom: 1px solid;
+  
+    
+}
+
+/*zera as margin do p no form_btn exclusivamente dos que estão dentro do container cor*/
+.cor .form_btn p{
+    margin: 0;
+}
+
+/*aplica uma configuração diferente para o form_btn encontrado dentro do modal_color, alinhando ele ao centro e aumentando sua largura para 100%*/
+.modal_color .form_btn{
+    border:1px solid black;
+    align-self: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+/*aumenta o tamanho do icone dentro do botão para fechar o modal_color e adiciona o cursor pointer*/
+.close_color{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/*organiza as cores dentro do modal, adicionando um flex-wrap para que os itens quebrem as linhas quando for necessário, além de alinha-los ao centro e impedir que eles saiam do container com overflow hidden*/
+.color_content{
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+    align-self: center;
+    overflow: hidden;
+    background-color: white;
+}
+
+/*configurações para os blocos de cores, altura e largura iguais para formar um quadrado, border black de 1px para destacá-los e um display block para assumir um formato de bloco e um cursor pointer*/
+.color_content span{
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    display: block;
+    margin: 2px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/*adicionando uma pseudo-classe after aos spans, com um simbolo de checked que inicialmente fica invisivel na página*/
+.color_content span::after{
+    content: "✔";
+    display: none;
+}
+
+/*um label que fica em volta do span para acionar o input radio*/
+.color_content label{
+    display: table;
+}
+
+/*os inputs radio ficam invisiveis na página*/
+ input[type="radio"]{
+    display: none;
+}
+
+/*quando o input radio é checkado, a pseudo-classe do span muda para display block e assim aparecendo na página*/
+input[type="radio"]:checked ~ span::after{
+    display: block;
+}
+
+/*configuração para o modal color, igual ao modal principal que abre o formulário, apenas com uma diferença de tamanho*/
+ .modal_color{
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    border: 1px solid black;
+    background: white;
+    width: 230px;
+    height: 300px;
+    overflow-y: scroll;
+    z-index: 10;
+    transition: 200ms ease-in-out;  
+    overflow: hidden;
+    padding: 5px;
+    -ms-overflow-style: none; /* IE 11 */
+    scrollbar-width: none; /* Firefox 64 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+/*quando ativa o modal color, sua scala se altera para 1 e assim se tornando visivel na página*/
+ .modal_color.active{
+    transform: translate(-50%,-50%) scale(1);
+}
+
+
+/*.schedule_update{
+    color: black;
+    position: absolute;
+    flex-shrink: 1;
+    top: 0;
+    right: 0;
+    font-size: 1.9em;
+}
+.schedules .schedule_update{
+    display: none;
+}
+.schedules:hover .schedule_update{
+    display: block;
+}*/
