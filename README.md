@@ -23,8 +23,13 @@
 <hr>
 
 <p>
-  Linggo App é um projeto criado para ser um organizador de tarefas, seu objetivo é ajudar
-  aspessoas a organizarem suas rotinas e facilitar a realização de suas tarefas. Projeto de conclusão do curso de Técnico em TI, oferecido pela instituição de ensino EME Prof.ª Alcina Dantas Feijão.
+  
+Projeto de conclusão do curso de Técnico em TI, oferecido pela instituição de ensino EME Prof.ª Alcina Dantas Feijão.  
+  
+Chegando ao final de um curso, é necessário mostrar todo o conhecimento adquirido durante a jornada, desenvolvemos um projeto para testar nossas habilidades e mostrar o que nós aprendemos. O projeto Linggo App, foi desenvolvido com o intuito de ser um organizador de tarefas com base no sistema de organização kanban, um sistema utilizando pela maioria das empresas para melhorar a produtividade e a organização das tarefas, nessa aplicação o sistema foi mais simplificado para ser utilizado por qualquer pessoa. 
+  
+Linggo é uma palavra Filipina que significa “Semana”, uma característica que descreve nosso site, é um projeto que visa organizar a semana do usuário, utilizando o método kanban, ajudando a deixar a semana mais produtiva e mais organizada.
+  
 </p>
 
 <h2>Telas APP</h2>
