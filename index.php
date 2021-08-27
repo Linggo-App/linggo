@@ -97,18 +97,7 @@
                     <p><li>Desenvolvedor do App</li></p>
                     <p><li>Desenvolvedor full stack</li></p>
                 </div>
-            </div>
-            <div class="card">
-                <div class="img">
-                <img src="https://avatars.githubusercontent.com/u/71861617?v=4">
-                </div>
-                <div class="card_info">
-                    <h2>Leticia Smidt</h2>
-                    <p><li>Redatora</li></p> 
-                    <p><li>Desenvolvedor front-end</li></p>
-                    <p><li>Assistente de Designer</li></p>
-                </div>
-            </div>
+            </div>       
             <div class="card">
                 <div class="img">
                   <img src="https://avatars0.githubusercontent.com/u/64908399?s=460&u=cb6bc7163c5cbf01cbe06bca0237975c0d5e2928&v=4">
@@ -118,17 +107,6 @@
                     <p><li>Desenvolvedor full stack</li></p>
                     <p><li>Assistente de Designer</li></p>
                     <p><li>Redator</li></p>    
-                </div>
-            </div>
-            <div class="card">
-                <div class="img">
-                <img src="https://avatars3.githubusercontent.com/u/68129713?s=460&u=6a039f994ea8301c13882d58a490b975eece3585&v=4">
-                </div>
-                <div class="card_info">
-                    <h2>Ricardo Felix</h2>
-                    <p><li>Designer</li></p>
-                    <p><li>Redator</li></p>  
-                    <p><li>Ajudante geral</li></p>
                 </div>
             </div>
         </div>
