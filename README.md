@@ -29,11 +29,15 @@ Projeto de conclusão do curso de Técnico em TI, oferecido pela instituição d
 Chegando ao final de um curso, é necessário mostrar todo o conhecimento adquirido durante a jornada, desenvolvemos um projeto para testar nossas habilidades e mostrar o que nós aprendemos. O projeto Linggo App, foi desenvolvido com o intuito de ser um organizador de tarefas com base no sistema de organização kanban, um sistema utilizando pela maioria das empresas para melhorar a produtividade e a organização das tarefas, nessa aplicação o sistema foi mais simplificado para ser utilizado por qualquer pessoa. 
   
 Linggo é uma palavra Filipina que significa “Semana”, uma característica que descreve nosso site, é um projeto que visa organizar a semana do usuário, utilizando o método kanban, ajudando a deixar a semana mais produtiva e mais organizada.
-  
 </p>
-
 <h2>Telas APP</h2>
 <h4>Aplicação desenvolvida com o objetivo de visualização das inforamções da página.</h4>
 <p align="center">
-  <img src="https://i.imgur.com/UFYVp1u.png" width="950px">
+  <img src="https://i.imgur.com/UFYVp1u.png" width="930px">
+</p>
+<h2>LinggoAPP APK</h2>
+<p>
+  
+  [LinggoAPP.zip](https://github.com/Linggo-App/linggo/files/7069399/LinggoAPP.zip)
+
 </p>
