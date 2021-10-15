@@ -1,213 +1,254 @@
-.container_perfil{
-    width: 100%;
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas:'atalhos atalho_selec';
-    grid-column-gap:10px;
-}
-
-.controls_perfil{
-    grid-area: atalhos;
-    display: grid;
-    grid-template-rows: 0.5fr 1fr;
-    grid-template-areas: 'dados'
-                        'caminhos';
-}
-
-.dados_user{
-    grid-area: dados;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.dados_user h3{
-    font-size: 0.9em;
-    opacity: 0.5;
-}
-
-.atalhos{
-    grid-area:caminhos;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.btn_atalho{
-    padding: 10px 100px;
-    margin-top: 20px;
-    /* color: white;
-    background: black; */
-    cursor: pointer;
-}
-
-.container_atalho{
-    grid-area:atalho_selec;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.logs{
-    padding: 10px 100px;
-    margin-top: 20px;
-    margin-left: 45px;
-    background: #f49236  !important;
-    border: none !important;
-    color:white;
-    font-size: 1em !important;
-    cursor: pointer;
-    box-shadow: none !important;
-}
-/* .container_atalho .ata_select{
-    height: 100px;
-} */
-
-.agendas{
-    width: 90% !important;
-    height: 70vh !important;
-    /* overflow-y:auto; */
-    align-items: flex-start !important;
-    
-}
-.ata_select{
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.21fr 1fr;
-    grid-template-areas: 
-    'titulo'
-    'tela';
-}
-.container_atalho .screen_title{
-    grid-area: titulo;
-    align-self: end;
-    /* margin-top: 120px;
-    position: relative; */
-}
-.screen_exibe{
-    grid-area: tela;
-    width: 90% ;
-    height: 70vh ;
-    overflow-y:auto;
-}
-
-.screen_exibe::-webkit-scrollbar {
-    border-right: 1px solid black;
-    width: 5px;
-  }
-
-  .screen_exibe::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.418);
-    
-  }
-.perfil_edit .input{
-    outline: none;
-}
-/* .perfil_edit .input{
-    outline: none;
-} */
-.perfil_edit{
-    margin-top: 30px;
-}
-
-.perfil_edit label{
-    user-select: none;
-}
-
-[class*="fa-eye"]{
-    color: #5b5ca8;
-    font-size: 1.2em;
-}
-
-.input{
-    width: 50% !important;
-}
-
-.pass_view{
-    font-size: 0.8em;
-    color: #5b5ca8;
-    user-select: none;
-}
-/*cel*/
-@media(max-width:680px){
-    .container_perfil{
-        grid-template-columns: 1fr;
-        grid-template-areas:
-        'atalhos'
-        'atalho_selec';
-    }
-
-    .controls_perfil{
-        grid-template-rows: 1fr 1fr;
-    }
-
-    .logs{
-        margin-left:0;
-    }
-
-    .atalhos{
-        flex-direction: row;
-        overflow-x: auto;
-        margin-top: 20px;
-        position: relative;
-        padding: 10px;
-    }
-
-    .atalhos::before{
-        content: "\2794";
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-right: 10px;
-        color: rgba(0,0,0,.5);
-        animation: scroll-x .5s ease-in 0s infinite alternate;
-    }
-
-    @keyframes scroll-x {
-        from{
-            transform:translateX(0px);
-        }
-        to{
-            transform:translateX(10px);
-        }
-    }
-
-   .controls_perfil .form_btn{
-        margin-left: 10px;
-    }
-
-    .container_atalho div{
-        justify-content: flex-start;
-        margin-top: 50px;
-        padding: 5px;
-        /* text-align: center; */
-    }
-    .screen_title{
-        text-align: center;
-    }
-
-    [class*="fa-eye"]{
-        margin-top: 10px;
-    }
-
-    .agendas{
-        flex-direction: row !important;
-    }
-
-    .input{
-        width: 100% !important;
-    }
-
-    .screen_exibe{
-        margin: auto;
-    }
-
-}
+/*definindo o layout da página com grid, atalho tomando uma coluna e atalhos_selec pegando a maior coluna*/
+.container_perfil{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:'atalhos atalho_selec';
+    grid-column-gap:10px;
+}
+
+/*configurando atalhos para ser divido em uma coluna e duas linhas, os dados na parte de cima e caminhos na parte de baixo*/
+.controls_perfil{
+    grid-area: atalhos;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas: 'dados'
+                        'caminhos';
+}
+
+/*dados do usuário, recebe a area de cima da coluna e display flex para alinhar os textos*/
+.dados_user{
+    grid-area: dados;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*configuração para o email do usuário, menor que seu username sem opacidade para não se destacar*/
+.dados_user h3{
+    font-size: 0.9em;
+    opacity: 0.5;
+}
+
+/*container onde ficam os botões, e display flex para alinhar-los ao centro*/
+.atalhos{
+    grid-area:caminhos;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*botões de atalho, 20px de distancia um do outro e padding de 10px verticais e 100px laterais*/
+.btn_atalho{
+    padding: 10px 100px;
+    margin-top: 20px;
+    /* color: white;
+    background: black; */
+    cursor: pointer;
+}
+
+/*container onde vai aparecer as telas escolhidas, ocupando 100% da tela e display flex para posicionar as telas no centro*/
+.container_atalho{
+    grid-area:atalho_selec;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*botão de logout, junto com o form_btn, porém aplicando uma cor diferente, um font-size especifico e sem borda por conta de ser um input type submit*/
+.logs{
+    /*padding: 10px 100px;*/
+    margin-top: 20px;
+    /*margin-left: 45px;*/
+    background: #f49236  !important;
+    border: none !important;
+    color:white;
+    font-size: 1em !important;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+/* .container_atalho .ata_select{
+    height: 100px;
+} */
+
+/*configurações diferentes para container de agendas na página de perfil*/
+.agendas{
+    width: 90% !important;
+    height: 70vh !important;
+    /* overflow-y:auto; */
+    align-items: flex-start !important;
+    
+}
+
+/*defindo mais uma grid area para atalhos selecionados, separando o titulo e a tela em sí*/
+.ata_select{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.21fr 1fr;
+    grid-template-areas: 
+    'titulo'
+    'tela';
+}
+
+/*titulo da tela, apenas alinha ao fim do container*/
+.container_atalho .screen_title{
+    grid-area: titulo;
+    align-self: end;
+    /* margin-top: 120px;
+    position: relative; */
+}
+
+/*screen a ser exibido, não tomando 100% da tela e overflow verticial no automatico, só vai scrollar quando necessário*/
+.screen_exibe{
+    grid-area: tela;
+    width: 90% ;
+    height: 70vh ;
+    overflow-y:auto;
+}
+
+/*aplicando configurações para barra de rolagem da tela de exibição*/
+.screen_exibe::-webkit-scrollbar {
+    border-right: 1px solid black;
+    width: 5px;
+  }
+
+/*aplicando configurações para barra de rolagem da tela de exibição*/
+  .screen_exibe::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.418);
+    
+  }
+  
+  /*retirando a linha de focus dos inputs da tela de perfil edit*/
+.perfil_edit .input{
+    outline: none;
+}
+/* .perfil_edit .input{
+    outline: none;
+} */
+
+/*aplicando distancia de 30px do topo*/
+.perfil_edit{
+    margin-top: 30px;
+}
+
+/*tirando o select dos labels*/
+.perfil_edit label{
+    user-select: none;
+}
+
+/*mudando a cor e o tamanho do link de mostrar senha*/
+[class*="fa-eye"]{
+    color: #5b5ca8;
+    font-size: 1.2em;
+}
+
+/*aplicando um tamanho curto para os inputs dos formulários no perfil*/
+.input{
+    width: 50% !important;
+}
+
+/*configurações para texto de mostrar a senha*/
+.pass_view{
+    font-size: 0.8em;
+    color: #5b5ca8;
+    user-select: none;
+}
+
+/*cel*/
+@media(max-width:680px){
+    /*alterando a grid area para apenas uma coluna, atalhos em cima e telas selecionadas em baixo*/
+    .container_perfil{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        'atalhos'
+        'atalho_selec';
+    }
+
+/*alterando botões de atalho para ficar em duas linhas*/
+    .controls_perfil{
+        grid-template-rows: 1fr 1fr;
+    }
+
+/*zerando as margins do botão de logout*/
+    .logs{
+        margin-left:0;
+    }
+
+/*colocando os botões de atalhos em linha*/
+    .atalhos{
+        flex-direction: row;
+        overflow-x: auto;
+        margin-top: 20px;
+        position: relative;
+        padding: 10px;
+    }
+
+/*criando a seta apara indicar scroll para a direita*/
+    .atalhos::before{
+        content: "\2794";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 10px;
+        color: rgba(0,0,0,.5);
+        animation: scroll-x .5s ease-in 0s infinite alternate;
+    }
+    
+    
+/*criando a animação da seta, transitando no eixo x de 0px para 10px a cada 0.5s*/
+    @keyframes scroll-x {
+        from{
+            transform:translateX(0px);
+        }
+        to{
+            transform:translateX(10px);
+        }
+    }
+
+/*aplicando distancia da esquerda entre os botões do atalho*/
+   .controls_perfil .form_btn{
+        margin-left: 10px;
+    }
+
+/*configurando todos as div do container de atalho para ficar no inicio e margin do topo de 50px*/
+    .container_atalho div{
+        justify-content: flex-start;
+        margin-top: 50px;
+        padding: 5px;
+        /* text-align: center; */
+    }
+    
+    /*alinhando o titulo das telas escolhidas*/
+    .screen_title{
+        text-align: center;
+    }
+
+/*os icones de mostrar a senha tomam distancia do topo*/
+    [class*="fa-eye"]{
+        margin-top: 10px;
+    }
+
+/*agendas ficam em direção de linha para ficar em colunas (não entendi o porque disso, mas foi a unica forma que funcionou)*/
+    .agendas{
+        flex-direction: row !important;
+    }
+
+/*todos os inputs ficam em 100%*/
+    .input{
+        width: 100% !important;
+    }
+
+/*alinhando a screen exibida horizontalmente*/
+    .screen_exibe{
+        margin: auto;
+    }
+
+}
