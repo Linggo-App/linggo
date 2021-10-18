@@ -8,7 +8,7 @@
 
     <title>Linggo</title>
 
-    <link rel="icon" href="./assets/Mini-Logo.png">
+   <link rel="icon" href="./assets/Mini-Logo.png">
 
     <!-- <meta http-equiv="refresh" content="1" >  -->
 
@@ -16,9 +16,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./global.css">
-
-    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
@@ -26,145 +24,95 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&display=swap" rel="stylesheet">
 
-   <!-- <script src="./src/js/jquery-3.5.1.min.js"></script>
-
-    <script src="./src/js/index.js"></script>-->
-
-
-
-    <style>
-
-    /*aplicando uma nova grid area exclusiva para o header da página home, em que o menu ocupa as duas primeiras colunas e o logo da página ocupa a ultima coluna*/
-
-         header{
-
-            grid-template-areas: 
-
-            "menu menu logo"
-
-            ;
-
-            /* position: fixed;
-
-            top: 0;
-
-            z-index: 10000; */
-
-        } 
-
-
-
-/*resetando algumas configurações, como flex grow e aplicando um novo valor fixo*/
-
-        .menu__createbtn{
-
-            flex-grow: 0;
-
-            width: 200px;
-
-        }
-
-
-
-/*configuração para smartphone*/
-
-        @media(max-width:680px){
-
-            
-
-            /*alterando a grid area para o botão do menu assumir as duas primeiras colunas*/
-
-    header{
-
-        grid-template-areas: 
-
-        "menu_btn menu_btn logo"
-
-        "menu menu menu"
-
-        !important;
-
-       /* overflow: hidden; */
-
-       position: relative;
-
-       
-
-    }
-
-        }
-
-
-
-/*configuração para tablets*/
-
-        @media(max-width:900px){
-
-            
-
-             /*alterando a grid area para o botão do menu assumir as duas primeiras colunas*/
-
-    header{
-
-        grid-template-areas: 
-
-        "menu_btn menu_btn logo"
-
-        "menu menu menu"
-
-       ;
-
-       /* overflow: hidden; */
-
-       position: relative;
-
-       
-
-    }
-
-}
-
-</style>
-
 </head>
-
-
 
 <body>
 
-<header><!--abrindo a tag header -->
+    <header><!-- inicio do header -->
+            
+        <div id="header-content">
 
-        <input type="checkbox" name="" id="check_menu" style="display: none;"><!-- checkbox para acionar o menu nas telas de smartphones e tablets, com display none para ficar invisivel  -->
+            <input type="checkbox" name="" id="check_menu" style="display: none;"><!-- checkbox que acionará o menu na parte responsiva, ficará invisivel -->
 
-        <label id="menu_btn" for="check_menu" ><!--abrindo a label que ficará responsável de ativar o checkbox -->
+            <label id="menu_btn" for="check_menu" ><!-- label que ficará responsavel acionar a checkbox -->
+                <i class="fas fa-bars"></i><!-- icone de hamburger retirado do fontawesome -->
+            </label><!-- fechando a label -->
 
-              <i class="fas fa-bars"></i><!-- icone de hamburguer retirado do site fontawesome, formando o icone através da cdn localizado no head -->
+            <nav>
 
-             </label><!-- fechando a tag label -->
+                <ul id="menu-area" ><!-- abrindo a tag ul para criar uma lista -->
 
-        <nav class="menu"><!-- abrindo a tag nav e aplicando a classe menu -->
+                    <li>
+                            <!-- link que leva para a página home com uma imagem do nosso logo em branco para se destacar com o fundo da página -->
+                        <a class="anchor-logo" href="./index" target="_self">
+                            <img class="logo" src="./assets/LingoApp_Branco_Cortada.png" alt="Logo da página com cores em roxo e laranja">
+                        </a>
+                    </li>
 
-    
+                    <li>
+                        <a href="#sobre" target="_self">
+                            <i class="fas fa-info-circle"></i> 
+                            Sobre
+                        </a>
+                    </li><!-- primeiro item, com o link para o container Sobre e icone do site fontawesome -->
 
-            <ul><!-- abrindo a tag ul para criar uma lista -->
+                    <li>
+                        <a href="#equipe" target="_self">
+                            <i class="fas fa-users"></i> 
+                            Equipe
+                        </a>
+                    </li><!-- segundo item, com o link para o container Equipe e icone do site fontawesome -->
 
-                <li><a href="#sobre" target="_self"><i class="fas fa-info-circle"></i> Sobre</a></li><!-- primeiro item, com o link para o container Sobre e icone do site fontawesome -->
+                    <li>
+                        <a href="https://www.facebook.com/Linggo-APP-104781658511510/" target="_blank">
+                            <i class="fas fa-question-circle"></i> 
+                            Suporte
+                        </a>
+                    </li><!-- terceiro item, com o link para a nossa página no facebook voltado para o suporte ao nosso usuário e icone do site fontawesome -->
 
-                <li><a href="#equipe" target="_self"><i class="fas fa-users"></i> Equipe</a></li><!-- segundo item, com o link para o container Equipe e icone do site fontawesome -->
+                </ul><!-- fechando a tag de lista -->
 
-                <li><a href="https://www.facebook.com/Linggo-APP-104781658511510/" target="_blank"><i class="fas fa-question-circle"></i> Suporte</a></li><!-- terceiro item, com o link para a nossa página no facebook voltado para o suporte ao nosso usuário e icone do site fontawesome -->
+            </nav>
+                
+            <div id="user-area"><!-- container do usuário -->
+                <!-- container onde ficará o nome do usuário -->
 
-                <li class="menu__createbtn"><a href="./src/php/add_agenda" target="_self"><i class="fas fa-plus"></i> Criar Projeto</a></li><!-- quarto item, com o link para a página de add_agenda para criar projetos e icone do site fontawesome -->
+                <div class="username">
+                    <?php 
+                        if(!isset($_SESSION["username"])){/*verifica se o nome de usuário não foi passado pela sessão*/
 
-            </ul><!-- fechando a tag de lista -->
+                        echo 
+                            // "<a href='./perfil' target='_self' class='perfil-img'>
+                            //     <i class='fas fa-user'></i>
+                            // </a>"
+                            // .
+                            "<a href='./src/php/cadastro' target='_self'>"
+                                ."Logar".
+                            "</a>";/*se não for passado, então vai imprimir o link para a página de cadastro*/
 
-        </nav><!-- fechando a tag nav -->
+                        }else{/* se tiver sido passado o valor para a variavel da sessão, então o link será para a pagina de perfil.php*/
 
-        <a class="cont_logo" href="./index" target="_self"><img class="logo" src="./assets/LingoApp_Branco.png" alt="Logo da página com cores em branco"></a><!-- link que leva para a página home com uma imagem do nosso logo em branco para se destacar com o fundo da página -->
+                            echo 
+                                "<a href='./src/php/perfil' target='_self'>Olá, <br>"
+                                    .$_SESSION["username"].
+                                "</a>";
 
+                        }
+                    ?>
+                </div><!-- fechando o container do username -->
+
+                <li class="menu-createbtn">
+                    <a href="./src/php/add_agenda" target="_self">
+                        <i class="fas fa-plus"></i> 
+                        Criar Projeto
+                    </a>
+                </li><!-- quarto item, com o link para a página de add_agenda para criar projetos e icone do site fontawesome -->
+
+
+            </div><!-- fechando o container do usuário -->
+
+        </div>
     </header><!-- fechando a tag header -->
-
-
 
     <div class="container_index container_2"><!-- abrindo container central da página home e o primeiro a ser exibido -->
 
