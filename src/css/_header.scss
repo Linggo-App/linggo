@@ -1,0 +1,60 @@
+header{
+    max-height: 70px;
+    @include flexCenter(row, center);
+
+    
+    a:not(.anchor-logo){
+        color: #fff;
+        opacity: 0.9;
+    }
+
+    a:hover{ opacity: 1; }
+
+    #menu_btn{
+        display: none;
+    }
+
+}
+
+#header-content{
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    background: #5b5ca8;
+    border-bottom: 1px solid #dadce0;
+    overflow: hidden;
+
+    #user-area, #menu-area { @include flexCenter(row, none); }
+
+    #menu-area{
+
+        li:not(li:nth-child(1)){ margin: 0 10px; }
+        
+        .anchor-logo{
+            width: 10px;
+            margin: 0px auto;
+    
+            .logo{
+                width: auto;
+                height: 40px;
+            }
+        }
+    }
+
+    #user-area{
+        justify-content: right;
+
+        .username{ margin: 0 25px 0 0; }
+
+        .menu-createbtn > a{
+            width: 100vw;
+            padding: 10px;
+            height: 100vh;
+            border-radius: 10px;
+            background:#f49236;
+            border: 1px solid #f39339;
+        }
+    }
+}

@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/rotina.css"> <!-- Insersão do css rotina.css -->
-        <link rel="stylesheet" href="../../global.css"> <!-- Insersão do css global.css -->
+        <link rel="stylesheet" href="../css/styles.css">
         <script src="../js/jquery-3.5.1.min.js"></script> <!-- Insersão do jquerry v3.5.1-->
     </head>
     <?php
