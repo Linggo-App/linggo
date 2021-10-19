@@ -868,24 +868,6 @@
 
     </li>
 
-
-
-    <!-- <li>
-
-        <h3>MINHA CONTA</h3>
-
-        <div class="footer-link-content">
-
-            <a href="">Minha conta</a>
-
-            <a href="../cadastro.html">Logar/Cadastrar</a>
-
-        </div>
-
-    </li> -->
-
-
-
     <li>
 
         <h3>SIGA-NOS</h3>
@@ -906,13 +888,11 @@
 
 </ul>
 
-
-
 <section id="assin">
 
     <p>
 
-        @2021-2028 Batatinha Tecnologia - Todos os direitos reservados.
+        @2021-2028 LiggoAPP - Todos os direitos reservados.
 
     </p>
 
@@ -920,9 +900,8 @@
 
 </footer>
 
-<script src="./src/js/footer.js" async defer></script>
+<!-- <script src="./src/js/footer.js" async defer></script> -->
 
 </body>
 
 </html>
-
