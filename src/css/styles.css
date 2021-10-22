@@ -212,8 +212,10 @@ footer ul li #container-git-collaborators #git-collaborators-list .collaborators
   background-color: #27274f;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
-  -webkit-box-shadow: 0 1px 1px 0 #3c404387,  0 1px 4px 1px #3c40435a;
-          box-shadow: 0 1px 1px 0 #3c404387,  0 1px 4px 1px #3c40435a;
+  -webkit-box-shadow: 0 1px 1px 0 #3c404387, 
+ 0 1px 4px 1px #3c40435a;
+          box-shadow: 0 1px 1px 0 #3c404387, 
+ 0 1px 4px 1px #3c40435a;
 }
 
 footer ul li #container-git-collaborators #git-collaborators-list .collaborators a p {
