@@ -135,7 +135,22 @@ header a:hover {
             justify-content: left;
   }
   #header-content #menu {
-    
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  #header-content #menu #menu-area li {
+    width: 100%;
+  }
+  #header-content #menu_btn {
+    color: white;
+    cursor: pointer;
+    font-size: 1.8em;
+  }
+}
 /* footer css */
 footer ul, .siga, .collaborators, .collaborators a {
   -webkit-box-sizing: unset;
