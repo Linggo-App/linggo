@@ -1,0 +1,152 @@
+/* footer css */
+
+footer ul, .siga, .collaborators, .collaborators a{box-sizing: unset;display: flex;}
+
+footer{
+    width: 100%;
+    height: auto;
+    color: white;
+    font-size: 12px;
+    line-height: 50px;
+    background: #5b5ca8;
+    padding: 2em 5em 0.5em 5em;
+    border-top: 1px solid #dadce0;
+
+    ul{
+        @include flexCenter(row, space-around);
+        // height: 100%;
+
+        li{
+
+            #Logo{
+                display: flex;
+                flex-direction: column;
+    
+                p{ margin: 0 10px; }
+    
+                img{
+                    width: auto;
+                    height: 14vh;
+                }    
+            }
+
+            #checkGit{ display: none; }
+
+            label[for="checkGit"], #checkGit { 
+                right: 215px;
+                cursor: pointer;
+            }
+
+            label[for="checkGit"] img{
+                opacity: 0.5;
+                width: 50px;
+                height: 50px;
+                border-radius: 70%;
+                -webkit-border-radius: 70%;
+            }
+
+            label[for="checkGit"] img, .collaborators a, 
+            #container-git-collaborators{
+                -webkit-transition: all 0.5s;
+                transition: all 0.5s;
+            }
+
+            label[for="checkGit"] img:hover{ opacity: 1; }
+
+            #container-git-collaborators{
+                width: 100%;
+                max-width: 180px;
+                display: block;            
+                padding: 0 0 0 5px;
+
+                #git-collaborators-list{ 
+                    margin: 0 15px 0 20px; 
+
+                    .collaborators {
+                        height: 50px;
+                        margin: 2px 0;
+                    
+                        a{
+                            position: absolute;
+                            transform: scale(0);
+                            margin: 5px;
+                            padding: 5px;
+                            width: 25px;
+                            border-radius: 40px;
+                            -webkit-border-radius: 40px;
+                            background-color: #27274f;
+                            transition-timing-function: ease;
+                            box-shadow: 0 1px 1px 0 #3c404387, 
+                            0 1px 4px 1px #3c40435a;
+
+                            p{ 
+                                display: none;
+                                align-items: center;
+                                justify-content: center;
+                                color: white;
+                                max-height: 35px;
+                                font-weight: bold;
+                                margin: 0 0 0 10px;
+                             }
+                             
+                            img{
+                                transition: all 1s;
+                                width: 25px;
+                                height: 25px;
+                                border-radius: 15px;
+                                -webkit-border-radius: 15px;
+                            }
+                        }
+
+                        a:hover{
+                            cursor: pointer;
+                            width: 170px;
+                            background-color: #27274f;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    #assin{
+        width: 100%;
+        margin-top: 10px;
+        border-top: 1px dotted black;
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width:300px) and (max-width:800px) {
+
+    
+
+    footer ul, footer ul li, .siga, #Logo{
+
+        display: flex;
+
+        text-align: center;
+
+        align-items: center;
+
+        flex-direction: column;
+
+        justify-content: space-between;
+
+    }
+
+
+
+    .siga{ margin-right: 0px; }
+
+
+
+    #container-git-collaborators{ padding: 0px; }
+
+
+
+    #git-collaborators-list{ margin: 0px; }
+
+}

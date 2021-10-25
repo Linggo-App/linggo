@@ -135,6 +135,167 @@ header a:hover {
             justify-content: left;
   }
   #header-content #menu {
+    
+/* footer css */
+footer ul, .siga, .collaborators, .collaborators a {
+  -webkit-box-sizing: unset;
+          box-sizing: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  color: white;
+  font-size: 12px;
+  line-height: 50px;
+  background: #5b5ca8;
+  padding: 2em 5em 0.5em 5em;
+  border-top: 1px solid #dadce0;
+}
+
+footer ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer ul li #Logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer ul li #Logo p {
+  margin: 0 10px;
+}
+
+footer ul li #Logo img {
+  width: auto;
+  height: 14vh;
+}
+
+footer ul li #checkGit {
+  display: none;
+}
+
+footer ul li label[for="checkGit"], footer ul li #checkGit {
+  right: 215px;
+  cursor: pointer;
+}
+
+footer ul li label[for="checkGit"] img {
+  opacity: 0.5;
+  width: 50px;
+  height: 50px;
+  border-radius: 70%;
+  -webkit-border-radius: 70%;
+}
+
+footer ul li label[for="checkGit"] img, footer ul li .collaborators a,
+footer ul li #container-git-collaborators {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+footer ul li label[for="checkGit"] img:hover {
+  opacity: 1;
+}
+
+footer ul li #container-git-collaborators {
+  width: 100%;
+  max-width: 180px;
+  display: block;
+  padding: 0 0 0 5px;
+}
+
+footer ul li #container-git-collaborators #git-collaborators-list {
+  margin: 0 15px 0 20px;
+}
+
+footer ul li #container-git-collaborators #git-collaborators-list .collaborators {
+  height: 50px;
+  margin: 2px 0;
+}
+
+footer ul li #container-git-collaborators #git-collaborators-list .collaborators a {
+  position: absolute;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  margin: 5px;
+  padding: 5px;
+  width: 25px;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  background-color: #27274f;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-box-shadow: 0 1px 1px 0 #3c404387, 
+ 0 1px 4px 1px #3c40435a;
+          box-shadow: 0 1px 1px 0 #3c404387, 
+ 0 1px 4px 1px #3c40435a;
+}
+
+footer ul li #container-git-collaborators #git-collaborators-list .collaborators a p {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  max-height: 35px;
+  font-weight: bold;
+  margin: 0 0 0 10px;
+}
+
+footer ul li #container-git-collaborators #git-collaborators-list .collaborators a img {
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+}
+
+footer ul li #container-git-collaborators #git-collaborators-list .collaborators a:hover {
+  cursor: pointer;
+  width: 170px;
+  background-color: #27274f;
+}
+
+footer #assin {
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px dotted black;
+  text-align: center;
+}
+
+@media screen and (min-width: 300px) and (max-width: 800px) {
+  footer ul, footer ul li, .siga, #Logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -149,6 +310,18 @@ header a:hover {
     color: white;
     cursor: pointer;
     font-size: 1.8em;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .siga {
+    margin-right: 0px;
+  }
+  #container-git-collaborators {
+    padding: 0px;
+  }
+  #git-collaborators-list {
+    margin: 0px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
