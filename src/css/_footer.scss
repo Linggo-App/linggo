@@ -118,3 +118,35 @@ footer{
     }
 
 }
+
+@media screen and (min-width:300px) and (max-width:800px) {
+
+    
+
+    footer ul, footer ul li, .siga, #Logo{
+
+        display: flex;
+
+        text-align: center;
+
+        align-items: center;
+
+        flex-direction: column;
+
+        justify-content: space-between;
+
+    }
+
+
+
+    .siga{ margin-right: 0px; }
+
+
+
+    #container-git-collaborators{ padding: 0px; }
+
+
+
+    #git-collaborators-list{ margin: 0px; }
+
+}

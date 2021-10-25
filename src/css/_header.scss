@@ -58,3 +58,10 @@ header{
         }
     }
 }
+
+@media screen and (min-width:500px){
+    #menu-area{
+        background-color: red;
+        flex-direction: column;
+    }
+}
