@@ -9,8 +9,33 @@
   font-family: "ubuntu",sans-serif;
 }
 
-header {
-  max-height: 70px;
+header #menu_btn {
+  display: none;
+}
+
+header a:not(.anchor-logo) {
+  color: #fff;
+  opacity: 0.9;
+}
+
+header a:hover {
+  opacity: 1;
+}
+
+#header-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  position: fixed;
+  overflow: hidden;
+  background: #5b5ca8;
+  border-bottom: 1px solid #dadce0;
+}
+
+#header-content #menu, #header-content #user-area, #header-content #menu-area {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,62 +51,19 @@ header {
           flex-direction: row;
 }
 
-header a:not(.anchor-logo) {
-  color: #fff;
-  opacity: 0.9;
-}
-
-header a:hover {
-  opacity: 1;
-}
-
-header #menu_btn {
-  display: none;
-}
-
-#header-content {
-  width: 100%;
-  padding: 10px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 80% 20%;
-      grid-template-columns: 80% 20%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #5b5ca8;
-  border-bottom: 1px solid #dadce0;
-  overflow: hidden;
-}
-
-#header-content #user-area, #header-content #menu-area {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: none;
-      -ms-flex-pack: none;
-          justify-content: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-#header-content #menu-area li:not(li:nth-child(1)) {
-  margin: 0 10px;
-}
-
-#header-content #menu-area .anchor-logo {
-  width: 10px;
-  margin: 0px auto;
-}
-
-#header-content #menu-area .anchor-logo .logo {
+#header-content .anchor-logo .logo {
   width: auto;
   height: 40px;
+}
+
+#header-content #menu-area {
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+#header-content #menu-area li {
+  margin: 0 10px;
 }
 
 #header-content #user-area {
@@ -95,14 +77,65 @@ header #menu_btn {
 }
 
 #header-content #user-area .menu-createbtn > a {
-  width: 100vw;
+  width: 100%;
+  height: 100%;
   padding: 10px;
-  height: 100vh;
+  text-align: center;
   border-radius: 10px;
   background: #f49236;
   border: 1px solid #f39339;
 }
 
+@media (max-width: 900px) {
+  #header-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative !important;
+  }
+}
+
+@media (max-width: 600px) {
+  #header-content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #header-content #menu, #header-content #user-area, #header-content #menu-area {
+    width: 100%;
+    display: block;
+  }
+  #header-content #menu-area li {
+    margin: 0;
+  }
+  #header-content a:not(.anchor-logo) {
+    width: 100%;
+    opacity: 0.9;
+    color: #fff;
+    display: block;
+    padding: 10px 0;
+    font-size: 1.3em;
+  }
+  #header-content #user-area {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  #header-content #menu {
+    
 /* footer css */
 footer ul, .siga, .collaborators, .collaborators a {
   -webkit-box-sizing: unset;
@@ -267,6 +300,16 @@ footer #assin {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  #header-content #menu #menu-area li {
+    width: 100%;
+  }
+  #header-content #menu_btn {
+    color: white;
+    cursor: pointer;
+    font-size: 1.8em;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;

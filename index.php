@@ -30,24 +30,31 @@
 
     <header><!-- inicio do header -->
             
-        <div id="header-content">
+        <nav id="header-content">
+                <!-- link que leva para a página home com uma imagem do nosso logo em branco para se destacar com o fundo da página -->
+            <a class="anchor-logo" href="./index" target="_self">
+                <img class="logo" src="./assets/LingoApp_Branco_Cortada.png" alt="Logo da página com cores em roxo e laranja">
+            </a>
+            
+            <div id="bars">
+        
+                <input type="checkbox" name="" id="check_menu" style="display: none;"><!-- checkbox que acionará o menu na parte responsiva, ficará invisivel -->
 
-            <input type="checkbox" name="" id="check_menu" style="display: none;"><!-- checkbox que acionará o menu na parte responsiva, ficará invisivel -->
+                <label id="menu_btn" for="check_menu" ><!-- label que ficará responsavel acionar a checkbox -->
+                    <i class="fas fa-bars"></i><!-- icone de hamburger retirado do fontawesome -->
+                </label><!-- fechando a label -->
 
-            <label id="menu_btn" for="check_menu" ><!-- label que ficará responsavel acionar a checkbox -->
-                <i class="fas fa-bars"></i><!-- icone de hamburger retirado do fontawesome -->
-            </label><!-- fechando a label -->
+            </div>
 
-            <nav>
+            <div id="menu">
 
-                <ul id="menu-area" ><!-- abrindo a tag ul para criar uma lista -->
+                <ul id="menu-area"><!-- abrindo a tag ul para criar uma lista -->
 
-                    <li>
-                            <!-- link que leva para a página home com uma imagem do nosso logo em branco para se destacar com o fundo da página -->
+                    <!-- <li>
                         <a class="anchor-logo" href="./index" target="_self">
                             <img class="logo" src="./assets/LingoApp_Branco_Cortada.png" alt="Logo da página com cores em roxo e laranja">
                         </a>
-                    </li>
+                    </li> -->
 
                     <li>
                         <a href="#sobre" target="_self">
@@ -72,46 +79,44 @@
 
                 </ul><!-- fechando a tag de lista -->
 
-            </nav>
-                
-            <div id="user-area"><!-- container do usuário -->
-                <!-- container onde ficará o nome do usuário -->
+                <div id="user-area"><!-- container do usuário -->
+                    <!-- container onde ficará o nome do usuário -->
 
-                <div class="username">
-                    <?php 
-                        if(!isset($_SESSION["username"])){/*verifica se o nome de usuário não foi passado pela sessão*/
-
-                        echo 
-                            // "<a href='./perfil' target='_self' class='perfil-img'>
-                            //     <i class='fas fa-user'></i>
-                            // </a>"
-                            // .
-                            "<a href='./src/php/cadastro' target='_self'>"
-                                ."Logar".
-                            "</a>";/*se não for passado, então vai imprimir o link para a página de cadastro*/
-
-                        }else{/* se tiver sido passado o valor para a variavel da sessão, então o link será para a pagina de perfil.php*/
+                    <div class="username">
+                        <?php 
+                            if(!isset($_SESSION["username"])){/*verifica se o nome de usuário não foi passado pela sessão*/
 
                             echo 
-                                "<a href='./src/php/perfil' target='_self'>Olá, <br>"
-                                    .$_SESSION["username"].
-                                "</a>";
+                                // "<a href='./perfil' target='_self' class='perfil-img'>
+                                //     <i class='fas fa-user'></i>
+                                // </a>"
+                                // .
+                                "<a href='./src/php/cadastro' target='_self'>"
+                                    ."<i class='fas fa-user'></i> 
+                                    Logar".
+                                "</a>";/*se não for passado, então vai imprimir o link para a página de cadastro*/
 
-                        }
-                    ?>
-                </div><!-- fechando o container do username -->
+                            }else{/* se tiver sido passado o valor para a variavel da sessão, então o link será para a pagina de perfil.php*/
 
-                <li class="menu-createbtn">
-                    <a href="./src/php/add_agenda" target="_self">
-                        <i class="fas fa-plus"></i> 
-                        Criar Projeto
-                    </a>
-                </li><!-- quarto item, com o link para a página de add_agenda para criar projetos e icone do site fontawesome -->
+                                echo 
+                                    "<a href='./src/php/perfil' target='_self'>Olá, <br>"
+                                        .$_SESSION["username"].
+                                    "</a>";
 
+                            }
+                        ?>
 
-            </div><!-- fechando o container do usuário -->
+                    </div><!-- fechando o container do username -->
+                        <div class="menu-createbtn">
+                            <a href="./src/php/add_agenda" target="_self">
+                                <i class="fas fa-plus"></i> 
+                                Criar Projeto
+                            </a>
+                        </div>
+                </div><!-- fechando o container do usuário -->
+            </div>
 
-        </div>
+        </nav>
     </header><!-- fechando a tag header -->
 
     <div class="container_index container_2"><!-- abrindo container central da página home e o primeiro a ser exibido -->
