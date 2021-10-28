@@ -16,7 +16,6 @@ header{
     display: flex;
     width: 100%;
     padding: 10px;
-    // position: fixed; 
     overflow: hidden;
     background: #5b5ca8;
     border-bottom: 1px solid #dadce0;
@@ -39,6 +38,7 @@ header{
     #menu-area{ 
         justify-content: left; 
         li{ margin: 0 10px; }
+        min-width: 425px !important;
     }
 
     #user-area{
@@ -80,7 +80,13 @@ header{
             display: block;
         }
         
-        #menu-area li { margin:  0; }
+        #menu-area li { 
+            margin:  0; 
+            &:nth-child(1){
+                display: flex;
+                justify-content: space-between
+            }
+        }
 
         a:not(.anchor-logo){
             width: 100%;
@@ -103,6 +109,7 @@ header{
             color: white;
             cursor: pointer;
             font-size: 1.8em;
+            display: block;
         }
     }
 }

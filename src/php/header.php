@@ -30,14 +30,6 @@
         
         <div id="header-content">
 
-        <input type="checkbox" name="" id="check_menu" style="display: none;"><!-- checkbox que acionará o menu na parte responsiva, ficará invisivel -->
-
-<label id="menu_btn" for="check_menu" ><!-- label que ficará responsavel acionar a checkbox -->
-    <i class="fas fa-bars"></i><!-- icone de hamburger retirado do fontawesome -->
-</label><!-- fechando a label -->
-
-<nav>
-
     <ul id="menu-area" ><!-- abrindo a tag ul para criar uma lista -->
 
         <li>
@@ -45,6 +37,13 @@
             <a class="anchor-logo" href="../../index" target="_self">
                 <img class="logo" src="../../assets/LingoApp_Branco_Cortada.png" alt="Logo da página com cores em roxo e laranja">
             </a>
+
+            <input type="checkbox" name="" id="check_menu" style="display: none;"><!-- checkbox que acionará o menu na parte responsiva, ficará invisivel -->
+
+            <label id="menu_btn" for="check_menu" ><!-- label que ficará responsavel acionar a checkbox -->
+                <i class="fas fa-bars"></i><!-- icone de hamburger retirado do fontawesome -->
+            </label><!-- fechando a label -->
+
         </li>
 
         <li>
@@ -84,9 +83,9 @@
                 //     <i class='fas fa-user'></i>
                 // </a>"
                 // .
-                "<a href='./cadastro' target='_self'>"
+                "<a href='./singin' target='_self'>"
                     ."Logar".
-                "</a>";/*se não for passado, então vai imprimir o link para a página de cadastro*/
+                "</a>";/*se não for passado, então vai imprimir o link para a página de singin*/
 
             }else{/* se tiver sido passado o valor para a variavel da sessão, então o link será para a pagina de perfil.php*/
 
@@ -105,9 +104,6 @@
             Criar Projeto
         </a>
     </li><!-- quarto item, com o link para a página de add_agenda para criar projetos e icone do site fontawesome -->
-
-
-</div><!-- fechando o container do usuário -->
 
         </div>
         </header><!-- fechando a tag header -->
