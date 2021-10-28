@@ -1,0 +1,112 @@
+$invalidInput: crimson;
+$validInput: green;
+
+#main-container, form, #login-container, .form-title{ width: 100%; }
+
+#main-container{
+    height: 100%; /* Define a altura para ocupar 100% */
+    display: flex; /* Define o elemento como flexível */
+    overflow: hidden; /* Defina que todo elemento que transbordar será escondido */
+    align-items: center; /* Alinha os elementos verticalmente */
+    justify-content: center; /* Alinha os elementos horizontalmente */
+
+    #align-form{
+        margin: 5rem; /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
+        padding: 25px; /* Define um preenchimento de topo,fundo,direta e esqueda de 25px */
+        display: flex; /* Define o elemento como flexível */
+        max-width: 550px;
+        justify-content: center; /* Alinha os elementos horizontalemnte */
+        overflow: hidden; /* Defina que todo elemento que transbordar será escondido */
+        border-radius: 5px; /* Adiciona um arredondamento na borda de 5px */
+        background-color: #fff; /* Define cor de fundo */
+        border: 1px solid #dadce0; /* Define uma borda solida, com 1px de altura */
+        /* Adiciona uma sombra ao elemento */
+        box-shadow: 
+            0 1px 2px 0 rgba(60,64,67,0.302), 
+            0 2px 6px 2px rgba(60,64,67,0.149);
+
+
+            #login-container{
+                position: relative; 
+                border-radius: 5px;
+
+                .form-title{
+                    padding: 10px; /* Adiciona um preenchimento de topo,fundo,direita e esquerda de 10px */
+                    border-radius: 5px 5px 0px 0px; /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
+                    background-color: #fff; /* Adiciona cor de fundo */
+
+                    p:first-child{
+                        font-weight: bold; /* Define texto como negríto */
+                        font-size: 1.5em;  /* Define tamanho da fonte para 1.5em */
+                        text-align: center; /* Alinha o texto ao centro  */
+                        color: #5f6368; /* Adiciona cor ao texto */
+                    }
+
+                    p{ 
+                        color: #3c4043b8; /* Adiciona cor ao texto */
+                        margin: 5px 0px; /* Adiciona margin ao topo e fundo de 5px */
+                        text-align: center; /* Alinha o texto ao centro1 */
+                        font-weight: bold; /* Define o texto como negríto */
+                        font-size: 0.9em; /* Defina tamanho da fonte para 0.9em */
+                     }
+                }
+
+                input{
+                    width: 100%; /* Define um comprimento de 100% */
+                    height: 50px; /* Define uma altura de 50px */
+                    padding: 20px; /* Adiciona preenchimento de 20px para o topo,fundo,direita e esquerda */
+                    margin: 5px 0px 5px 0px;
+                    /* border-radius: 5px; */
+                    border: 1px solid #d1d2d4; /* Adiciona borda solida de 1px de altura */
+                    outline: none;  /* Remove o contorno do texto */
+                }
+
+                a:not(p > a){ color: #5f6368; }
+                p a {color: #6869bb;}
+
+                #btn-submit{
+                    margin-top: 15px;
+                    padding: 10px;
+                    color: white;
+                    cursor: pointer; 
+                    font-size: 0.9em; /* Defina tamanho da fonte para 0.9em */
+                    font-weight: bold; /* Define o texto como negríto */
+                    text-align: center; 
+                    border-radius: 10px;
+                    background:#f49236;
+                    border: 1px solid #f39339;
+                    transition: 0.5s ease-out;
+
+                    // &:hover{
+                    //     color: white;
+                    // }
+                }
+                
+                // #btn_log .bg{ background: #f49236 !important; }
+                
+                .email.valid{ border-color: $validInput; }
+                .email.invalid{ border-color:$invalidInput; }
+                .senha.valid{ border-color: $validInput; }
+                .senha.invalid{ border-color:$invalidInput; }
+                .validation{ font-size: .8em; }
+                .validation.valid{ color: $validInput; }
+                .validation.invalid{ color: $invalidInput; }
+
+            }
+    }
+
+}
+
+/* Responsividade Celular e Tablet */
+@media (max-width:450px){
+
+    #main-container, form, #login-container, .form-title{ width: 100%; }
+
+    #align-form{
+        margin: 0;
+        border: none;
+        border-radius: 0; 
+        box-shadow: none;
+    }
+
+}
