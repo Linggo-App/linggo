@@ -112,7 +112,7 @@
 
 </html>
 
-<!--Cadastro-->
+<!--singin-->
 
 <?php
 

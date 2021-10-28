@@ -40,9 +40,9 @@
 
         if(!isset($_SESSION["id_user"])){
 
-          //  header("location: cadastro");
+          //  header("location: singin");
 
-           echo "<script>window.location.replace('http://".$serv."src/php/cadastro');</script>";
+           echo "<script>window.location.replace('http://".$serv."src/php/singin');</script>";
 
         }else{
 
@@ -178,7 +178,7 @@
 
                    //echo "<script>alert('".$lin."')</script>";
 
-                }else{/*caso contrário executará o cadastro no banco de dados*/
+                }else{/*caso contrário executará o singin no banco de dados*/
 
                 $sql="INSERT INTO usuarios_rotinas (ID_USUARIO, ID_ROTINA, TITULO_ROTINA, ROTINA_COR, STATUS) VALUE($id_user,null,'$titulo','$cor', 'active')";/*comando em sql para cadastrar utilizando os dados que foi passado pelo usuário no formulário*/
 
@@ -198,7 +198,7 @@
 
 
 
-              }else{//caso contrário, exibe uma mensagem de que ouve um erro ao fazer o cadastro
+              }else{//caso contrário, exibe uma mensagem de que ouve um erro ao fazer o singin
 
                  echo "<script>alert('erro ao cadastrar')</script>";
 
@@ -528,7 +528,7 @@
 
                     
 
-                     </label><!-- fechando o botão de cadastro -->
+                     </label><!-- fechando o botão de singin -->
 
                 
 

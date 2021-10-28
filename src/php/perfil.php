@@ -40,9 +40,9 @@
 
         if(!isset($_SESSION["id_user"])){
 
-            echo "<script>window.location.replace('./cadastro');</script>";
+            echo "<script>window.location.replace('./singin');</script>";
 
-            // header("location: cadastro");
+            // header("location: singin");
 
         }else{
 
@@ -186,7 +186,7 @@
 
                             $new_username=$_POST["new_username"];/*capaturando as informações passadas pelo input com esse name*/
 
-                            $id_user=$_SESSION["id_user"];/*capturando o id do usuário passado pela sessão via cadastro*/
+                            $id_user=$_SESSION["id_user"];/*capturando o id do usuário passado pela sessão via singin*/
 
                             $sql="UPDATE usuarios set APELIDO='$new_username' WHERE ID_USUARIO=$id_user";/*troca o valor do username do usuário pelo valor na variavel new_username via id do usuário*/
 
@@ -216,7 +216,7 @@
 
                             $pass_new=md5($_POST["pass_new"]);/*capaturando as informações passadas pelo input com esse name*/
 
-                            $id_user=$_SESSION["id_user"];/*capturando o id do usuário passado pela sessão via cadastro*/
+                            $id_user=$_SESSION["id_user"];/*capturando o id do usuário passado pela sessão via singin*/
 
 
 
