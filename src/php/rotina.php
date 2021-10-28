@@ -16,9 +16,9 @@
      ?>
     <body>
     <?php 
-        if(!isset($_SESSION["id_user"]) ){/*se não receber o id do usuário, o usuário será encaminhado para a tela de cadastro*/
-            echo "<script>window.location.replace('./cadastro');</script>";
-            // header("location: cadastro");
+        if(!isset($_SESSION["id_user"]) ){/*se não receber o id do usuário, o usuário será encaminhado para a tela de singin*/
+            echo "<script>window.location.replace('./singin');</script>";
+            // header("location: singin");
         }else{/*se o id do usuário for recebido, carrega a página normalmente*/
           
             $id_user=$_SESSION['id_user'];

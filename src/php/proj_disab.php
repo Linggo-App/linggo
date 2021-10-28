@@ -38,7 +38,7 @@
 
         if(!isset($_SESSION["id_user"]) ){
 
-            header("location: cadastro");
+            header("location: singin");
 
         }else{
 

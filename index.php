@@ -91,10 +91,10 @@
                                 //     <i class='fas fa-user'></i>
                                 // </a>"
                                 // .
-                                "<a href='./src/php/cadastro' target='_self'>"
+                                "<a href='./src/php/singin' target='_self'>"
                                     ."<i class='fas fa-user'></i> 
                                     Logar".
-                                "</a>";/*se não for passado, então vai imprimir o link para a página de cadastro*/
+                                "</a>";/*se não for passado, então vai imprimir o link para a página de singin*/
 
                             }else{/* se tiver sido passado o valor para a variavel da sessão, então o link será para a pagina de perfil.php*/
 

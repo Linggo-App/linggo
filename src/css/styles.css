@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -59,6 +60,7 @@ header a:hover {
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
+  min-width: 425px !important;
 }
 
 #header-content #menu-area li {
@@ -120,6 +122,14 @@ header a:hover {
   #header-content #menu-area li {
     margin: 0;
   }
+  #header-content #menu-area li:nth-child(1) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   #header-content a:not(.anchor-logo) {
     width: 100%;
     opacity: 0.9;
@@ -148,7 +158,66 @@ header a:hover {
     color: white;
     cursor: pointer;
     font-size: 1.8em;
+    display: block;
   }
+}
+
+#home-content {
+  padding: 10px 50px;
+}
+
+#home-content *:hover {
+  cursor: default;
+}
+
+#home-content section {
+  min-height: 525px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#home-content section button, #home-content section button a {
+  padding: 10px;
+  border-radius: 10px;
+  background: #f49236;
+  cursor: pointer !important;
+  border: 1px solid #f39339;
+}
+
+#home-content section img {
+  width: 250px;
+  height: 250px;
+  border: 1px solid;
+}
+
+#home-content section div:nth-child(2) {
+  margin: 20px 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#home-content section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#home-content #content-block-3 img {
+  width: 100%;
+  height: 625px;
 }
 
 /* footer css */
@@ -328,61 +397,173 @@ footer #assin {
   }
 }
 
-#home-content {
-  padding: 10px 50px;
+#main-container, form, #login-container, .form-title {
+  width: 100%;
 }
 
-#home-content *:hover {
-  cursor: default;
-}
-
-#home-content section {
-  min-height: 525px;
+#main-container {
+  height: 100%;
+  /* Define a altura para ocupar 100% */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* Define o elemento como flexível */
+  overflow: hidden;
+  /* Defina que todo elemento que transbordar será escondido */
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /* Alinha os elementos verticalmente */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  /* Alinha os elementos horizontalmente */
 }
 
-#home-content section button, #home-content section button a {
-  padding: 10px;
-  border-radius: 10px;
-  background: #f49236;
-  cursor: pointer !important;
-  border: 1px solid #f39339;
-}
-
-#home-content section img {
-  width: 250px;
-  height: 250px;
-  border: 1px solid;
-}
-
-#home-content section div:nth-child(2) {
-  margin: 20px 0;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-#home-content section div {
+#main-container #align-form {
+  margin: 5rem;
+  /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
+  padding: 25px;
+  /* Define um preenchimento de topo,fundo,direta e esqueda de 25px */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* Define o elemento como flexível */
+  max-width: 550px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Alinha os elementos horizontalemnte */
+  overflow: hidden;
+  /* Defina que todo elemento que transbordar será escondido */
+  border-radius: 5px;
+  /* Adiciona um arredondamento na borda de 5px */
+  background-color: #fff;
+  /* Define cor de fundo */
+  border: 1px solid #dadce0;
+  /* Define uma borda solida, com 1px de altura */
+  /* Adiciona uma sombra ao elemento */
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
+          box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
 }
 
-#home-content #content-block-3 img {
+#main-container #align-form #login-container {
+  position: relative;
+  border-radius: 5px;
+}
+
+#main-container #align-form #login-container .form-title {
+  padding: 10px;
+  /* Adiciona um preenchimento de topo,fundo,direita e esquerda de 10px */
+  border-radius: 5px 5px 0px 0px;
+  /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
+  background-color: #fff;
+  /* Adiciona cor de fundo */
+}
+
+#main-container #align-form #login-container .form-title p:first-child {
+  font-weight: bold;
+  /* Define texto como negríto */
+  font-size: 1.5em;
+  /* Define tamanho da fonte para 1.5em */
+  text-align: center;
+  /* Alinha o texto ao centro  */
+  color: #5f6368;
+  /* Adiciona cor ao texto */
+}
+
+#main-container #align-form #login-container .form-title p {
+  color: #3c4043b8;
+  /* Adiciona cor ao texto */
+  margin: 5px 0px;
+  /* Adiciona margin ao topo e fundo de 5px */
+  text-align: center;
+  /* Alinha o texto ao centro1 */
+  font-weight: bold;
+  /* Define o texto como negríto */
+  font-size: 0.9em;
+  /* Defina tamanho da fonte para 0.9em */
+}
+
+#main-container #align-form #login-container input {
   width: 100%;
-  height: 625px;
+  /* Define um comprimento de 100% */
+  height: 50px;
+  /* Define uma altura de 50px */
+  padding: 20px;
+  /* Adiciona preenchimento de 20px para o topo,fundo,direita e esquerda */
+  margin: 5px 0px 5px 0px;
+  /* border-radius: 5px; */
+  border: 1px solid #d1d2d4;
+  /* Adiciona borda solida de 1px de altura */
+  outline: none;
+  /* Remove o contorno do texto */
+}
+
+#main-container #align-form #login-container a {
+  color: #5f6368;
+}
+
+#main-container #align-form #login-container p a {
+  color: #6869bb;
+}
+
+#main-container #align-form #login-container #btn-submit {
+  margin-top: 15px;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9em;
+  /* Defina tamanho da fonte para 0.9em */
+  font-weight: bold;
+  /* Define o texto como negríto */
+  text-align: center;
+  border-radius: 10px;
+  background: #f49236;
+  border: 1px solid #f39339;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
+#main-container #align-form #login-container .email.valid {
+  border-color: green;
+}
+
+#main-container #align-form #login-container .email.invalid {
+  border-color: crimson;
+}
+
+#main-container #align-form #login-container .senha.valid {
+  border-color: green;
+}
+
+#main-container #align-form #login-container .senha.invalid {
+  border-color: crimson;
+}
+
+#main-container #align-form #login-container .validation {
+  font-size: .8em;
+}
+
+#main-container #align-form #login-container .validation.valid {
+  color: green;
+}
+
+#main-container #align-form #login-container .validation.invalid {
+  color: crimson;
+}
+
+/* Responsividade Celular e Tablet */
+@media (max-width: 450px) {
+  #main-container, form, #login-container, .form-title {
+    width: 100%;
+  }
+  #align-form {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
