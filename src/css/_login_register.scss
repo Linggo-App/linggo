@@ -17,7 +17,7 @@ $validInput: green;
         max-width: 550px;
         justify-content: center; /* Alinha os elementos horizontalemnte */
         overflow: hidden; /* Defina que todo elemento que transbordar será escondido */
-        border-radius: 5px; /* Adiciona um arredondamento na borda de 5px */
+        border-radius: $valueBorderRadius; /* Adiciona um arredondamento na borda de 5px */
         background-color: #fff; /* Define cor de fundo */
         border: 1px solid #dadce0; /* Define uma borda solida, com 1px de altura */
         /* Adiciona uma sombra ao elemento */
@@ -28,11 +28,11 @@ $validInput: green;
 
             #login-container{
                 position: relative; 
-                border-radius: 5px;
+                border-radius: $valueBorderRadius;
 
                 .form-title{
                     padding: 10px; /* Adiciona um preenchimento de topo,fundo,direita e esquerda de 10px */
-                    border-radius: 5px 5px 0px 0px; /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
+                    border-radius: $valueBorderRadius $valueBorderRadius 0px 0px; /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
                     background-color: #fff; /* Adiciona cor de fundo */
 
                     p:first-child{
@@ -56,7 +56,6 @@ $validInput: green;
                     height: 50px; /* Define uma altura de 50px */
                     padding: 20px; /* Adiciona preenchimento de 20px para o topo,fundo,direita e esquerda */
                     margin: 5px 0px 5px 0px;
-                    /* border-radius: 5px; */
                     border: 1px solid #d1d2d4; /* Adiciona borda solida de 1px de altura */
                     outline: none;  /* Remove o contorno do texto */
                 }
@@ -64,26 +63,13 @@ $validInput: green;
                 a:not(p > a){ color: #5f6368; }
                 p a {color: #6869bb;}
 
-                #btn-submit{
+                input[type='submit']{
                     margin-top: 15px;
-                    padding: 10px;
-                    color: white;
-                    cursor: pointer; 
                     font-size: 0.9em; /* Defina tamanho da fonte para 0.9em */
                     font-weight: bold; /* Define o texto como negríto */
-                    text-align: center; 
-                    border-radius: 10px;
-                    background:#f49236;
-                    border: 1px solid #f39339;
                     transition: 0.5s ease-out;
-
-                    // &:hover{
-                    //     color: white;
-                    // }
                 }
-                
-                // #btn_log .bg{ background: #f49236 !important; }
-                
+                  
                 .email.valid{ border-color: $validInput; }
                 .email.invalid{ border-color:$invalidInput; }
                 .senha.valid{ border-color: $validInput; }
