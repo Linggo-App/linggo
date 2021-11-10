@@ -1,0 +1,77 @@
+/*configura o container onde ficam as agendas, deixando os itens dentro dele flexiveis e alinhando verticalmente, além de uma margin de 40px do top e do bottom*/
+#routines-dashboard{
+    margin: 0px 48px 24px;
+
+#routines-menu{
+    h2{ margin: 16px 16px 16px 0; }
+}
+
+    #routines-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
+        gap: 24px;
+
+        .routine{
+            height: 246px;
+            text-decoration: none;
+            border: 1px solid #dadce0;
+            border-radius: $valueBorderRadius;
+
+            &:hover{
+                box-shadow: 
+                0 1px 2px 0 rgba(60, 64, 67, 0.158), 
+                0 2px 6px 2px rgba(60, 64, 67, 0.138);
+            }
+
+            .routine-content{
+                .routine-columns{
+                    height: 186px;
+                    // padding: 10px 0 0 0;
+                    @include flexCenter(flex-end, center, row);
+                    .col{
+                        width: 100%;
+                        height: 100%;
+                        padding: 0 5px;
+                        background-color: #5f6368ba;
+                    }
+                }
+            }     
+        
+            .routine-info{
+                width: 100%;
+                height: 60px;
+                padding: 0 10px;
+                border-top: 1px solid #dadce0;
+                @include flexCenter(center, space-between, row);
+
+                h2{ color: #3c4043; font-weight: unset; }
+
+                button{
+                    height: 100%;
+                    border: unset;
+                    background-color: unset;
+                    i { font-size: 1.2em; color: #5f6368; }
+                }
+            }
+        }
+    }
+}
+
+/*configurações especificas para o botão de criação dos projetos, com background grey e color black para diferenciar dos outros projetos criados dinamicamente.*/
+
+#create-routine {
+    color: #000;
+    transition: 1s;
+    cursor: pointer;
+    border-style: dashed !important;
+    border-color: #5f636882 !important;
+    @include flexCenter(center, center ,row);
+
+    /*adiciona um cursor pointer aos projetos e diminui a opacidade para dar um efeito com hover*/
+    &:hover{ background-color: #5f636825; }
+
+    /*aumentando o tamanho do icone de + dentro do botão de criação dos projetos*/
+    i{ font-size: 3em; }
+}
+
+@import './modal_routines';
