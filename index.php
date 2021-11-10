@@ -1,3 +1,5 @@
+<?php require('./src/php/connect.php'); ?> 
+
 <!DOCTYPE html>
 
 <html lang="pt-br">
@@ -28,96 +30,84 @@
 
 <body>
 
-    <header><!-- inicio do header -->
-            
-        <nav id="header-content">
-                <!-- link que leva para a página home com uma imagem do nosso logo em branco para se destacar com o fundo da página -->
+<header><!-- inicio do header -->
+        
+        <div id="header-content">
+
+    <ul id="menu-area" ><!-- abrindo a tag ul para criar uma lista -->
+
+        <li>
+             <!-- link que leva para a página home com uma imagem do nosso logo em branco para se destacar com o fundo da página -->
             <a class="anchor-logo" href="./index" target="_self">
                 <img class="logo" src="./assets/LingoApp_Branco_Cortada.png" alt="Logo da página com cores em roxo e laranja">
             </a>
-            
-            <div id="bars">
+
+            <input type="checkbox" name="" id="check_menu" style="display: none;"><!-- checkbox que acionará o menu na parte responsiva, ficará invisivel -->
+
+            <label id="menu_btn" for="check_menu" ><!-- label que ficará responsavel acionar a checkbox -->
+                <i class="fas fa-bars"></i><!-- icone de hamburger retirado do fontawesome -->
+            </label><!-- fechando a label -->
+
+        </li>
+
+        <li>
+            <a href="./index#sobre" target="_self">
+                <i class="fas fa-info-circle"></i> 
+                Sobre
+            </a>
+        </li><!-- primeiro item, com o link para o container Sobre e icone do site fontawesome -->
+
+        <li>
+            <a href="./index#equipe" target="_self">
+                <i class="fas fa-users"></i> 
+                Equipe
+            </a>
+        </li><!-- segundo item, com o link para o container Equipe e icone do site fontawesome -->
+
+        <li>
+            <a href="https://www.facebook.com/Linggo-APP-104781658511510/" target="_blank">
+                <i class="fas fa-question-circle"></i> 
+                Suporte
+            </a>
+        </li><!-- terceiro item, com o link para a nossa página no facebook voltado para o suporte ao nosso usuário e icone do site fontawesome -->
+
+    </ul><!-- fechando a tag de lista -->
+
+</nav>
         
-                <input type="checkbox" name="" id="check_menu" style="display: none;"><!-- checkbox que acionará o menu na parte responsiva, ficará invisivel -->
+<div id="user-area"><!-- container do usuário -->
+    <!-- container onde ficará o nome do usuário -->
 
-                <label id="menu_btn" for="check_menu" ><!-- label que ficará responsavel acionar a checkbox -->
-                    <i class="fas fa-bars"></i><!-- icone de hamburger retirado do fontawesome -->
-                </label><!-- fechando a label -->
+    <div class="username">
+        <?php 
+            if(!isset($_SESSION["username"])){/*verifica se o nome de usuário não foi passado pela sessão*/
 
-            </div>
+            echo 
+                // "<a href='./perfil' target='_self' class='perfil-img'>
+                //     <i class='fas fa-user'></i>
+                // </a>"
+                // .
+                "<a href='./src/php/singin' target='_self'>"
+                    ."Logar".
+                "</a>";/*se não for passado, então vai imprimir o link para a página de singin*/
 
-            <div id="menu">
+            }else{/* se tiver sido passado o valor para a variavel da sessão, então o link será para a pagina de perfil.php*/
 
-                <ul id="menu-area"><!-- abrindo a tag ul para criar uma lista -->
+                echo  "<script>window.location.replace('http://".$serv."src/php/routines.php');</script>";
 
-                    <!-- <li>
-                        <a class="anchor-logo" href="./index" target="_self">
-                            <img class="logo" src="./assets/LingoApp_Branco_Cortada.png" alt="Logo da página com cores em roxo e laranja">
-                        </a>
-                    </li> -->
+            }
+        ?>
+    </div><!-- fechando o container do username -->
 
-                    <li>
-                        <a href="#sobre" target="_self">
-                            <i class="fas fa-info-circle"></i> 
-                            Sobre
-                        </a>
-                    </li><!-- primeiro item, com o link para o container Sobre e icone do site fontawesome -->
+    <li class="btn-orange">
+        <a href="./src/php/routines" target="_self">
+        <i class="far fa-calendar-check"></i>
+            Rotinas
+        </a>
+    </li><!-- quarto item, com o link para a página de routines para criar projetos e icone do site fontawesome -->
 
-                    <li>
-                        <a href="#equipe" target="_self">
-                            <i class="fas fa-users"></i> 
-                            Equipe
-                        </a>
-                    </li><!-- segundo item, com o link para o container Equipe e icone do site fontawesome -->
-
-                    <li>
-                        <a href="https://www.facebook.com/Linggo-APP-104781658511510/" target="_blank">
-                            <i class="fas fa-question-circle"></i> 
-                            Suporte
-                        </a>
-                    </li><!-- terceiro item, com o link para a nossa página no facebook voltado para o suporte ao nosso usuário e icone do site fontawesome -->
-
-                </ul><!-- fechando a tag de lista -->
-
-                <div id="user-area"><!-- container do usuário -->
-                    <!-- container onde ficará o nome do usuário -->
-
-                    <div class="username">
-                        <?php 
-                            if(!isset($_SESSION["username"])){/*verifica se o nome de usuário não foi passado pela sessão*/
-
-                            echo 
-                                // "<a href='./perfil' target='_self' class='perfil-img'>
-                                //     <i class='fas fa-user'></i>
-                                // </a>"
-                                // .
-                                "<a href='./src/php/singin' target='_self'>"
-                                    ."<i class='fas fa-user'></i> 
-                                    Logar".
-                                "</a>";/*se não for passado, então vai imprimir o link para a página de singin*/
-
-                            }else{/* se tiver sido passado o valor para a variavel da sessão, então o link será para a pagina de perfil.php*/
-
-                                echo 
-                                    "<a href='./src/php/perfil' target='_self'>Olá, <br>"
-                                        .$_SESSION["username"].
-                                    "</a>";
-
-                            }
-                        ?>
-
-                    </div><!-- fechando o container do username -->
-                        <div class="menu-createbtn">
-                            <a href="./src/php/add_agenda" target="_self">
-                                <i class="fas fa-plus"></i> 
-                                Criar Projeto
-                            </a>
-                        </div>
-                </div><!-- fechando o container do usuário -->
-            </div>
-
-        </nav>
-    </header><!-- fechando a tag header -->
+        </div>
+        </header><!-- fechando a tag header -->
 
     <div id="home-content">
         <main>
@@ -129,7 +119,7 @@
                     "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
                 </article>
                 
-                <button>
+                <button class="btn-orange">
                     <a href="./src/php/add_agenda" target="_self">
                         <i class="fas fa-plus"></i> 
                         Criar Projeto

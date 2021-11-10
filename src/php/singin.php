@@ -2,7 +2,9 @@
 
     require('./connect.php'); 
 
-    //session_start();
+    if(isset($_SESSION["username"])){/*verifica se o nome de usuário foi passado pela sessão*/
+        echo  "<script>window.location.replace('http://".$serv."src/php/routines.php');</script>";
+    }
 
 ?> 
 
@@ -61,7 +63,7 @@
                             <!-- <label for="log" class="form_btn btn_reg" id="btn-submit">container para o botão linkado com o input submit -->
 
                                 <!-- <input type="submit" id="log" name="login" value="Login" style="display:none;">input submit invisivel -->
-                            <input type="submit" id="btn-submit" name="login" value="Logar" ><!-- input submit invisivel -->
+                            <input type="submit" class="btn-orange" name="login" value="Logar" ><!-- input submit invisivel -->
 
                                     <!-- <p>Login</p>titulo do botão -->
 
@@ -139,7 +141,7 @@
 
 
 
-         echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";/*redireciona o usuário para a página de add_agenda */
+         echo "<script>window.location.replace('http://".$serv."src/php/routines');</script>";/*redireciona o usuário para a página de routines */
 
 
 
