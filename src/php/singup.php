@@ -2,7 +2,9 @@
 
     require('./connect.php'); 
 
-    //session_start();
+    if(isset($_SESSION["username"])){/*verifica se o nome de usuário foi passado pela sessão*/
+        echo  "<script>window.location.replace('http://".$serv."src/php/routines.php');</script>";
+    }
 
 ?> 
 
@@ -65,7 +67,7 @@
                             <input type="password" class="senha" id="c_senha" name="register-conf-senha" placeholder="Confirmar senha*" required><span class="validation">Teste</span><!-- campo de texto para informar a senha e o span serve para fazer a validação -->
         
                             <!-- <label for="teste" class="form_btn btn_reg">container para o botão linkado com o input submit -->
-                            <input type="submit" id="btn-submit" name="register" value="Registrar-se"><!-- input submit invisivel -->
+                            <input type="submit" class="btn-orange" name="register" value="Registrar-se"><!-- input submit invisivel -->
                                 <!-- <span class="bg"></span>fundo que será acionado com hover -->
                                 <!-- <p>Cadastrar</p>titulo do botão -->
                             <!-- </label>fechando a label e container do botão -->
@@ -144,7 +146,7 @@
 
 
 
-         echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";/*redireciona o usuário para a página de add_agenda */
+         echo "<script>window.location.replace('http://".$serv."src/php/routines');</script>";/*redireciona o usuário para a página de routines */
 
 
 

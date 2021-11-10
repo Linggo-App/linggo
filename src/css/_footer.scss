@@ -7,13 +7,14 @@ footer{
     height: auto;
     color: white;
     font-size: 12px;
+    margin-top: auto;
     line-height: 50px;
     background: #5b5ca8;
     padding: 2em 5em 0.5em 5em;
     border-top: 1px solid #dadce0;
 
     ul{
-        @include flexCenter(row, space-around);
+        @include flexCenter(center, space-around, row);
         // height: 100%;
 
         li{
@@ -99,7 +100,6 @@ footer{
                         }
 
                         a:hover{
-                            cursor: pointer;
                             width: 170px;
                             background-color: #27274f;
                         }

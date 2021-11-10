@@ -114,7 +114,7 @@
 
                     // if($res){
 
-                    //     echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
+                    //     echo "<script>window.location.replace('http://".$serv."src/php/routines');</script>";
 
                     // }
 
@@ -148,7 +148,7 @@
 
                         //  echo "<meta http-equiv='refresh' content='0; url=./proj_disab?id_tab=".$id_tab."'/>";
 
-                         echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";
+                         echo "<script>window.location.replace('http://".$serv."src/php/routines');</script>";
 
                     }
 

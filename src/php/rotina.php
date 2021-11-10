@@ -142,7 +142,7 @@
                     $res=mysqli_query($con,$sql);
 
                     if($res){
-                        echo "<script>window.location.replace('http://".$serv."src/php/add_agenda');</script>";/*volta o usuário para a página de add_agenda*/
+                        echo "<script>window.location.replace('http://".$serv."src/php/routines');</script>";/*volta o usuário para a página de routines*/
                     }
                 }
             ?>

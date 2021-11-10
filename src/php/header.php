@@ -98,12 +98,12 @@
         ?>
     </div><!-- fechando o container do username -->
 
-    <li class="menu-createbtn">
-        <a href="./add_agenda" target="_self">
-            <i class="fas fa-plus"></i> 
-            Criar Projeto
+    <li class="btn-orange">
+        <a href="./routines" target="_self">
+        <i class="far fa-calendar-check"></i>
+            Rotinas
         </a>
-    </li><!-- quarto item, com o link para a página de add_agenda para criar projetos e icone do site fontawesome -->
+    </li><!-- quarto item, com o link para a página de routines para criar projetos e icone do site fontawesome -->
 
         </div>
         </header><!-- fechando a tag header -->

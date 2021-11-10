@@ -10,6 +10,471 @@
   font-family: "ubuntu",sans-serif;
 }
 
+*:hover p, *:hover h1, *:hover h2, *:hover h3 {
+  cursor: default !important;
+}
+
+*:hover a, *:hover button, *:hover input[type=submit] {
+  cursor: pointer !important;
+}
+
+.btn-orange {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  text-align: center;
+  background: #f49236;
+  border: 1px solid #f39339;
+  border-radius: 4.5px;
+}
+
+#home-content {
+  padding: 10px 50px;
+}
+
+#home-content section {
+  min-height: 525px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#home-content section img {
+  width: 250px;
+  height: 250px;
+  border: 1px solid;
+}
+
+#home-content section div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#home-content section div:nth-child(2) {
+  margin: 20px 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+#home-content #content-block-3 img {
+  width: 100%;
+  height: 625px;
+}
+
+#main-container, form, #login-container, .form-title {
+  width: 100%;
+}
+
+#main-container {
+  height: 100%;
+  /* Define a altura para ocupar 100% */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Define o elemento como flexível */
+  overflow: hidden;
+  /* Defina que todo elemento que transbordar será escondido */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Alinha os elementos verticalmente */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Alinha os elementos horizontalmente */
+}
+
+#main-container #align-form {
+  margin: 5rem;
+  /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
+  padding: 25px;
+  /* Define um preenchimento de topo,fundo,direta e esqueda de 25px */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* Define o elemento como flexível */
+  max-width: 550px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Alinha os elementos horizontalemnte */
+  overflow: hidden;
+  /* Defina que todo elemento que transbordar será escondido */
+  border-radius: 4.5px;
+  /* Adiciona um arredondamento na borda de 5px */
+  background-color: #fff;
+  /* Define cor de fundo */
+  border: 1px solid #dadce0;
+  /* Define uma borda solida, com 1px de altura */
+  /* Adiciona uma sombra ao elemento */
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
+          box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
+}
+
+#main-container #align-form #login-container {
+  position: relative;
+  border-radius: 4.5px;
+}
+
+#main-container #align-form #login-container .form-title {
+  padding: 10px;
+  /* Adiciona um preenchimento de topo,fundo,direita e esquerda de 10px */
+  border-radius: 4.5px 4.5px 0px 0px;
+  /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
+  background-color: #fff;
+  /* Adiciona cor de fundo */
+}
+
+#main-container #align-form #login-container .form-title p:first-child {
+  font-weight: bold;
+  /* Define texto como negríto */
+  font-size: 1.5em;
+  /* Define tamanho da fonte para 1.5em */
+  text-align: center;
+  /* Alinha o texto ao centro  */
+  color: #5f6368;
+  /* Adiciona cor ao texto */
+}
+
+#main-container #align-form #login-container .form-title p {
+  color: #3c4043b8;
+  /* Adiciona cor ao texto */
+  margin: 5px 0px;
+  /* Adiciona margin ao topo e fundo de 5px */
+  text-align: center;
+  /* Alinha o texto ao centro1 */
+  font-weight: bold;
+  /* Define o texto como negríto */
+  font-size: 0.9em;
+  /* Defina tamanho da fonte para 0.9em */
+}
+
+#main-container #align-form #login-container input {
+  width: 100%;
+  /* Define um comprimento de 100% */
+  height: 50px;
+  /* Define uma altura de 50px */
+  padding: 20px;
+  /* Adiciona preenchimento de 20px para o topo,fundo,direita e esquerda */
+  margin: 5px 0px 5px 0px;
+  border: 1px solid #d1d2d4;
+  /* Adiciona borda solida de 1px de altura */
+  outline: none;
+  /* Remove o contorno do texto */
+}
+
+#main-container #align-form #login-container a {
+  color: #5f6368;
+}
+
+#main-container #align-form #login-container p a {
+  color: #6869bb;
+}
+
+#main-container #align-form #login-container input[type='submit'] {
+  margin-top: 15px;
+  font-size: 0.9em;
+  /* Defina tamanho da fonte para 0.9em */
+  font-weight: bold;
+  /* Define o texto como negríto */
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
+#main-container #align-form #login-container .email.valid {
+  border-color: green;
+}
+
+#main-container #align-form #login-container .email.invalid {
+  border-color: crimson;
+}
+
+#main-container #align-form #login-container .senha.valid {
+  border-color: green;
+}
+
+#main-container #align-form #login-container .senha.invalid {
+  border-color: crimson;
+}
+
+#main-container #align-form #login-container .validation {
+  font-size: .8em;
+}
+
+#main-container #align-form #login-container .validation.valid {
+  color: green;
+}
+
+#main-container #align-form #login-container .validation.invalid {
+  color: crimson;
+}
+
+/* Responsividade Celular e Tablet */
+@media (max-width: 450px) {
+  #main-container, form, #login-container, .form-title {
+    width: 100%;
+  }
+  #align-form {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+/*configura o container onde ficam as agendas, deixando os itens dentro dele flexiveis e alinhando verticalmente, além de uma margin de 40px do top e do bottom*/
+#routines-dashboard {
+  margin: 0px 48px 24px;
+}
+
+#routines-dashboard #routines-menu h2 {
+  margin: 16px 16px 16px 0;
+}
+
+#routines-dashboard #routines-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(355px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(355px, 1fr));
+  gap: 24px;
+}
+
+#routines-dashboard #routines-container .routine {
+  height: 246px;
+  text-decoration: none;
+  border: 1px solid #dadce0;
+  border-radius: 4.5px;
+}
+
+#routines-dashboard #routines-container .routine:hover {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.158), 0 2px 6px 2px rgba(60, 64, 67, 0.138);
+          box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.158), 0 2px 6px 2px rgba(60, 64, 67, 0.138);
+}
+
+#routines-dashboard #routines-container .routine .routine-content .routine-columns {
+  height: 186px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#routines-dashboard #routines-container .routine .routine-content .routine-columns .col {
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
+  background-color: #5f6368ba;
+}
+
+#routines-dashboard #routines-container .routine .routine-info {
+  width: 100%;
+  height: 60px;
+  padding: 0 10px;
+  border-top: 1px solid #dadce0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#routines-dashboard #routines-container .routine .routine-info h2 {
+  color: #3c4043;
+  font-weight: unset;
+}
+
+#routines-dashboard #routines-container .routine .routine-info button {
+  height: 100%;
+  border: unset;
+  background-color: unset;
+}
+
+#routines-dashboard #routines-container .routine .routine-info button i {
+  font-size: 1.2em;
+  color: #5f6368;
+}
+
+/*configurações especificas para o botão de criação dos projetos, com background grey e color black para diferenciar dos outros projetos criados dinamicamente.*/
+#create-routine {
+  color: #000;
+  -webkit-transition: 1s;
+  transition: 1s;
+  cursor: pointer;
+  border-style: dashed !important;
+  border-color: #5f636882 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /*adiciona um cursor pointer aos projetos e diminui a opacidade para dar um efeito com hover*/
+  /*aumentando o tamanho do icone de + dentro do botão de criação dos projetos*/
+}
+
+#create-routine:hover {
+  background-color: #5f636825;
+}
+
+#create-routine i {
+  font-size: 3em;
+}
+
+.container_form {
+  width: 100%;
+  border: none;
+}
+
+.modal, .settings {
+  position: fixed;
+  z-index: 10;
+  top: 55%;
+  left: 50%;
+  overflow: hidden;
+  min-width: 350px;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+  border-radius: 4.5px;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.083), 0 1px 6px 1px rgba(60, 64, 67, 0.027);
+          box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.083), 0 1px 6px 1px rgba(60, 64, 67, 0.027);
+}
+
+#criar-proj {
+  background-color: #fff;
+}
+
+#criar-proj .modal-header {
+  padding: 5px 10px;
+  border-bottom: 2px solid #dadce0;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.083), 0 1px 6px 1px rgba(60, 64, 67, 0.027);
+          box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.083), 0 1px 6px 1px rgba(60, 64, 67, 0.027);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#criar-proj .modal-inputs {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#criar-proj .modal-inputs input {
+  margin: 3.5px 0;
+  padding: 5px;
+  border: 1px solid lightgray !important;
+  border-radius: 4.5px;
+}
+
+/*modal, configura o modal para atingir uma posição fixa na página e ficar sobre todos os componentes do html, com scala inicialmente 0 para não aparecer na página.*/
+.modal, .settings {
+  overflow: hidden;
+  border-radius: 4.5px;
+}
+
+/*esconde o scroll do modal*/
+.modal::-webkit-scrollbar {
+  visibility: hidden;
+}
+
+/*um fundo escuro com baixa opacidade para tirar os eventos de cursores e de click ao redor do modal*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/*botão para fechar o modal, com font-size de 2em e uma margin de 5px para distanciar das bordas.*/
+.modal .close {
+  margin: 5px;
+  font-size: 2em;
+}
+
+/*realiza a ação de abrir o modal para o usuário, transitando a scala de 0 para 1.*/
+.modal.active, .settings.active {
+  -webkit-transform: translate(-50%, -50%) scale(1.7);
+          transform: translate(-50%, -50%) scale(1.7);
+}
+
 header #menu_btn {
   display: none;
 }
@@ -80,11 +545,6 @@ header a:hover {
 #header-content #user-area .menu-createbtn > a {
   width: 100%;
   height: 100%;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px;
-  background: #f49236;
-  border: 1px solid #f39339;
 }
 
 @media (max-width: 900px) {
@@ -162,64 +622,6 @@ header a:hover {
   }
 }
 
-#home-content {
-  padding: 10px 50px;
-}
-
-#home-content *:hover {
-  cursor: default;
-}
-
-#home-content section {
-  min-height: 525px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-#home-content section button, #home-content section button a {
-  padding: 10px;
-  border-radius: 10px;
-  background: #f49236;
-  cursor: pointer !important;
-  border: 1px solid #f39339;
-}
-
-#home-content section img {
-  width: 250px;
-  height: 250px;
-  border: 1px solid;
-}
-
-#home-content section div:nth-child(2) {
-  margin: 20px 0;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-#home-content section div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#home-content #content-block-3 img {
-  width: 100%;
-  height: 625px;
-}
-
 /* footer css */
 footer ul, .siga, .collaborators, .collaborators a {
   -webkit-box-sizing: unset;
@@ -234,6 +636,7 @@ footer {
   height: auto;
   color: white;
   font-size: 12px;
+  margin-top: auto;
   line-height: 50px;
   background: #5b5ca8;
   padding: 2em 5em 0.5em 5em;
@@ -357,7 +760,6 @@ footer ul li #container-git-collaborators #git-collaborators-list .collaborators
 }
 
 footer ul li #container-git-collaborators #git-collaborators-list .collaborators a:hover {
-  cursor: pointer;
   width: 170px;
   background-color: #27274f;
 }
@@ -394,176 +796,6 @@ footer #assin {
   }
   #git-collaborators-list {
     margin: 0px;
-  }
-}
-
-#main-container, form, #login-container, .form-title {
-  width: 100%;
-}
-
-#main-container {
-  height: 100%;
-  /* Define a altura para ocupar 100% */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /* Define o elemento como flexível */
-  overflow: hidden;
-  /* Defina que todo elemento que transbordar será escondido */
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  /* Alinha os elementos verticalmente */
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  /* Alinha os elementos horizontalmente */
-}
-
-#main-container #align-form {
-  margin: 5rem;
-  /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
-  padding: 25px;
-  /* Define um preenchimento de topo,fundo,direta e esqueda de 25px */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  /* Define o elemento como flexível */
-  max-width: 550px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  /* Alinha os elementos horizontalemnte */
-  overflow: hidden;
-  /* Defina que todo elemento que transbordar será escondido */
-  border-radius: 5px;
-  /* Adiciona um arredondamento na borda de 5px */
-  background-color: #fff;
-  /* Define cor de fundo */
-  border: 1px solid #dadce0;
-  /* Define uma borda solida, com 1px de altura */
-  /* Adiciona uma sombra ao elemento */
-  -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
-          box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
-}
-
-#main-container #align-form #login-container {
-  position: relative;
-  border-radius: 5px;
-}
-
-#main-container #align-form #login-container .form-title {
-  padding: 10px;
-  /* Adiciona um preenchimento de topo,fundo,direita e esquerda de 10px */
-  border-radius: 5px 5px 0px 0px;
-  /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
-  background-color: #fff;
-  /* Adiciona cor de fundo */
-}
-
-#main-container #align-form #login-container .form-title p:first-child {
-  font-weight: bold;
-  /* Define texto como negríto */
-  font-size: 1.5em;
-  /* Define tamanho da fonte para 1.5em */
-  text-align: center;
-  /* Alinha o texto ao centro  */
-  color: #5f6368;
-  /* Adiciona cor ao texto */
-}
-
-#main-container #align-form #login-container .form-title p {
-  color: #3c4043b8;
-  /* Adiciona cor ao texto */
-  margin: 5px 0px;
-  /* Adiciona margin ao topo e fundo de 5px */
-  text-align: center;
-  /* Alinha o texto ao centro1 */
-  font-weight: bold;
-  /* Define o texto como negríto */
-  font-size: 0.9em;
-  /* Defina tamanho da fonte para 0.9em */
-}
-
-#main-container #align-form #login-container input {
-  width: 100%;
-  /* Define um comprimento de 100% */
-  height: 50px;
-  /* Define uma altura de 50px */
-  padding: 20px;
-  /* Adiciona preenchimento de 20px para o topo,fundo,direita e esquerda */
-  margin: 5px 0px 5px 0px;
-  /* border-radius: 5px; */
-  border: 1px solid #d1d2d4;
-  /* Adiciona borda solida de 1px de altura */
-  outline: none;
-  /* Remove o contorno do texto */
-}
-
-#main-container #align-form #login-container a {
-  color: #5f6368;
-}
-
-#main-container #align-form #login-container p a {
-  color: #6869bb;
-}
-
-#main-container #align-form #login-container #btn-submit {
-  margin-top: 15px;
-  padding: 10px;
-  color: white;
-  cursor: pointer;
-  font-size: 0.9em;
-  /* Defina tamanho da fonte para 0.9em */
-  font-weight: bold;
-  /* Define o texto como negríto */
-  text-align: center;
-  border-radius: 10px;
-  background: #f49236;
-  border: 1px solid #f39339;
-  -webkit-transition: 0.5s ease-out;
-  transition: 0.5s ease-out;
-}
-
-#main-container #align-form #login-container .email.valid {
-  border-color: green;
-}
-
-#main-container #align-form #login-container .email.invalid {
-  border-color: crimson;
-}
-
-#main-container #align-form #login-container .senha.valid {
-  border-color: green;
-}
-
-#main-container #align-form #login-container .senha.invalid {
-  border-color: crimson;
-}
-
-#main-container #align-form #login-container .validation {
-  font-size: .8em;
-}
-
-#main-container #align-form #login-container .validation.valid {
-  color: green;
-}
-
-#main-container #align-form #login-container .validation.invalid {
-  color: crimson;
-}
-
-/* Responsividade Celular e Tablet */
-@media (max-width: 450px) {
-  #main-container, form, #login-container, .form-title {
-    width: 100%;
-  }
-  #align-form {
-    margin: 0;
-    border: none;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-            box-shadow: none;
   }
 }
 /*# sourceMappingURL=styles.css.map */
