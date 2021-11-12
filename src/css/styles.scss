@@ -1,52 +1,64 @@
 $valueBorderRadius: 4.5px;
 
-@mixin flexCenter($align_items, $justify_content, $flex_direction){
+@mixin flexCenter($align_items, $justify_content, $flex_direction) {
     display: flex;
     align-items: $align_items;
     justify-content: $justify_content;
     flex-direction: $flex_direction;
 }
 
-@mixin removeHighLight{
+@mixin removeHighLight {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-*{
+body {
+    height: 100vh;
+    @include flexCenter(unset, unset, column)
+}
+
+footer {
+    margin-top: auto;
+}
+
+* {
     margin: 0;
     padding: 0;
     outline: 0;
     list-style: none;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: "ubuntu",sans-serif;
+    font-family: "ubuntu", sans-serif;
 
-    &:hover{
-        p, h1, h2, h3{
+    &:hover {
+        p,
+        h1,
+        h2,
+        h3 {
             cursor: default !important;
         }
 
-        a, button, input[type=submit]{
+        a,
+        button,
+        input[type=submit] {
             cursor: pointer !important;
         }
     }
 }
 
-.btn-orange{
+.btn-orange {
     padding: 10px;
     color: white;
-    cursor: pointer;
     text-align: center;
-    background:#f49236;
+    background: #f49236;
     border: 1px solid #f39339;
     border-radius: $valueBorderRadius;
 }
-
 
 @import './_home.scss';
 
@@ -56,3 +68,25 @@ $valueBorderRadius: 4.5px;
 
 @import './_header.scss';
 @import './_footer.scss';
+
+@media only screen and(max-height:800px) {
+    body {
+        height: unset;
+
+        footer {
+            margin-top: unset;
+        }
+    }
+
+}
+
+@media only screen and(max-width:600px) {
+    body {
+        height: unset;
+
+        footer {
+            margin-top: unset;
+        }
+    }
+
+}
