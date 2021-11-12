@@ -1,4 +1,25 @@
 @charset "UTF-8";
+body {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,21 +28,25 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
-  font-family: "ubuntu",sans-serif;
+  font-family: "ubuntu", sans-serif;
 }
 
-*:hover p, *:hover h1, *:hover h2, *:hover h3 {
+*:hover p,
+*:hover h1,
+*:hover h2,
+*:hover h3 {
   cursor: default !important;
 }
 
-*:hover a, *:hover button, *:hover input[type=submit] {
+*:hover a,
+*:hover button,
+*:hover input[type=submit] {
   cursor: pointer !important;
 }
 
 .btn-orange {
   padding: 10px;
   color: white;
-  cursor: pointer;
   text-align: center;
   background: #f49236;
   border: 1px solid #f39339;
@@ -74,7 +99,10 @@
   height: 625px;
 }
 
-#main-container, form, #login-container, .form-title {
+#main-container,
+form,
+#login-container,
+.form-title {
   width: 100%;
 }
 
@@ -98,27 +126,29 @@
 }
 
 #main-container #align-form {
-  margin: 5rem;
-  /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
   padding: 25px;
   /* Define um preenchimento de topo,fundo,direta e esqueda de 25px */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   /* Define o elemento como flexível */
+  margin: inherit;
+  /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
   max-width: 550px;
+  overflow: hidden;
+  /* Defina que todo elemento que transbordar será escondido */
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   /* Alinha os elementos horizontalemnte */
-  overflow: hidden;
-  /* Defina que todo elemento que transbordar será escondido */
-  border-radius: 4.5px;
-  /* Adiciona um arredondamento na borda de 5px */
   background-color: #fff;
   /* Define cor de fundo */
   border: 1px solid #dadce0;
   /* Define uma borda solida, com 1px de altura */
+  border-radius: 4.5px;
+  /* Adiciona um arredondamento na borda de 5px */
   /* Adiciona uma sombra ao elemento */
   -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
           box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
@@ -132,34 +162,34 @@
 #main-container #align-form #login-container .form-title {
   padding: 10px;
   /* Adiciona um preenchimento de topo,fundo,direita e esquerda de 10px */
-  border-radius: 4.5px 4.5px 0px 0px;
-  /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
   background-color: #fff;
   /* Adiciona cor de fundo */
+  border-radius: 4.5px 4.5px 0 0;
+  /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
 }
 
 #main-container #align-form #login-container .form-title p:first-child {
-  font-weight: bold;
-  /* Define texto como negríto */
   font-size: 1.5em;
   /* Define tamanho da fonte para 1.5em */
-  text-align: center;
-  /* Alinha o texto ao centro  */
   color: #5f6368;
   /* Adiciona cor ao texto */
+  font-weight: bold;
+  /* Define texto como negríto */
+  text-align: center;
+  /* Alinha o texto ao centro  */
 }
 
 #main-container #align-form #login-container .form-title p {
-  color: #3c4043b8;
-  /* Adiciona cor ao texto */
-  margin: 5px 0px;
+  margin: 5px 0;
   /* Adiciona margin ao topo e fundo de 5px */
-  text-align: center;
-  /* Alinha o texto ao centro1 */
-  font-weight: bold;
-  /* Define o texto como negríto */
   font-size: 0.9em;
   /* Defina tamanho da fonte para 0.9em */
+  font-weight: bold;
+  /* Define o texto como negríto */
+  color: #3c4043b8;
+  /* Adiciona cor ao texto */
+  text-align: center;
+  /* Alinha o texto ao centro1 */
 }
 
 #main-container #align-form #login-container input {
@@ -169,11 +199,11 @@
   /* Define uma altura de 50px */
   padding: 20px;
   /* Adiciona preenchimento de 20px para o topo,fundo,direita e esquerda */
-  margin: 5px 0px 5px 0px;
-  border: 1px solid #d1d2d4;
-  /* Adiciona borda solida de 1px de altura */
+  margin: 5px 0;
   outline: none;
   /* Remove o contorno do texto */
+  border: 1px solid #d1d2d4;
+  /* Adiciona borda solida de 1px de altura */
 }
 
 #main-container #align-form #login-container a {
@@ -211,7 +241,7 @@
 }
 
 #main-container #align-form #login-container .validation {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 #main-container #align-form #login-container .validation.valid {
@@ -222,23 +252,42 @@
   color: crimson;
 }
 
-/* Responsividade Celular e Tablet */
-@media (max-width: 450px) {
-  #main-container, form, #login-container, .form-title {
+/* responsive SmartPhone */
+@media only screen and (max-width: 600px) {
+  #main-container,
+  form,
+  #login-container,
+  .form-title {
     width: 100%;
   }
-  #align-form {
-    margin: 0;
+  #main-container #align-form {
     border: none;
+    margin: 3rem 0;
     border-radius: 0;
     -webkit-box-shadow: none;
             box-shadow: none;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/* responsive Tablet */
+@media only screen and (max-width: 800px) {
+  #main-container,
+  form,
+  #login-container,
+  .form-title {
+    width: 100%;
+  }
+  #main-container #align-form {
+    -webkit-transform: scale(1);
+            transform: scale(1);
   }
 }
 
 /*configura o container onde ficam as agendas, deixando os itens dentro dele flexiveis e alinhando verticalmente, além de uma margin de 40px do top e do bottom*/
 #routines-dashboard {
-  margin: 0px 48px 24px;
+  margin: 0 48px 24px;
 }
 
 #routines-dashboard #routines-menu h2 {
@@ -363,7 +412,8 @@
   border: none;
 }
 
-.modal, .settings {
+.modal,
+.settings {
   position: fixed;
   z-index: 10;
   top: 55%;
@@ -374,6 +424,7 @@
   height: -moz-min-content;
   height: min-content;
   scrollbar-width: none;
+  background-color: #fff !important;
   -ms-overflow-style: none;
   -webkit-transition: 200ms ease-in-out;
   transition: 200ms ease-in-out;
@@ -384,11 +435,7 @@
           box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.083), 0 1px 6px 1px rgba(60, 64, 67, 0.027);
 }
 
-#criar-proj {
-  background-color: #fff;
-}
-
-#criar-proj .modal-header {
+.modal-header {
   padding: 5px 10px;
   border-bottom: 2px solid #dadce0;
   -webkit-box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.083), 0 1px 6px 1px rgba(60, 64, 67, 0.027);
@@ -408,7 +455,12 @@
           flex-direction: row;
 }
 
-#criar-proj .modal-inputs {
+.modal-header button {
+  background-color: transparent;
+  border: none;
+}
+
+.modal-inputs {
   padding: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -425,7 +477,7 @@
           flex-direction: column;
 }
 
-#criar-proj .modal-inputs input {
+.modal-inputs input {
   margin: 3.5px 0;
   padding: 5px;
   border: 1px solid lightgray !important;
@@ -433,7 +485,8 @@
 }
 
 /*modal, configura o modal para atingir uma posição fixa na página e ficar sobre todos os componentes do html, com scala inicialmente 0 para não aparecer na página.*/
-.modal, .settings {
+.modal,
+.settings {
   overflow: hidden;
   border-radius: 4.5px;
 }
@@ -470,9 +523,53 @@
 }
 
 /*realiza a ação de abrir o modal para o usuário, transitando a scala de 0 para 1.*/
-.modal.active, .settings.active {
-  -webkit-transform: translate(-50%, -50%) scale(1.7);
-          transform: translate(-50%, -50%) scale(1.7);
+.modal.active,
+.settings.active {
+  -webkit-transform: translate(-50%, -50%) scale(1.5);
+          transform: translate(-50%, -50%) scale(1.5);
+}
+
+@media only screen and (max-width: 600px) {
+  .modal.active,
+  .settings.active {
+    -webkit-transform: translate(-50%, -50%) scale(1.1);
+            transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .modal.active,
+  .settings.active {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #routines-dashboard {
+    margin: 0 20px 24px;
+  }
+  #routines-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  #routines-dashboard {
+    margin: auto;
+  }
 }
 
 header #menu_btn {
@@ -499,7 +596,10 @@ header a:hover {
   border-bottom: 1px solid #dadce0;
 }
 
-#header-content #menu, #header-content #user-area, #header-content #menu-area {
+#header-content #menu,
+#header-content #user-area,
+#header-content #menu-area,
+#header-content nav {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -547,7 +647,7 @@ header a:hover {
   height: 100%;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   #header-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -556,31 +656,34 @@ header a:hover {
   }
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
   #header-content {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     position: relative !important;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    -webkit-box-orient: horizontal;
+    -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  #header-content #menu, #header-content #user-area, #header-content #menu-area {
-    width: 100%;
+  #header-content #menu,
+  #header-content #user-area,
+  #header-content #menu-area,
+  #header-content nav {
     display: block;
   }
   #header-content #menu-area li {
     margin: 0;
+  }
+  #header-content #menu-area li {
+    display: none;
   }
   #header-content #menu-area li:nth-child(1) {
     display: -webkit-box;
@@ -599,9 +702,7 @@ header a:hover {
     font-size: 1.3em;
   }
   #header-content #user-area {
-    -webkit-box-pack: left;
-        -ms-flex-pack: left;
-            justify-content: left;
+    display: none;
   }
   #header-content #menu {
     -webkit-box-orient: vertical;
@@ -615,15 +716,26 @@ header a:hover {
     width: 100%;
   }
   #header-content #menu_btn {
+    position: absolute;
+    right: 10px;
     color: white;
     cursor: pointer;
     font-size: 1.8em;
     display: block;
   }
+  #check_menu:checked ~ nav #menu-area li:not(#check_menu:checked:nth-child(1)) {
+    display: block;
+  }
+  #check_menu:checked ~ nav #user-area {
+    display: block;
+  }
 }
 
 /* footer css */
-footer ul, .siga, .collaborators, .collaborators a {
+footer ul,
+.siga,
+.collaborators,
+.collaborators a {
   -webkit-box-sizing: unset;
           box-sizing: unset;
   display: -webkit-box;
@@ -639,7 +751,7 @@ footer {
   margin-top: auto;
   line-height: 50px;
   background: #5b5ca8;
-  padding: 2em 5em 0.5em 5em;
+  padding: 2em 5em 0.5em;
   border-top: 1px solid #dadce0;
 }
 
@@ -681,7 +793,8 @@ footer ul li #checkGit {
   display: none;
 }
 
-footer ul li label[for="checkGit"], footer ul li #checkGit {
+footer ul li label[for="checkGit"],
+footer ul li #checkGit {
   right: 215px;
   cursor: pointer;
 }
@@ -694,7 +807,8 @@ footer ul li label[for="checkGit"] img {
   -webkit-border-radius: 70%;
 }
 
-footer ul li label[for="checkGit"] img, footer ul li .collaborators a,
+footer ul li label[for="checkGit"] img,
+footer ul li .collaborators a,
 footer ul li #container-git-collaborators {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -721,33 +835,33 @@ footer ul li #container-git-collaborators #git-collaborators-list .collaborators
 }
 
 footer ul li #container-git-collaborators #git-collaborators-list .collaborators a {
-  position: absolute;
-  -webkit-transform: scale(0);
-          transform: scale(0);
   margin: 5px;
   padding: 5px;
   width: 25px;
+  position: absolute;
+  -webkit-transform: scale(0);
+          transform: scale(0);
   border-radius: 40px;
   -webkit-border-radius: 40px;
   background-color: #27274f;
   -webkit-transition-timing-function: ease;
           transition-timing-function: ease;
-  -webkit-box-shadow: 0 1px 1px 0 #3c404387,  0 1px 4px 1px #3c40435a;
-          box-shadow: 0 1px 1px 0 #3c404387,  0 1px 4px 1px #3c40435a;
+  -webkit-box-shadow: 0 1px 1px 0 #3c404387, 0 1px 4px 1px #3c40435a;
+          box-shadow: 0 1px 1px 0 #3c404387, 0 1px 4px 1px #3c40435a;
 }
 
 footer ul li #container-git-collaborators #git-collaborators-list .collaborators a p {
   display: none;
+  color: white;
+  max-height: 35px;
+  font-weight: bold;
+  margin: 0 0 0 10px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: white;
-  max-height: 35px;
-  font-weight: bold;
-  margin: 0 0 0 10px;
 }
 
 footer ul li #container-git-collaborators #git-collaborators-list .collaborators a img {
@@ -771,31 +885,52 @@ footer #assin {
   text-align: center;
 }
 
-@media screen and (min-width: 300px) and (max-width: 800px) {
-  footer ul, footer ul li, .siga, #Logo {
+@media only screen and (min-width: 300px) and (max-width: 800px) {
+  footer ul,
+  footer ul li,
+  .siga,
+  #Logo {
+    text-align: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    text-align: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
   }
   .siga {
-    margin-right: 0px;
+    margin-right: 0;
   }
   #container-git-collaborators {
-    padding: 0px;
+    padding: 0;
   }
   #git-collaborators-list {
-    margin: 0px;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-height: 800px) {
+  body {
+    height: unset;
+  }
+  body footer {
+    margin-top: unset;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    height: unset;
+  }
+  body footer {
+    margin-top: unset;
   }
 }
 /*# sourceMappingURL=styles.css.map */
