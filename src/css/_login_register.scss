@@ -1,98 +1,145 @@
-$invalidInput: crimson;
 $validInput: green;
+$invalidInput: crimson;
 
-#main-container, form, #login-container, .form-title{ width: 100%; }
+#main-container,
+form,
+#login-container,
+.form-title {
+    width: 100%;
+}
 
-#main-container{
+#main-container {
     height: 100%; /* Define a altura para ocupar 100% */
     display: flex; /* Define o elemento como flexível */
     overflow: hidden; /* Defina que todo elemento que transbordar será escondido */
     align-items: center; /* Alinha os elementos verticalmente */
     justify-content: center; /* Alinha os elementos horizontalmente */
 
-    #align-form{
-        margin: 5rem; /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
+    #align-form {
         padding: 25px; /* Define um preenchimento de topo,fundo,direta e esqueda de 25px */
         display: flex; /* Define o elemento como flexível */
+        margin: inherit; /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
         max-width: 550px;
-        justify-content: center; /* Alinha os elementos horizontalemnte */
         overflow: hidden; /* Defina que todo elemento que transbordar será escondido */
-        border-radius: $valueBorderRadius; /* Adiciona um arredondamento na borda de 5px */
+        transform: scale(1.3);
+        justify-content: center; /* Alinha os elementos horizontalemnte */
         background-color: #fff; /* Define cor de fundo */
         border: 1px solid #dadce0; /* Define uma borda solida, com 1px de altura */
+        border-radius: $valueBorderRadius; /* Adiciona um arredondamento na borda de 5px */
         /* Adiciona uma sombra ao elemento */
-        box-shadow: 
-            0 1px 2px 0 rgba(60,64,67,0.302), 
-            0 2px 6px 2px rgba(60,64,67,0.149);
+        box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302), 0 2px 6px 2px rgba(60, 64, 67, 0.149);
 
 
-            #login-container{
-                position: relative; 
-                border-radius: $valueBorderRadius;
+        #login-container {
+            position: relative;
+            border-radius: $valueBorderRadius;
 
-                .form-title{
-                    padding: 10px; /* Adiciona um preenchimento de topo,fundo,direita e esquerda de 10px */
-                    border-radius: $valueBorderRadius $valueBorderRadius 0px 0px; /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
-                    background-color: #fff; /* Adiciona cor de fundo */
+            .form-title {
+                padding: 10px; /* Adiciona um preenchimento de topo,fundo,direita e esquerda de 10px */
+                background-color: #fff; /* Adiciona cor de fundo */
+                border-radius: $valueBorderRadius $valueBorderRadius 0 0; /* Adiciona um arredandamento para as boradas topo esquerda e topo direita de 5px */
 
-                    p:first-child{
-                        font-weight: bold; /* Define texto como negríto */
-                        font-size: 1.5em;  /* Define tamanho da fonte para 1.5em */
-                        text-align: center; /* Alinha o texto ao centro  */
-                        color: #5f6368; /* Adiciona cor ao texto */
-                    }
-
-                    p{ 
-                        color: #3c4043b8; /* Adiciona cor ao texto */
-                        margin: 5px 0px; /* Adiciona margin ao topo e fundo de 5px */
-                        text-align: center; /* Alinha o texto ao centro1 */
-                        font-weight: bold; /* Define o texto como negríto */
-                        font-size: 0.9em; /* Defina tamanho da fonte para 0.9em */
-                     }
+                p:first-child {
+                    font-size: 1.5em; /* Define tamanho da fonte para 1.5em */
+                    color: #5f6368; /* Adiciona cor ao texto */
+                    font-weight: bold; /* Define texto como negríto */
+                    text-align: center; /* Alinha o texto ao centro  */
                 }
 
-                input{
-                    width: 100%; /* Define um comprimento de 100% */
-                    height: 50px; /* Define uma altura de 50px */
-                    padding: 20px; /* Adiciona preenchimento de 20px para o topo,fundo,direita e esquerda */
-                    margin: 5px 0px 5px 0px;
-                    border: 1px solid #d1d2d4; /* Adiciona borda solida de 1px de altura */
-                    outline: none;  /* Remove o contorno do texto */
-                }
-
-                a:not(p > a){ color: #5f6368; }
-                p a {color: #6869bb;}
-
-                input[type='submit']{
-                    margin-top: 15px;
+                p {
+                    margin: 5px 0; /* Adiciona margin ao topo e fundo de 5px */
                     font-size: 0.9em; /* Defina tamanho da fonte para 0.9em */
                     font-weight: bold; /* Define o texto como negríto */
-                    transition: 0.5s ease-out;
+                    color: #3c4043b8; /* Adiciona cor ao texto */
+                    text-align: center; /* Alinha o texto ao centro1 */
                 }
-                  
-                .email.valid{ border-color: $validInput; }
-                .email.invalid{ border-color:$invalidInput; }
-                .senha.valid{ border-color: $validInput; }
-                .senha.invalid{ border-color:$invalidInput; }
-                .validation{ font-size: .8em; }
-                .validation.valid{ color: $validInput; }
-                .validation.invalid{ color: $invalidInput; }
-
             }
+
+            input {
+                width: 100%; /* Define um comprimento de 100% */
+                height: 50px; /* Define uma altura de 50px */
+                padding: 20px; /* Adiciona preenchimento de 20px para o topo,fundo,direita e esquerda */
+                margin: 5px 0;
+                outline: none; /* Remove o contorno do texto */
+                border: 1px solid #d1d2d4; /* Adiciona borda solida de 1px de altura */
+            }
+
+            a:not(p > a) {
+                color: #5f6368;
+            }
+            p a {
+                color: #6869bb;
+            }
+
+            input[type='submit'] {
+                margin-top: 15px;
+                font-size: 0.9em; /* Defina tamanho da fonte para 0.9em */
+                font-weight: bold; /* Define o texto como negríto */
+                transition: 0.5s ease-out;
+            }
+
+            .email.valid {
+                border-color: $validInput;
+            }
+            .email.invalid {
+                border-color: $invalidInput;
+            }
+            .senha.valid {
+                border-color: $validInput;
+            }
+            .senha.invalid {
+                border-color: $invalidInput;
+            }
+            .validation {
+                font-size: 0.8em;
+            }
+            .validation.valid {
+                color: $validInput;
+            }
+            .validation.invalid {
+                color: $invalidInput;
+            }
+
+        }
     }
 
 }
 
-/* Responsividade Celular e Tablet */
-@media (max-width:450px){
+/* responsive SmartPhone */
+@media only screen and(max-width:600px) {
 
-    #main-container, form, #login-container, .form-title{ width: 100%; }
-
-    #align-form{
-        margin: 0;
-        border: none;
-        border-radius: 0; 
-        box-shadow: none;
+    #main-container,
+    form,
+    #login-container,
+    .form-title {
+        width: 100%;
     }
 
+    #main-container {
+        #align-form {
+            border: none;
+            margin: 3rem 0;
+            border-radius: 0;
+            box-shadow: none;
+            transform: scale(1);
+        }
+    }
+}
+
+/* responsive Tablet */
+@media only screen and(max-width:800px) {
+
+    #main-container,
+    form,
+    #login-container,
+    .form-title {
+        width: 100%;
+    }
+
+    #main-container {
+        #align-form {
+            transform: scale(1);
+            // margin: 0.5rem;
+        }
+    }
 }

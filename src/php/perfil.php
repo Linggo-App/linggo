@@ -1,4 +1,4 @@
-<?php require('./connect.php'); ?> 
+<?php require('./connect.php'); ?>
 
 <!DOCTYPE html>
 
@@ -34,51 +34,63 @@
 
     <?php
 
-     
 
-        include("./header.php");
 
-        if(!isset($_SESSION["id_user"])){
+    include("./header.php");
 
-            echo "<script>window.location.replace('./singin');</script>";
+    if (!isset($_SESSION["id_user"])) {
 
-            // header("location: singin");
+        echo "<script>window.location.replace('./singin');</script>";
 
-        }else{
+        // header("location: singin");
 
-            //echo $_SESSION["username"];
+    } else {
+
+        //echo $_SESSION["username"];
 
     ?>
 
-      <div class="container_perfil"><!-- container principal onde ficarão todos os elementos da página perfil -->
+        <div class="container_perfil">
+            <!-- container principal onde ficarão todos os elementos da página perfil -->
 
-            <div class="controls_perfil"><!-- tela de controle do perfil onde se localizam os botões -->
+            <div class="controls_perfil">
+                <!-- tela de controle do perfil onde se localizam os botões -->
 
-                <div class="dados_user"><!-- abrindo a parte de cima da tela de controle, onde ficarão os dados do usuário-->
+                <div class="dados_user">
+                    <!-- abrindo a parte de cima da tela de controle, onde ficarão os dados do usuário-->
 
                     <h1><?php echo $_SESSION["username"]; ?></h1><!-- onde ficará o username do usuário -->
 
                     <h3><?php echo $_SESSION["email"]; ?></h3><!-- onde ficará o email do usuário -->
 
-                </div><!--fechando os dados do usuário -->
+                </div>
+                <!--fechando os dados do usuário -->
 
-                <div class="atalhos"><!-- container onde os botões do menu serão localizados -->
+                <div class="atalhos">
+                    <!-- container onde os botões do menu serão localizados -->
 
-                    <div class="btn_atalho form_btn" id="btn_edit"><!-- container do botão -->
+                    <div class="btn_atalho form_btn" id="btn_edit">
+                        <!-- container do botão -->
 
                         <span class="bg"></span><!-- fundo que será acionado com hover -->
 
-                        <p>Editar Perfil</p></div><!-- titulo do botão e fechamento do botão -->
+                        <p>Editar Perfil</p>
+                    </div><!-- titulo do botão e fechamento do botão -->
 
-                    <div class="btn_atalho  form_btn" id="btn_pjex"><span class="bg"></span> <p>Projetos Excluidos</p></div>
+                    <div class="btn_atalho  form_btn" id="btn_pjex"><span class="bg"></span>
+                        <p>Projetos Excluidos</p>
+                    </div>
 
-                    <div class="btn_atalho  form_btn" id="btn_security"><span class="bg"></span> <p>Segurança</p></div>
+                    <div class="btn_atalho  form_btn" id="btn_security"><span class="bg"></span>
+                        <p>Segurança</p>
+                    </div>
 
 
 
-                    <form method="post"><!--formulário para acionar a função logout  no php -->
+                    <form method="post">
+                        <!--formulário para acionar a função logout  no php -->
 
-                          <input type="submit" name="logout" class="logs form_btn" value="Logout"><!-- input submit para acionar a função -->
+                        <input type="submit" name="logout" class="logs form_btn" value="Logout"><!-- input submit para acionar a função -->
 
                     </form><!-- fechando formulário -->
 
@@ -88,179 +100,180 @@
 
             </div><!-- fechando controls_perfil -->
 
-            
 
-            <div class="container_atalho"><!-- container onde ficarão as telas escolhidas -->
 
-                 <div class="" id="apresent"><!-- tela de apresentação -->
+            <div class="container_atalho">
+                <!-- container onde ficarão as telas escolhidas -->
 
-                 <h1 class="screen_title">Seja Bem Vindo <?php echo $_SESSION["username"]; ?>!</h1><!-- titulo da tela com o nome de usuário --> 
+                <div class="" id="apresent">
+                    <!-- tela de apresentação -->
 
-                 </div><!-- fechando tela de apresentação -->
+                    <h1 class="screen_title">Seja Bem Vindo <?php echo $_SESSION["username"]; ?>!</h1><!-- titulo da tela com o nome de usuário -->
 
-                 
+                </div><!-- fechando tela de apresentação -->
 
-                <div class="ata_select" id="edit_perfil"><!-- abrindo tela selecionada -->
 
-                <h1 class="screen_title">Editar Perfil</h1><!-- titulo da tela selecionada -->
 
-                <div class="screen_exibe"><!-- container onde ficará o conteúdo da tela -->
+                <div class="ata_select" id="edit_perfil">
+                    <!-- abrindo tela selecionada -->
 
-                    <form class="perfil_edit" action="" method="post"><!-- formulário para fazer updates no banco de dados -->
+                    <h1 class="screen_title">Editar Perfil</h1><!-- titulo da tela selecionada -->
 
-                        <label class="lbl_edit" for="inp_user">Nome de usuário</label><br><br><!-- label que representará o titulo do input -->
+                    <div class="screen_exibe">
+                        <!-- container onde ficará o conteúdo da tela -->
 
-                        <input type="text" id="inp_user" name="new_username" class="input" onClick='this.select();' value="<?php echo $_SESSION["username"]; ?>"  placeholder="Nome de usuário" minlength="6" maxlength="45" required><!-- input que receberá as informações atuais do usuário e utilizará os dados novos para atualizar os dados na tabela -->
+                        <form class="perfil_edit" action="" method="post">
+                            <!-- formulário para fazer updates no banco de dados -->
 
-                        <br><br>
+                            <label class="lbl_edit" for="inp_user">Nome de usuário</label><br><br><!-- label que representará o titulo do input -->
 
-                        <label for="sub_user" class="form_btn btn_reg" id="btn_log"><!-- label container do botão que acionará o input submit invisivel dentro da label -->
+                            <input type="text" id="inp_user" name="new_username" class="input" onClick='this.select();' value="<?php echo $_SESSION["username"]; ?>" placeholder="Nome de usuário" minlength="6" maxlength="45" required><!-- input que receberá as informações atuais do usuário e utilizará os dados novos para atualizar os dados na tabela -->
+
+                            <br><br>
+
+                            <label for="sub_user" class="form_btn btn_reg" id="btn_log">
+                                <!-- label container do botão que acionará o input submit invisivel dentro da label -->
 
                                 <input type="submit" id="sub_user" name="upd_user" value="" style="display:none;"><!-- input submit invisivel -->
 
-                                 <span class="bg"></span><!-- fundo que será acionado com hover -->
+                                <span class="bg"></span><!-- fundo que será acionado com hover -->
 
-                                 <p>Salvar alteração</p><!-- titulo do botão -->
+                                <p>Salvar alteração</p><!-- titulo do botão -->
 
-                        </label><!-- fechando o container do botão -->
+                            </label><!-- fechando o container do botão -->
 
-                        <br><br> <hr><br><!-- linha horizontal para uma divisão -->
+                            <br><br>
+                            <hr><br><!-- linha horizontal para uma divisão -->
 
-                        <div class="new_password"><!-- container para troca se password-->
+                            <div class="new_password">
+                                <!-- container para troca se password-->
 
-                            <input type="checkbox" name="" id="btn_pass"><!-- checkbox que faz com que o container password apareça -->
+                                <input type="checkbox" name="" id="btn_pass"><!-- checkbox que faz com que o container password apareça -->
 
-                            <label for="btn_pass">Trocar senha</label><br><br><!-- label que aciona a checkbox acima -->
-
-
-
-                        <div class="container_password"><!-- container password que vai aparecer, inicialmente escondido -->
-
-                            <label class="lbl_edit" for="inp_pass">Senha Atual:</label><br><br><!-- titulo do input -->
-
-                        <input type="password" id="inp_pass" class="input" onClick='this.select();' placeholder="Senha atual" name="pass_atual"> <i class="fas fa-eye" id="hide_pass"></i><i class="fas fa-eye-slash" id="show_pass"></i> <span class="pass_view">Mostrar Senha</span> <!-- input password com icone para mostrar a senha e um titulo para mostrar o valor do input -->
-
-                        <br><br>
+                                <label for="btn_pass">Trocar senha</label><br><br><!-- label que aciona a checkbox acima -->
 
 
 
-                        <label class="lbl_edit" for="inp_newpass">Nova Senha:</label><br><br>
+                                <div class="container_password">
+                                    <!-- container password que vai aparecer, inicialmente escondido -->
 
-                        <input type="password" id="inp_newpass" class="input" onClick='this.select();' placeholder="Senha nova" name="pass_new"> <i class="fas fa-eye" id="hide_newpass"></i><i class="fas fa-eye-slash" id="show_newpass"></i><span class="pass_view">Mostrar Senha</span>  
+                                    <label class="lbl_edit" for="inp_pass">Senha Atual:</label><br><br><!-- titulo do input -->
 
-                        <br><br>
+                                    <input type="password" id="inp_pass" class="input" onClick='this.select();' placeholder="Senha atual" name="pass_atual"> <i class="fas fa-eye" id="hide_pass"></i><i class="fas fa-eye-slash" id="show_pass"></i> <span class="pass_view">Mostrar Senha</span> <!-- input password com icone para mostrar a senha e um titulo para mostrar o valor do input -->
 
-
-
-                        <label class="lbl_edit" for="conf_newpass">Confirmar Nova Senha:</label><br><br>
-
-                        <input type="password" id="conf_newpass" class="input" onClick='this.select();' placeholder="Confirmar Senha"> <i class="fas fa-eye" id="hide_confpass"></i><i class="fas fa-eye-slash" id="show_confpass"></i><span class="pass_view">Mostrar Senha</span>  
-
-                        <br><br>
-
-                        <label for="sub_pass" class="form_btn btn_reg" id="btn_log">
-
-                                       <input type="submit" id="sub_pass" name="upd_pass" value="" style="display:none;">
-
-                                         <span class="bg"></span>
-
-                                          <p>Salvar nova senha</p>
+                                    <br><br>
 
 
 
-                        </label>
+                                    <label class="lbl_edit" for="inp_newpass">Nova Senha:</label><br><br>
 
-                        </div><!-- fechando container password -->
+                                    <input type="password" id="inp_newpass" class="input" onClick='this.select();' placeholder="Senha nova" name="pass_new"> <i class="fas fa-eye" id="hide_newpass"></i><i class="fas fa-eye-slash" id="show_newpass"></i><span class="pass_view">Mostrar Senha</span>
 
-                        </div><!-- fechando container new_password -->
+                                    <br><br>
 
-                    </form><!-- fechando formulário de update de senha -->
 
-                    <!-- Update no usuário -->
 
-                    <?php
+                                    <label class="lbl_edit" for="conf_newpass">Confirmar Nova Senha:</label><br><br>
+
+                                    <input type="password" id="conf_newpass" class="input" onClick='this.select();' placeholder="Confirmar Senha"> <i class="fas fa-eye" id="hide_confpass"></i><i class="fas fa-eye-slash" id="show_confpass"></i><span class="pass_view">Mostrar Senha</span>
+
+                                    <br><br>
+
+                                    <label for="sub_pass" class="form_btn btn_reg" id="btn_log">
+
+                                        <input type="submit" id="sub_pass" name="upd_pass" value="" style="display:none;">
+
+                                        <span class="bg"></span>
+
+                                        <p>Salvar nova senha</p>
+
+
+
+                                    </label>
+
+                                </div><!-- fechando container password -->
+
+                            </div><!-- fechando container new_password -->
+
+                        </form><!-- fechando formulário de update de senha -->
+
+                        <!-- Update no usuário -->
+
+                        <?php
 
                         //Trocar nome de usuário
 
-                        if(isset($_POST["upd_user"])){
+                        if (isset($_POST["upd_user"])) {
 
-                            $new_username=$_POST["new_username"];/*capaturando as informações passadas pelo input com esse name*/
+                            $new_username = $_POST["new_username"];/*capaturando as informações passadas pelo input com esse name*/
 
-                            $id_user=$_SESSION["id_user"];/*capturando o id do usuário passado pela sessão via singin*/
+                            $id_user = $_SESSION["id_user"];/*capturando o id do usuário passado pela sessão via singin*/
 
-                            $sql="UPDATE usuarios set APELIDO='$new_username' WHERE ID_USUARIO=$id_user";/*troca o valor do username do usuário pelo valor na variavel new_username via id do usuário*/
+                            $sql = "UPDATE usuarios set APELIDO='$new_username' WHERE ID_USUARIO=$id_user";/*troca o valor do username do usuário pelo valor na variavel new_username via id do usuário*/
 
-                            $res=mysqli_query($con,$sql);/*executa o codigo em sql*/
+                            $res = mysqli_query($con, $sql);/*executa o codigo em sql*/
 
-    
 
-                            if($res){/*se res for executado, troca o valor da variavel da sessão e recarrega a página*/
 
-                                $_SESSION["username"]=$new_username;
+                            if ($res) {/*se res for executado, troca o valor da variavel da sessão e recarrega a página*/
 
-                                echo "<script>window.location.replace('http://".$serv."src/php/perfil');</script>";
+                                $_SESSION["username"] = $new_username;
 
-                            }else{
+                                echo "<script>window.location.replace('http://" . $serv . "src/php/perfil');</script>";
+                            } else {
 
                                 echo "<script>alert('não foi possivel fazer a troca de username');</script>";
-
                             }
-
                         }
 
                         //Trocando Password
 
-                        if(isset($_POST["upd_pass"])){
+                        if (isset($_POST["upd_pass"])) {
 
-                            $pass_atual=md5($_POST["pass_atual"]);/*capaturando as informações passadas pelo input com esse name*/
+                            $pass_atual = md5($_POST["pass_atual"]);/*capaturando as informações passadas pelo input com esse name*/
 
-                            $pass_new=md5($_POST["pass_new"]);/*capaturando as informações passadas pelo input com esse name*/
+                            $pass_new = md5($_POST["pass_new"]);/*capaturando as informações passadas pelo input com esse name*/
 
-                            $id_user=$_SESSION["id_user"];/*capturando o id do usuário passado pela sessão via singin*/
-
-
-
-                            $sql_log="SELECT * FROM usuarios WHERE ID_USUARIO=$id_user";/*seleciona todos os dados da tabela usuários pelo id*/
-
-                            $res_log=mysqli_query($con,$sql_log);/*executa o codigo em sql*/
-
-                            $row_info=mysqli_fetch_assoc($res_log);/*separa todas as informações em um vetor*/
+                            $id_user = $_SESSION["id_user"];/*capturando o id do usuário passado pela sessão via singin*/
 
 
 
-                            if($row_info["SENHA"]==$pass_atual){/*verifica se a senha cadastrada é igual a senha que passada na senha_atual*/
+                            $sql_log = "SELECT * FROM usuarios WHERE ID_USUARIO=$id_user";/*seleciona todos os dados da tabela usuários pelo id*/
 
-                                $sql="UPDATE usuarios set SENHA='$pass_new' WHERE ID_USUARIO=$id_user";/*troca os dados do campo SENHA na tabela pelo valor da pass_new*/
+                            $res_log = mysqli_query($con, $sql_log);/*executa o codigo em sql*/
 
-                                $res=mysqli_query($con,$sql);/*executa o codigo em sql*/
+                            $row_info = mysqli_fetch_assoc($res_log);/*separa todas as informações em um vetor*/
 
-        
 
-                                if($res){/*se o res for executado com sucesso, exibe a mensagem em alert e recarrega a página*/
 
-                                   echo "<script>alert('Sua Senha foi alterada!');</script>";
+                            if ($row_info["SENHA"] == $pass_atual) {/*verifica se a senha cadastrada é igual a senha que passada na senha_atual*/
 
-                                    echo "<script>window.location.replace('http://".$serv."src/php/perfil');</script>";
+                                $sql = "UPDATE usuarios set SENHA='$pass_new' WHERE ID_USUARIO=$id_user";/*troca os dados do campo SENHA na tabela pelo valor da pass_new*/
 
-                                }else{/*caso contrário exibe uma mensagem de não foi possivel cadastrar*/
+                                $res = mysqli_query($con, $sql);/*executa o codigo em sql*/
+
+
+
+                                if ($res) {/*se o res for executado com sucesso, exibe a mensagem em alert e recarrega a página*/
+
+                                    echo "<script>alert('Sua Senha foi alterada!');</script>";
+
+                                    echo "<script>window.location.replace('http://" . $serv . "src/php/perfil');</script>";
+                                } else {/*caso contrário exibe uma mensagem de não foi possivel cadastrar*/
 
                                     echo "<script>alert('não foi possível cadastrar');</script>";
-
                                 }
-
-                            }else{/*se as senhas não forem iguais, não permite fazer a troca*/
+                            } else {/*se as senhas não forem iguais, não permite fazer a troca*/
 
                                 echo "<script>alert('A senha atual não corresponde com que foi passada');</script>";
-
                             }
-
                         }
 
-                    ?>
+                        ?>
 
-                 </div>
+                    </div>
 
-              
+
 
                 </div>
 
@@ -270,65 +283,59 @@
 
                     <div class="agendas screen_exibe">
 
-                    <?php
+                        <?php
 
-                   // Exibe os projetos excluidos na página.(mesmo codigo da página de add_agendas para imprimir as rotinas cadastradas)
+                        // Exibe os projetos excluidos na página.(mesmo codigo da página de add_agendas para imprimir as rotinas cadastradas)
 
-                        $id_user=$_SESSION['id_user'];
+                        $id_user = $_SESSION['id_user'];
 
-                        $sql="SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user AND STATUS='disabled' ORDER by TITULO_ROTINA ASC";/*seleciona todas as rotinas cadastradas do usuário com o status disabled, capturados pelo id do usuário*/
+                        $sql = "SELECT * FROM usuarios_rotinas WHERE ID_USUARIO=$id_user AND STATUS='disabled' ORDER by TITULO_ROTINA ASC";/*seleciona todas as rotinas cadastradas do usuário com o status disabled, capturados pelo id do usuário*/
 
-                        $res=mysqli_query($con,$sql);
+                        $res = mysqli_query($con, $sql);
 
-                        $lin=mysqli_num_rows($res);
+                        $lin = mysqli_num_rows($res);
 
-                        if($lin>0){
+                        if ($lin > 0) {
 
                             // Exibe as rotinas criadas na página.
 
-                            while($linha=mysqli_fetch_array($res)){
+                            while ($linha = mysqli_fetch_array($res)) {
 
-                                    if($linha["ROTINA_COR"]=="#fff"){
+                                if ($linha["ROTINA_COR"] == "#fff") {
 
-                                        echo"<a href=./proj_disab.php?id_tab=".$linha["ID_ROTINA"]." target='_self' class='schedules' style='background:".$linha["ROTINA_COR"].";'>
+                                    echo "<a href=./proj_disab.php?id_tab=" . $linha["ID_ROTINA"] . " target='_self' class='schedules' style='background:" . $linha["ROTINA_COR"] . ";'>
 
                                         
 
                                         <h1 class='schedule_titulo' style='color:black;'>
 
-                                            ".$linha['TITULO_ROTINA']."
+                                            " . $linha['TITULO_ROTINA'] . "
 
                                         </h1>
 
-                                        <span style='display:none'>".$linha["ID_ROTINA"]."</span>
+                                        <span style='display:none'>" . $linha["ID_ROTINA"] . "</span>
 
                                         </a> ";
+                                } else {
 
-                                    }else{
-
-                                        echo"<a href=./proj_disab.php?id_tab=".$linha["ID_ROTINA"]." target='_self' class='schedules'  style= 'background:".$linha["ROTINA_COR"].";'>
+                                    echo "<a href=./proj_disab.php?id_tab=" . $linha["ID_ROTINA"] . " target='_self' class='schedules'  style= 'background:" . $linha["ROTINA_COR"] . ";'>
 
                                         
 
                                         <h1 class='schedule_titulo' >
 
-                                        ".$linha['TITULO_ROTINA']."
+                                        " . $linha['TITULO_ROTINA'] . "
 
                                         </h1>
 
-                                        <span style='display:none'>".$linha["ID_ROTINA"]."</span>
+                                        <span style='display:none'>" . $linha["ID_ROTINA"] . "</span>
 
                                         </a> ";
-
-                        
-
-                                    }
-
                                 }
+                            }
+                        }
 
-                             }
-
-                      ?>
+                        ?>
 
                     </div>
 
@@ -342,99 +349,96 @@
 
                 <div class="ata_select" id="security">
 
-                <h1 class="screen_title">Perguntas de Segurança</h1>
+                    <h1 class="screen_title">Perguntas de Segurança</h1>
 
-                <div class="screen_exibe">
+                    <div class="screen_exibe">
 
-                    <form class="perfil_edit" action="" method="post">
+                        <form class="perfil_edit" action="" method="post">
 
-                        <label class="lbl_edit" for="inp_answer1">Primeira escola em que estudou?</label><br><br>
+                            <label class="lbl_edit" for="inp_answer1">Primeira escola em que estudou?</label><br><br>
 
-                        <input type="text" id="inp_answer1" name="inp_answer1" class="input" onClick='this.select();' value="<?php echo $_SESSION["p1"]; ?>"  placeholder="Primeira escola em que estudou" required>
+                            <input type="text" id="inp_answer1" name="inp_answer1" class="input" onClick='this.select();' value="<?php echo $_SESSION["p1"]; ?>" placeholder="Primeira escola em que estudou" required>
 
-                        <br><br>
+                            <br><br>
 
-                        <label class="lbl_edit" for="inp_answer2">Nome do Melhor Amigo?</label><br><br>
+                            <label class="lbl_edit" for="inp_answer2">Nome do Melhor Amigo?</label><br><br>
 
-                        <input type="text" id="inp_answer2" name="inp_answer2" class="input" onClick='this.select();' value="<?php echo $_SESSION["p2"]; ?>"  placeholder="Nome do Melhor Amigo" required>
+                            <input type="text" id="inp_answer2" name="inp_answer2" class="input" onClick='this.select();' value="<?php echo $_SESSION["p2"]; ?>" placeholder="Nome do Melhor Amigo" required>
 
-                        <br><br>
+                            <br><br>
 
-                        <label class="lbl_edit" for="inp_answer3">Nome da mãe?</label><br><br>
+                            <label class="lbl_edit" for="inp_answer3">Nome da mãe?</label><br><br>
 
-                        <input type="text" id="inp_answer3" name="inp_answer3" class="input" onClick='this.select();' value="<?php echo $_SESSION["p3"]; ?>"  placeholder="Nome da mãe" required>
+                            <input type="text" id="inp_answer3" name="inp_answer3" class="input" onClick='this.select();' value="<?php echo $_SESSION["p3"]; ?>" placeholder="Nome da mãe" required>
 
-                        <br><br>
+                            <br><br>
 
-                        <label for="upd_answer" class="form_btn btn_reg" id="btn_log">
+                            <label for="upd_answer" class="form_btn btn_reg" id="btn_log">
 
                                 <input type="submit" id="upd_answer" name="upd_answer" value="" style="display:none;">
 
-                                 <span class="bg"></span>
+                                <span class="bg"></span>
 
-                                 <p>Salvar alteração</p>
+                                <p>Salvar alteração</p>
 
-                        </label>
+                            </label>
 
-                    </form>
+                        </form>
 
-                </div>
-
-                </div>
-
-                    <!-- Update no usuário -->
-
-                    <?php
-
-                        //Trocar respostas de segurança de usuário
-
-                        if(isset($_POST["upd_answer"])){
-
-                            $inp_answer1=$_POST["inp_answer1"];
-
-                            $inp_answer2=$_POST["inp_answer2"];
-
-                            $inp_answer3=$_POST["inp_answer3"];
-
-                            $id_user=$_SESSION["id_user"];
-
-                            $sql="UPDATE usuarios set FIRST_SCHOOL='$inp_answer1', BEST_FRIEND='$inp_answer2', MOM='$inp_answer3' WHERE ID_USUARIO=$id_user";/*troca as  perguntas do usuário pelo valor das variaveis*/
-
-                            $res=mysqli_query($con,$sql);
-
-    
-
-                            if($res){/*se a res for executada com sucesso, atualiza os valores das variaveis da sessão e recarrega a página*/
-
-                                $_SESSION["p1"]=$inp_answer1;
-
-                                $_SESSION["p2"]=$inp_answer2;
-
-                                $_SESSION["p3"]=$inp_answer3;
-
-                                echo "<script>alert('Respostas atualizadas com sucesso!');</script>";
-
-                                echo "<script>window.location.replace('http://".$serv."src/php/perfil');</script>";
-
-                            }else{/*caso contrário exibe a mensagem*/
-
-                                echo "<script>alert('Não foi possivel atualizar');</script>";
-
-                            }
-
-                        }
-
-                    ?>
-
-                 </div>
-
-              
+                    </div>
 
                 </div>
 
-    
+                <!-- Update no usuário -->
 
-    <footer>
+                <?php
+
+                //Trocar respostas de segurança de usuário
+
+                if (isset($_POST["upd_answer"])) {
+
+                    $inp_answer1 = $_POST["inp_answer1"];
+
+                    $inp_answer2 = $_POST["inp_answer2"];
+
+                    $inp_answer3 = $_POST["inp_answer3"];
+
+                    $id_user = $_SESSION["id_user"];
+
+                    $sql = "UPDATE usuarios set FIRST_SCHOOL='$inp_answer1', BEST_FRIEND='$inp_answer2', MOM='$inp_answer3' WHERE ID_USUARIO=$id_user";/*troca as  perguntas do usuário pelo valor das variaveis*/
+
+                    $res = mysqli_query($con, $sql);
+
+
+
+                    if ($res) {/*se a res for executada com sucesso, atualiza os valores das variaveis da sessão e recarrega a página*/
+
+                        $_SESSION["p1"] = $inp_answer1;
+
+                        $_SESSION["p2"] = $inp_answer2;
+
+                        $_SESSION["p3"] = $inp_answer3;
+
+                        echo "<script>alert('Respostas atualizadas com sucesso!');</script>";
+
+                        echo "<script>window.location.replace('http://" . $serv . "src/php/perfil');</script>";
+                    } else {/*caso contrário exibe a mensagem*/
+
+                        echo "<script>alert('Não foi possivel atualizar');</script>";
+                    }
+                }
+
+                ?>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <footer>
 
             <?php include("./footer.php"); ?>
 
@@ -445,8 +449,7 @@
 </html>
 
 <script>
-
-       $("#btn_security").click(function(){
+    $("#btn_security").click(function() {
 
         $(".ata_select").hide();
 
@@ -455,21 +458,18 @@
         $("#security").show();
 
     })
-
 </script>
 
-<?php 
+<?php
 
-            if(isset($_POST["logout"])){/*função de logout, destroi as variaveis da sessão e renova a página para destruir a sessão que estava iniciada*/
+        if (isset($_POST["logout"])) {/*função de logout, destroi as variaveis da sessão e renova a página para destruir a sessão que estava iniciada*/
 
-                session_unset();
+            session_unset();
 
-                session_destroy();
+            session_destroy();
 
-                echo "<script>location.reload();</script>";
-
-            }
-
+            echo "<script>location.reload();</script>";
         }
+    }
 
 ?>
