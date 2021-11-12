@@ -1,4 +1,12 @@
-<?php require('./src/php/connect.php'); ?>
+<?php
+
+require('./src/php/connect.php');
+
+if (isset($_SESSION["username"])) {/*verifica se o nome de usuário foi passado pela sessão*/
+    echo  "<script>window.location.replace('http://" . $serv . "src/php/routines.php');</script>";
+}
+
+?>
 
 <!DOCTYPE html>
 
