@@ -18,7 +18,7 @@ form,
     #align-form {
         padding: 25px; /* Define um preenchimento de topo,fundo,direta e esqueda de 25px */
         display: flex; /* Define o elemento como flexível */
-        margin: inherit; /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
+        margin: 5rem 0; /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
         max-width: 550px;
         overflow: hidden; /* Defina que todo elemento que transbordar será escondido */
         transform: scale(1.3);
