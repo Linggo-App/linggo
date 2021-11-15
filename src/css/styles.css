@@ -132,7 +132,7 @@ form,
   display: -ms-flexbox;
   display: flex;
   /* Define o elemento como flexível */
-  margin: inherit;
+  margin: 5rem 0;
   /* Define uma margin de topo,fundo,direta e esqueda de 5rem */
   max-width: 550px;
   overflow: hidden;
@@ -925,7 +925,7 @@ footer #assin {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) and (max-width: 600px) {
   body {
     height: unset;
   }
