@@ -24,7 +24,7 @@
 
 <p>
   
-Foi o projeto de conclusão do curso de Técnico em TI, oferecido pela instituição de ensino EME Prof.ª Alcina Dantas Feijão. Atualmente está passando pro um processo de refaturação de código, redesign e rreestilização.
+Foi o projeto de conclusão do curso de Técnico em TI, oferecido pela instituição de ensino EME Prof.ª Alcina Dantas Feijão. Atualmente está passando pro um processo de refaturação de código, redesign e reestilização.
   
 O projeto Linggo App, foi desenvolvido com o intuito de ser um organizador de tarefas com base no sistema de organização kanban, um sistema utilizando pela maioria das empresas para melhorar a produtividade e a organização das tarefas, nessa aplicação o sistema foi mais simplificado para ser utilizado por qualquer pessoa. 
   
